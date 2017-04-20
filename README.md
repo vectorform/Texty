@@ -90,4 +90,4 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 
 ## License
-Texty is available under the BSD license. See the [LICENSE](LICENSE) file for more info.
+Texty is available under the BSD 3-clause "New" or "Revised" License. See the [LICENSE](LICENSE) file for more info.
