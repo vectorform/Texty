@@ -1,0 +1,16 @@
+PODS:
+  - Texty (0.1.0)
+
+DEPENDENCIES:
+  - Texty (from `../`)
+
+EXTERNAL SOURCES:
+  Texty:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  Texty: 4a10f2f064578412dd804459920d744493454124
+
+PODFILE CHECKSUM: fc7fcf3ffe93519853e64e36ef7fe101506b12e1
+
+COCOAPODS: 1.1.1

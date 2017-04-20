@@ -1,0 +1,22 @@
+{
+  "name": "Texty",
+  "version": "0.1.0",
+  "summary": "A short description of Texty.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/${USER_NAME}/${POD_NAME}",
+  "license": {
+    "type": "BSD",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "${USER_NAME}": "${USER_EMAIL}"
+  },
+  "source": {
+    "git": "https://github.com/${USER_NAME}/${POD_NAME}.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "Pod/Classes/**/*"
+}
