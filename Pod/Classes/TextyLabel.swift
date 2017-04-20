@@ -2,7 +2,7 @@
 //
 // Redistribution and use in source and binary forms, with or without modification,
 // are permitted provided that the following conditions are met:
-//
+///Users/cbechtel/Desktop/Yarp Repo/Yarp/README.md
 // 1. Redistributions of source code must retain the above copyright notice, this
 // list of conditions and the following disclaimer.
 //
@@ -32,8 +32,11 @@ import UIKit
 
 open class TextyLabel: UILabel, TextStyleDelegate {
     
-    public var style: TextStyle!
+    //
+    // Class Members
+    //
     
+    public var style: TextStyle!
     
     /// In each of the below setters, style is accessed using self.style? because
     /// the super.init() call will attempt to set default values, at which point 
@@ -58,7 +61,7 @@ open class TextyLabel: UILabel, TextStyleDelegate {
         get { return self.attributedText?.string }
         set {
             self.possiblyTaggedText = newValue
-            self.attributedText = (newValue == nil ? nil : self.style.attributedString(with: newValue!))
+            self.attributedText = newValue == nil ? nil : self.style.attributedString(with: newValue!)
         }
     }
     
@@ -76,13 +79,16 @@ open class TextyLabel: UILabel, TextStyleDelegate {
         set { self.style?.foregroundColor = newValue }
     }
     
+    //
+    // Initializers
+    //
     
     public convenience init() {
-        self.init(style: TextStyle(attributes: nil))
+        self.init(style: TextStyle())
     }
     
     public required init(style: TextStyle, frame: CGRect? = nil) {
-        super.init(frame: (frame == nil ? .zero : frame!))
+        super.init(frame: frame ?? .zero)
         self.style = style
         self.setDefaults()
         self.style.delegate = self
@@ -92,19 +98,23 @@ open class TextyLabel: UILabel, TextStyleDelegate {
         fatalError("not supported")
     }
     
+    // 
+    // Functions
+    //
     
+    //if the font/textColor are not set yet by the TextStyle passed in, then set some default values
     private func setDefaults() {
         self.text = nil
         
-        if(self.style.font == nil) {
+        if self.style.font == nil  {
             self.style.font = UIFont.systemFont(ofSize: 17.0)
         }
         
-        if(self.style.foregroundColor == nil) {
+        if self.style.foregroundColor == nil {
             self.style.foregroundColor = UIColor.black
         }
         
-        if(self.style.paragraphStyle == nil) {
+        if self.style.paragraphStyle == nil {
             let pstyle: NSMutableParagraphStyle = NSMutableParagraphStyle()
             pstyle.alignment = .natural
             pstyle.lineBreakMode = .byTruncatingTail
@@ -112,10 +122,8 @@ open class TextyLabel: UILabel, TextStyleDelegate {
         }
     }
     
-    
+    //Update attributed string with new attributes called by the textStyle when it detects an update
     public func didUpdate(style: TextStyle) {
-        //Update attributed string with new attributes
         self.text = possiblyTaggedText
     }
-    
 }

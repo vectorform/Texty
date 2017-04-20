@@ -44,7 +44,7 @@ internal extension Scanner {
         guard self.scanUpTo(string, into: &ptr) || ((!self.isAtEnd) && ((self.string as NSString).substring(from: self.scanLocation).hasPrefix(string))) else {
             return nil
         }
-        return (ptr as? String)
+        return (ptr as? String) //should maybe be as! since it will never be nil?
     }
     
 }

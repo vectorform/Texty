@@ -30,7 +30,7 @@ import Foundation
 
 
 //TODO: Fix position of forward slash in tags to </bold> - not <bold/>
-//TODO: Figure out a way to support tagged strings with < or > in the string itself
+//TODO: Figure out a way to support tagged strings with < or > in the string itself (spaces present? or lack of a balanced end tag)
 //TODO: Allow uneven tags (i.e. <bold>My name <underline> is: <bold/>Igor<underline/>)
 //TODO: Create appearance proxy
 
@@ -76,7 +76,7 @@ public struct TextStyle {
         var mutableString: String = string
         var attributedString: NSMutableAttributedString
         
-        if(self.taggedAttributes.count > 0) {
+        if self.taggedAttributes.count > 0 {
             let tags: [String : NSRange] = mutableString.stripTags()        //This has to happen here because mutableString will be mutated in the stripTags() function
             attributedString = NSMutableAttributedString(string: mutableString, attributes: self.attributes)
             
