@@ -78,7 +78,7 @@ public struct TextStyle {
         var attributedString: NSMutableAttributedString
         
         if(self.taggedAttributes.count > 0) {
-            let tags: [String : NSRange] = mutableString.stripTags()        //This has to happen here because mutableString will be mutated in the stripTags() function
+            let tags: [(String, NSRange)] = mutableString.findAndRemoveTags()        //This has to happen here because mutableString will be mutated in the stripTags() function
             attributedString = NSMutableAttributedString(string: mutableString, attributes: self.attributes)
             
             for (name, range) in tags {

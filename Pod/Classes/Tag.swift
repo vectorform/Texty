@@ -38,16 +38,18 @@ internal struct Tag: Hashable {
     internal let short: Bool
     
     internal let name: String
+    internal let location: Int
     
     
     public var hashValue: Int { return self.name.hashValue }
     
     
-    public init(string: String, closing: Bool, short: Bool) {
+    public init(string: String, location: Int, closing: Bool, short: Bool) {
         assert(!(closing && short), "a tag can be closing, short, or neither, but not both closing and short")
         self.closing = closing
         self.short = short
         self.name = string
+        self.location = location
     }
     
 }

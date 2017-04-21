@@ -111,8 +111,9 @@ class LabelViewController: UIViewController, AdjustValueViewDelegate, AdjustAlig
         self.changeKernButton.setTitle("Kern", for: .normal)
         self.changeKernButton.translatesAutoresizingMaskIntoConstraints = false
         
-        self.titleLabel.style.setAttributes([TextAttribute.underlineStyle : NSNumber(value: NSUnderlineStyle.styleSingle.rawValue)], forTag: "underline")
-        self.titleLabel.text = "This is a <underline>TextyLabel<underline/>"
+        self.titleLabel.style.setAttributes([TextAttribute.obliqueness : 0.2], forTag: "italic")
+        self.titleLabel.style.setAttributes([TextAttribute.underlineStyle : NSUnderlineStyle.styleSingle.rawValue], forTag: "underline")
+        self.titleLabel.text = "This <italic>is a <underline>TextyLabel</italic> Example</underline>"
         self.titleLabel.textAlignment = .center
         self.titleLabel.textColor = UIColor(hue: 0.0, saturation: 1.0, brightness: 1.0, alpha: 1.0)
         self.titleLabel.translatesAutoresizingMaskIntoConstraints = false

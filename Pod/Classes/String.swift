@@ -70,7 +70,7 @@ internal extension String {
     }
     
     
-    internal mutating func findAndRemoveTags() -> [(tag: Tag, index: Int)] {
+    internal mutating func findAndRemoveTags() -> [(tag: String, range: NSRange)] {
         let scanner: Scanner = Scanner(string: self)
         
         var tagLocation: Int
@@ -81,7 +81,10 @@ internal extension String {
         var newString: String = ""
         var mutableTagString: String
         
-        var tags: [(Tag, Int)] = []
+        var tags: [Tag] = []
+        
+        var ret: [(tag: String, range: NSRange)] = []
+        var openTags: [Tag] = []
         
         
         scanner.charactersToBeSkipped = nil
@@ -122,12 +125,38 @@ internal extension String {
             }
             mutableTagString = mutableTagString.trimmingCharacters(in: .whitespaces)
             
-            tags.append((Tag(string: mutableTagString, closing: isClosingTag, short: isShortTag), tagLocation - lengthOffset))
+            tags.append(Tag(string: mutableTagString, location: tagLocation - lengthOffset, closing: isClosingTag, short: isShortTag))
             lengthOffset += 2 + tagString.characters.count
         }
         
+        for tag: Tag in tags {
+            guard !tag.short else {
+                ret.append((tag: tag.name, range: NSRange(location: tag.location, length: 0)))
+                continue
+            }
+            
+            guard !tag.opening else {
+                openTags.insert(tag, at: 0)
+                continue
+            }
+            
+            //The tag is closing, and we need to find the first opening tag for it
+            //== compares Tag.name properties only
+            guard let index = openTags.index(of: tag) else {
+                fatalError("unbalanced tags found in string")
+            }
+            
+            ret.append((tag: tag.name, range: NSRange(location: openTags[index].location, length: tag.location - openTags[index].location)))
+            openTags.remove(at: index)
+        }
+        
+        guard openTags.count == 0 else {
+            fatalError("unbalanced tags found in string")
+        }
+        
+        
         self = newString
-        return tags
+        return ret
     }
 
     
