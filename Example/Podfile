@@ -1,6 +1,6 @@
 use_frameworks!
 
-target ‘Example’ do
+target 'Example' do
   pod 'Texty', :path => '../'
 
 end

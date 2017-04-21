@@ -48,7 +48,7 @@ public struct TextStyle {
     
     fileprivate var attributes: [String : Any] = [:]
     
-    fileprivate var taggedAttributes: [Tag] = []
+    fileprivate var taggedAttributes: [String : TextStyle] = [:]
     
     
     public init(attributes: [TextAttribute : Any]? = nil) {
@@ -59,8 +59,8 @@ public struct TextStyle {
     }
     
     
-    private func findTag(with name: String) -> Tag? {
-        return self.taggedAttributes.filter { $0.name == name }.first
+    private func findStyle(forTag: String) -> TextStyle? {
+        return self.taggedAttributes.filter { $0.key == forTag }.first?.value
     }
     
     fileprivate mutating func set(value: Any?, for key: TextAttribute) {
@@ -76,14 +76,14 @@ public struct TextStyle {
         var mutableString: String = string
         var attributedString: NSMutableAttributedString
         
-        if self.taggedAttributes.count > 0 {
+        if(self.taggedAttributes.count > 0) {
             let tags: [String : NSRange] = mutableString.stripTags()        //This has to happen here because mutableString will be mutated in the stripTags() function
             attributedString = NSMutableAttributedString(string: mutableString, attributes: self.attributes)
             
             for (name, range) in tags {
-                let tag: Tag! = self.taggedAttributes.filter { $0.name == name }.first
-                assert(tag != nil, "unregistered tag \"<\(name)>\" found in string")
-                attributedString.addAttributes(tag.style.attributes, range: range)
+                let style: TextStyle! = self.findStyle(forTag: name)
+                assert(style != nil, "unregistered tag \"<\(name)>\" found in string")
+                attributedString.addAttributes(style.attributes, range: range)
             }
         } else {
             attributedString = NSMutableAttributedString(string: mutableString, attributes: self.attributes)
@@ -93,10 +93,8 @@ public struct TextStyle {
         return attributedString
     }
     
-    public mutating func add(attributes: [TextAttribute : Any], forTag: String) {
-        //Remove the tag if it is in the tags array already
-        self.taggedAttributes = self.taggedAttributes.flatMap { $0.name != forTag ? $0 : nil }
-        self.taggedAttributes.append(Tag(string: forTag, attributes: attributes))
+    public mutating func setAttributes(_ attributes: [TextAttribute : Any], forTag: String) {
+        self.taggedAttributes[forTag] = TextStyle(attributes: attributes)
         self.delegate?.didUpdate(style: self)
     }
     

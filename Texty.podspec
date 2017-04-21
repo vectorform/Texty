@@ -5,7 +5,7 @@
 Pod::Spec.new do |s|
   s.name             = 'Texty'
   s.version          = '0.1.0'
-  s.summary          = 'Texty is a POD whose goal is to make managing styles and annotated strings clean and easy.'
+  s.summary          = 'A library to make managing style and annotated string clean and easy.'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -14,8 +14,8 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-Texty is a POD whose goal is to make managing styles and annotated strings clean and easy.  Texty Provides TextStyle that can be applied to TextyLabels or the tags contained within them. 
-                       DESC
+A library to make managing style and annotated string clean and easy.                       
+DESC
 
   s.homepage         = 'https://github.com/vectorform/Texty'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
