@@ -5,9 +5,9 @@ Texty's goal is to make managing styles and annotated strings clean and easy.
 
 
 ## Getting started
-### Create TextStyle's
+### Create TextStyles
 ```swift
-/// This is the default way to create TextStyle's.
+/// This is the default way to create TextStyles.
 struct Style {
     static let Header1: TextStyle = TextStyle(attributes: [.foregroundColor : UIColor.black, .font : UIFont.boldSystemFont(ofSize: 24.0)])
 }
@@ -40,7 +40,7 @@ The attributes available to use are:
 These line up with the attributes listed in Apple's [documentation](https://developer.apple.com/reference/foundation/nsattributedstring/character_attributes).
 
 
-### Create TextyLabel's with style!
+### Create TextyLabels with style!
 ```swift
 let titleLabel: TextyLabel = TextyLabel(style: Styles.Header1)
 
@@ -59,7 +59,7 @@ titleLabel.style.underlineStyle = someStyle
 ```
 
 
-### Associating TextStyle's with tags in strings
+### Associating TextStyles with tags in strings
 Tags can be used to apply TextAttribute's to text in a TextyLabel. The tag is a string key that is inserted into the text, similar to an HTML tag.
 
 ```swift

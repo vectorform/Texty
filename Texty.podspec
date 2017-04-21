@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-A library to make managing style and annotated string clean and easy.                       
+A library to make managing style and annotated string clean and easy.  Also has support for sub styles inside a TextyLabel.                     
 DESC
 
   s.homepage         = 'https://github.com/vectorform/Texty'
