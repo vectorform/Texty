@@ -27,7 +27,7 @@
 
 
 import Foundation
-import Texty
+import UIKit
 
 
 struct Styles {

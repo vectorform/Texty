@@ -29,8 +29,6 @@
 import Foundation
 import UIKit
 
-import Texty
-
 
 fileprivate extension UIControlEvents {
     
@@ -113,7 +111,7 @@ class LabelViewController: UIViewController, AdjustValueViewDelegate, AdjustAlig
         self.changeKernButton.setTitle("Kern", for: .normal)
         self.changeKernButton.translatesAutoresizingMaskIntoConstraints = false
         
-        self.titleLabel.style.add(attributes: [TextAttribute.underlineStyle : NSNumber(value: NSUnderlineStyle.styleSingle.rawValue)], forTag: "underline")
+        self.titleLabel.style.setAttributes([TextAttribute.underlineStyle : NSNumber(value: NSUnderlineStyle.styleSingle.rawValue)], forTag: "underline")
         self.titleLabel.text = "This is a <underline>TextyLabel<underline/>"
         self.titleLabel.textAlignment = .center
         self.titleLabel.textColor = UIColor(hue: 0.0, saturation: 1.0, brightness: 1.0, alpha: 1.0)

@@ -25,15 +25,6 @@ xcuserdata/
 *.dSYM.zip
 *.dSYM
 
-## Playgrounds
-timeline.xctimeline
-playground.xcworkspace
-
-# Example Pods
-Example/Pods/
-Example/Podfile.lock
-Example/Example.xcworkspace
-
 # OS
 *.DS_Store
 .AppleDouble

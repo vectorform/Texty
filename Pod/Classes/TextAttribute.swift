@@ -27,6 +27,7 @@
 
 
 import Foundation
+import UIKit
 
 
 public enum TextAttribute: String {

@@ -29,8 +29,6 @@
 import Foundation
 import UIKit
 
-import Texty
-
 
 class AdjustSizeView: AdjustValueView {
     

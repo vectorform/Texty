@@ -27,6 +27,7 @@
 
 
 import Foundation
+import UIKit
 
 
 //TODO: Fix position of forward slash in tags to </bold> - not <bold/>

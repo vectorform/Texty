@@ -29,8 +29,6 @@
 import Foundation
 import UIKit
 
-import Texty
-
 
 protocol AdjustValueViewDelegate: class {
     
