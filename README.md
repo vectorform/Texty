@@ -63,7 +63,7 @@ titleLabel.style.underlineStyle = someStyle
 Tags can be used to apply TextAttribute's to text in a TextyLabel. The tag is a string key that is inserted into the text, similar to an HTML tag.
 
 ```swift
-self.titleLabel.style.add(attributes: [TextAttribute.underlineStyle : NSNumber(value: NSUnderlineStyle.styleSingle.rawValue)], forTag: "underline")
+self.titleLabel.style.setAttributes([TextAttribute.underlineStyle : NSNumber(value: NSUnderlineStyle.styleSingle.rawValue)], forTag: "underline")
 self.titleLabel.text = "This is a <underline>TextyLabel<underline/>"
 ```
 
