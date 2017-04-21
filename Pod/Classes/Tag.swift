@@ -29,16 +29,30 @@
 import Foundation
 
 
-internal struct Tag {
+/// The Hashable protocol is here so that a Tag instance can be used as a key in a
+/// dictionary.  For that reason, == only compares the literal string tag.
+internal struct Tag: Hashable {
+    
+    internal var opening: Bool { return (!self.closing) && (!self.short) }
+    internal let closing: Bool
+    internal let short: Bool
     
     internal let name: String
-    internal let style: TextStyle
     
     
-    internal init(string: String, attributes: [TextAttribute : Any]) {
-        //TODO: support inline text attributes
+    public var hashValue: Int { return self.name.hashValue }
+    
+    
+    public init(string: String, closing: Bool, short: Bool) {
+        assert(!(closing && short), "a tag can be closing, short, or neither, but not both closing and short")
+        self.closing = closing
+        self.short = short
         self.name = string
-        self.style = TextStyle(attributes: attributes)
     }
     
+}
+
+
+internal func ==(lhs: Tag, rhs: Tag) -> Bool {
+    return lhs.name == rhs.name
 }

@@ -44,7 +44,23 @@ internal extension Scanner {
         guard self.scanUpTo(string, into: &ptr) || ((!self.isAtEnd) && ((self.string as NSString).substring(from: self.scanLocation).hasPrefix(string))) else {
             return nil
         }
-        return (ptr as? String) //should maybe be as! since it will never be nil?
+        return ptr as String?
+    }
+    
+    internal func scanUpToString(_ string: String) -> String? {
+        var ptr: NSString? = ""
+        guard self.scanUpTo(string, into: &ptr) || (!self.isAtEnd) else {
+            return nil
+        }
+        return ptr as String?
+    }
+    
+    internal func scanUpToCharacters(_ characterSet: CharacterSet) -> String? {
+        var ptr: NSString? = ""
+        guard self.scanUpToCharacters(from: characterSet, into: &ptr) || (!self.isAtEnd) else {
+            return nil
+        }
+        return ptr as String?
     }
     
 }

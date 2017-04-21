@@ -69,6 +69,68 @@ internal extension String {
         return length
     }
     
+    
+    internal mutating func findAndRemoveTags() -> [(tag: Tag, index: Int)] {
+        let scanner: Scanner = Scanner(string: self)
+        
+        var tagLocation: Int
+        var isClosingTag: Bool
+        var isShortTag: Bool
+        var lengthOffset: Int = 0
+        
+        var newString: String = ""
+        var mutableTagString: String
+        
+        var tags: [(Tag, Int)] = []
+        
+        
+        scanner.charactersToBeSkipped = nil
+        
+        //This will scan in one tag at a time
+        while let left: String = scanner.scanUpToString("<") {
+            newString += left
+            guard !scanner.isAtEnd else {
+                break
+            }
+            tagLocation = scanner.scanLocation
+            scanner.scanLocation += 1
+            
+            guard let tagString: String = scanner.scanUpToCharacters(CharacterSet(charactersIn: "<>")) else {
+                newString += "<"
+                break
+            }
+            
+            //This will check for consecutive '<' characters (i.e. <underline> < </underline>)
+            if(String(self[self.index(self.startIndex, offsetBy: scanner.scanLocation)]) == "<") {
+                //The next loop will catch the next '<'
+                newString += "<" + tagString
+                continue
+            }
+            scanner.scanLocation += 1
+            
+            //Create the tag
+            mutableTagString = tagString
+            isClosingTag = false
+            isShortTag = false
+            
+            if(mutableTagString.hasPrefix("/")) {
+                isClosingTag = true
+                mutableTagString = String(mutableTagString.characters.dropFirst())
+            } else if(mutableTagString.hasSuffix("/")) {
+                isShortTag = true
+                mutableTagString = String(mutableTagString.characters.dropLast())
+            }
+            mutableTagString = mutableTagString.trimmingCharacters(in: .whitespaces)
+            
+            tags.append((Tag(string: mutableTagString, closing: isClosingTag, short: isShortTag), tagLocation - lengthOffset))
+            lengthOffset += 2 + tagString.characters.count
+        }
+        
+        self = newString
+        return tags
+    }
+
+    
     internal mutating func stripTags() -> [String : NSRange] {
         let scanner: Scanner = Scanner(string: self)
         var tags: [String : NSRange] = [:]
