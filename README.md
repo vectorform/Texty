@@ -5,7 +5,7 @@ Texty's goal is to make managing styles and annotated strings clean and easy.
 
 
 ## Getting started
-### Create TextStyle's
+### Create TextStyles
 ```swift
 /// This is the default way to create TextStyles.
 struct Style {
