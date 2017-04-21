@@ -4,7 +4,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'Texty'
-  s.version          = '0.1.0'
+  s.version          = '0.1.1'
   s.summary          = 'A library to make managing style and annotated string clean and easy.'
 
 # This description is used to generate tags and improve search results.

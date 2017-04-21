@@ -77,7 +77,7 @@ self.titleLabel.text = "This is a <underline>TextyLabel</underline>"
 Texty can be added to your project using [CocoaPods](http://blog.cocoapods.org/Pod-Authors-Guide-to-CocoaPods-Frameworks/) by adding the following line to your `Podfile`:
 
 ```ruby
-pod 'Texty', '~> 0.1.0'
+pod 'Texty', '~> 0.1.1'
 ```
 
 
