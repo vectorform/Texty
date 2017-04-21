@@ -81,10 +81,6 @@ pod 'Texty', '~> 0.1.0'
 ```
 
 
-## Usage
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
-
-
 ## Authors
 [Igor Efremov](https://github.com/igorefremov), [iefremov@vectorform.com](mailto:iefremov@vectorform.com)
 
