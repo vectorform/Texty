@@ -1,3 +1,8 @@
+
+[![Platform](https://img.shields.io/cocoapods/p/Texty.svg?style=flat)](http://cocoadocs.org/docsets/Texty)
+[![CocoaPods Compatible](https://img.shields.io/cocoapods/v/Texty.svg)](https://img.shields.io/cocoapods/v/Texty.svg)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+
 # Texty
 Created and maintained by Vectorform, LLC.
 
@@ -77,9 +82,15 @@ self.titleLabel.text = "This is a <underline>TextyLabel</underline>"
 Texty can be added to your project using [CocoaPods](http://blog.cocoapods.org/Pod-Authors-Guide-to-CocoaPods-Frameworks/) by adding the following line to your `Podfile`:
 
 ```ruby
-pod 'Texty', '~> 0.1.1'
+pod 'Texty', '~> 0.1.4'
 ```
 
+### Carthage
+Texty can be added to your project using [Carthage](https://github.com/Carthage/Carthage/) by adding the following line to your `Cartfile`:
+
+```ogdl
+github "Vectorform/Texty" ~> 0.1.4
+```
 
 ## Authors
 [Igor Efremov](https://github.com/igorefremov), [iefremov@vectorform.com](mailto:iefremov@vectorform.com)
