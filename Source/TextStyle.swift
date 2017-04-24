@@ -30,12 +30,6 @@ import Foundation
 import UIKit
 
 
-//TODO: Fix position of forward slash in tags to </bold> - not <bold/>
-//TODO: Figure out a way to support tagged strings with < or > in the string itself (spaces present? or lack of a balanced end tag)
-//TODO: Allow uneven tags (i.e. <bold>My name <underline> is: <bold/>Igor<underline/>)
-//TODO: Create appearance proxy
-
-
 public protocol TextStyleDelegate: class {
     
     func didUpdate(style: TextStyle) -> Void
