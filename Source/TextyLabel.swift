@@ -113,7 +113,7 @@ open class TextyLabel: UILabel, TextStyleDelegate {
         }
     }
     
-    public func didUpdate(style: TextStyle) {
+    internal func didUpdate(style: TextStyle) {
         /// Update attributed string with new attributes called by the textStyle when it detects an update
         self.text = possiblyTaggedText
     }

@@ -88,7 +88,11 @@ public struct TextStyle {
     }
     
     public mutating func setAttributes(_ attributes: [TextAttribute : Any], forTag: String) {
-        self.taggedAttributes[forTag] = TextStyle(attributes: attributes)
+        self.setStyle(TextStyle(attributes: attributes), forTag: forTag)
+    }
+    
+    public mutating func setStyle(_ style: TextStyle, forTag: String) {
+        self.taggedAttributes[forTag] = style
         self.delegate?.didUpdate(style: self)
     }
     
