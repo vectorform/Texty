@@ -77,6 +77,8 @@ struct Style {
     static let Header2: TextStyle = TextStyle(attributes: [.foregroundColor : UIColor.black, .font : UIFont.boldSystemFont(ofSize: 20.0)])
 
     static let Normal: TextStyle = TextStyle(attributes: [.foregroundColor : UIColor.black, .font : UIFont.systemFont(ofSize: 17.0)])
+    
+    static let Underline: TextStyle = TextStyle(attributes: [TextAttribute.underlineStyle : NSUnderlineStyle.styleSingle])
 }
 ```
 ```swift
@@ -134,13 +136,34 @@ Subclassing TextyLabel and overriding one of these properties without calling th
 | textColor     | style.foregroundColor              |
 
 
-### Associating TextStyles with tags in strings
-Tags can be used to apply TextAttribute's to text in a TextyLabel. The tag is a string key that is inserted into the text, similar to an HTML tag.
-
+### Styling text via tags
+Texty provides the ability to style parts of a string using XML-like tags within the string.
 ```swift
-self.titleLabel.style.setAttributes([TextAttribute.underlineStyle : NSNumber(value: NSUnderlineStyle.styleSingle.rawValue)], forTag: "underline")
+let titleLabel: TextyLabel = TextyLabel(style: Style.Header1)
+self.titleLabel.style.setStyle(Style.Underline, forTag: "underline")
 self.titleLabel.text = "This is a <underline>TextyLabel</underline>"
 ```
+
+You can also forego creating a TextStyle for simple attributes and use an attribute dictionary instead.
+```swift
+let titleLabel: TextyLabel = TextyLabel(style: Style.Header1)
+self.titleLabel.style.setAttributes([TextAttribute.underlineStyle : NSUnderlineStyle.styleSingle.rawValue], forTag: "underline")
+self.titleLabel.text = "This is a <underline>TextyLabel</underline>"
+```
+
+Unlike XML, tags do not have to be balanced. For example, the following string is valid (given that the bold and italic tags are defined):
+
+```This is <italic>an example <bold>string used</italic> for demonstration</bold> purposes.```
+
+**It is important that your closing tags have the forward slash at the beginning and not the end.**
+
+| Good      | Bad       |
+|-----------|-----------|
+| \</bold\> | \<bold/\> |
+
+Forward slashes at the end of a tag will cause the tag to be detected as a *short tags*, which will have a use in the future, but currently offers nothing.
+
+**There is currently no way to escape tags within a string - all tags will be stripped during the styling process.**
 
 
 ---
