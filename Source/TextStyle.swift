@@ -30,7 +30,7 @@ import Foundation
 import UIKit
 
 
-public protocol TextStyleDelegate: class {
+internal protocol TextStyleDelegate: class {
     
     func didUpdate(style: TextStyle) -> Void
     
@@ -39,7 +39,7 @@ public protocol TextStyleDelegate: class {
 
 public struct TextStyle {
     
-    public weak var delegate: TextStyleDelegate?
+    internal weak var delegate: TextStyleDelegate?
     
     fileprivate var attributes: [String : Any] = [:]
     fileprivate var taggedAttributes: [String : TextStyle] = [:]
