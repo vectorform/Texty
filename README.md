@@ -144,7 +144,7 @@ self.titleLabel.style.setStyle(Style.Underline, forTag: "underline")
 self.titleLabel.text = "This is a <underline>TextyLabel</underline>"
 ```
 
-You can also forego creating a TextStyle for simple attributes and use an attribute dictionary instead.
+You can also forego creating a TextStyle and use an attribute dictionary instead.
 ```swift
 let titleLabel: TextyLabel = TextyLabel(style: Style.Header1)
 self.titleLabel.style.setAttributes([TextAttribute.underlineStyle : NSUnderlineStyle.styleSingle.rawValue], forTag: "underline")
