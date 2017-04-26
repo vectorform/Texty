@@ -161,7 +161,7 @@ Unlike XML, tags do not have to be balanced. For example, the following string i
 |-----------|-----------|
 | \</bold\> | \<bold/\> |
 
-Forward slashes at the end of a tag will cause the tag to be detected as a *short tags*, which will have a use in the future, but currently offers nothing.
+Forward slashes at the end of a tag will cause the tag to be detected as a *short tag*, which will have a use in the future, but currently offers nothing.
 
 **There is currently no way to escape tags within a string - all tags will be stripped during the styling process.**
 
