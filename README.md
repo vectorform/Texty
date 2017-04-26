@@ -30,31 +30,33 @@ class ViewController: UIViewController {
 }
 ```
 
-The attributes available to use are:
-- attachment
-- backgroundColor
-- baselineOffset
-- expansion
-- font
-- foregroundColor
-- kern
-- ligature
-- linkString
-- linkURL
-- obliqueness
-- paragraphStyle
-- shadow
-- strikethroughColor
-- strikethroughStyle
-- strokeColor
-- strokeWidth
-- textEffect
-- underlineColor
-- underlineStyle
-- verticalGlyphForm
-- writingDirection
 
-These line up with the attributes listed in Apple's [documentation](https://developer.apple.com/reference/foundation/nsattributedstring/character_attributes).
+### Available attributes
+| TextAttribute      | Native Equivalent                 | Expected Type     |
+|--------------------|-----------------------------------|-------------------|
+| attachment         | NSAttachmentAttributeName         | NSTextAttachment  |
+| backgroundColor    | NSBackgroundColorAttributeName    | UIColor           |
+| baselineOffset     | NSBaselineOffsetAttributeName     | NSNumber          |
+| expansion          | NSExpansionAttributeName          | NSNumber          |
+| font               | NSFontAttributeName               | UIFont            |
+| foregroundColor    | NSForegroundColorAttributeName    | UIColor           |
+| kern               | NSKernAttributeName               | NSNumber          |
+| ligature           | NSLigatureAttributeName           | NSNumber          |
+| link               | NSLinkAttributeName               | NSURL or NSString |
+| obliqueness        | NSObliquenessAttributeName        | NSNumber          |
+| paragraphStyle     | NSParagraphStyleAttributeName     | NSParagraphStyle  |
+| shadow             | NSShadowAttributeName             | NSShadow          |
+| strikethroughColor | NSStrikethroughColorAttributeName | UIColor           |
+| strikethroughStyle | NSStrikethroughStyleAttributeName | NSNumber          |
+| strokeColor        | NSStrokeColorAttributeName        | UIColor           |
+| strokeWidth        | NSStrokeWidthAttributeName        | NSNumber          |
+| textEffect         | NSTextEffectAttributeName         | NSString          |
+| underlineColor     | NSUnderlineColorAttributeName     | UIColor           |
+| underlineStyle     | NSUnderlineStyleAttributeName     | NSNumber          |
+| verticalGlyphForm  | NSVerticalGlyphFormAttributeName  | NSNumber          |
+| writingDirection   | NSWritingDirectionAttributeName   | Array\<NSNumber\> |
+
+More information about each attribute can be found in Apple's [documentation](https://developer.apple.com/reference/foundation/nsattributedstring/character_attributes).
 
 
 ### Create TextyLabels with style!
