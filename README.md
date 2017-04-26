@@ -10,11 +10,23 @@ Texty's goal is to make styling text clean and easy. This is accomplished using 
 
 
 ## Getting started
-### Create TextStyles
+### Creating styles
+The TextStyle struct was designed to be created once and reused across your entire application.
 ```swift
-/// This is the default way to create TextStyles.
+/// Create static references to reusable styles
 struct Style {
     static let Header1: TextStyle = TextStyle(attributes: [.foregroundColor : UIColor.black, .font : UIFont.boldSystemFont(ofSize: 24.0)])
+
+    static let Header2: TextStyle = TextStyle(attributes: [.foregroundColor : UIColor.black, .font : UIFont.boldSystemFont(ofSize: 20.0)])
+
+    static let Normal: TextStyle = TextStyle(attributes: [.foregroundColor : UIColor.black, .font : UIFont.systemFont(ofSize: 17.0)])
+}
+```
+```swift
+/// Reuse your defined styles across your entire application
+class ViewController: UIViewController {
+    private let headerLabel: TextyLabel = TextyLabel(style: Style.Header1)
+    private let textLabel: TextyLabel = TextyLabel(style: Style.Normal)
 }
 ```
 
