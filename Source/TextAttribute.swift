@@ -112,7 +112,7 @@ public enum TextAttribute: String {
         var convertedAttributes: [String : Any] = [:]
         
         for (k, v) in attributes {
-            assert(k.isProperType(object: v), "Value for attribute \"\(k.rawValue)\" is \"\(String(describing: type(of: v)))\" - should be \"\(k.properTypeString)\"")
+            assert(k.isProperType(object: v), "value for attribute \"\(k.rawValue)\" is \"\(String(describing: type(of: v)))\" - should be \"\(k.properTypeString)\"")
             convertedAttributes[k.NSAttribute] = v
         }
         return convertedAttributes

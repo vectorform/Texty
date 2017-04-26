@@ -32,15 +32,12 @@ import UIKit
 
 open class TextyLabel: UILabel, TextStyleDelegate {
     
-    //
-    // Class Members
-    //
-    
     public var style: TextStyle!
+    
     
     /// In each of the below setters, style is accessed using self.style? because
     /// the super.init() call will attempt to set default values, at which point 
-    /// style does not actually exist yet.
+    /// style does not exist yet.
     
     open override var font: UIFont! {
         get { return self.style.font }
@@ -78,32 +75,26 @@ open class TextyLabel: UILabel, TextStyleDelegate {
         get { return self.style.foregroundColor }
         set { self.style?.foregroundColor = newValue }
     }
-    
-    //
-    // Initializers
-    //
+
     
     public convenience init() {
         self.init(style: TextStyle())
     }
     
-    public required init(style: TextStyle, frame: CGRect? = nil) {
-        super.init(frame: frame ?? .zero)
+    public required init(style: TextStyle, frame: CGRect = .zero) {
+        super.init(frame: frame)
         self.style = style
         self.setDefaults()
         self.style.delegate = self
     }
     
     public required init?(coder aDecoder: NSCoder) {
-        fatalError("not supported")
+        super.init(coder: aDecoder)
     }
     
-    // 
-    // Functions
-    //
     
-    //if the font/textColor are not set yet by the TextStyle passed in, then set some default values
     private func setDefaults() {
+        /// If the font/textColor are not set yet by the TextStyle passed in, then set some default values
         self.text = nil
         
         if self.style.font == nil  {
@@ -122,8 +113,9 @@ open class TextyLabel: UILabel, TextStyleDelegate {
         }
     }
     
-    //Update attributed string with new attributes called by the textStyle when it detects an update
     public func didUpdate(style: TextStyle) {
+        /// Update attributed string with new attributes called by the textStyle when it detects an update
         self.text = possiblyTaggedText
     }
+    
 }

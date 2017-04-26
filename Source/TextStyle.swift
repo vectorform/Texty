@@ -42,7 +42,6 @@ public struct TextStyle {
     public weak var delegate: TextStyleDelegate?
     
     fileprivate var attributes: [String : Any] = [:]
-    
     fileprivate var taggedAttributes: [String : TextStyle] = [:]
     
     
@@ -72,10 +71,10 @@ public struct TextStyle {
         var attributedString: NSMutableAttributedString
         
         if(self.taggedAttributes.count > 0) {
-            let tags: [(String, NSRange)] = mutableString.findAndRemoveTags()        //This has to happen here because mutableString will be mutated in the stripTags() function
+            let tags: [(String, NSRange)] = mutableString.findAndRemoveTags()
             attributedString = NSMutableAttributedString(string: mutableString, attributes: self.attributes)
             
-            for (name, range) in tags {
+            tags.forEach { (name, range) in
                 let style: TextStyle! = self.findStyle(forTag: name)
                 assert(style != nil, "unregistered tag \"<\(name)>\" found in string")
                 attributedString.addAttributes(style.attributes, range: range)
