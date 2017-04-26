@@ -32,29 +32,29 @@ class ViewController: UIViewController {
 
 
 ### Available attributes
-| TextAttribute      | Native Equivalent                 | Expected Type     |
-|--------------------|-----------------------------------|-------------------|
-| attachment         | NSAttachmentAttributeName         | NSTextAttachment  |
-| backgroundColor    | NSBackgroundColorAttributeName    | UIColor           |
-| baselineOffset     | NSBaselineOffsetAttributeName     | NSNumber          |
-| expansion          | NSExpansionAttributeName          | NSNumber          |
-| font               | NSFontAttributeName               | UIFont            |
-| foregroundColor    | NSForegroundColorAttributeName    | UIColor           |
-| kern               | NSKernAttributeName               | NSNumber          |
-| ligature           | NSLigatureAttributeName           | NSNumber          |
-| link               | NSLinkAttributeName               | NSURL or NSString |
-| obliqueness        | NSObliquenessAttributeName        | NSNumber          |
-| paragraphStyle     | NSParagraphStyleAttributeName     | NSParagraphStyle  |
-| shadow             | NSShadowAttributeName             | NSShadow          |
-| strikethroughColor | NSStrikethroughColorAttributeName | UIColor           |
-| strikethroughStyle | NSStrikethroughStyleAttributeName | NSNumber          |
-| strokeColor        | NSStrokeColorAttributeName        | UIColor           |
-| strokeWidth        | NSStrokeWidthAttributeName        | NSNumber          |
-| textEffect         | NSTextEffectAttributeName         | NSString          |
-| underlineColor     | NSUnderlineColorAttributeName     | UIColor           |
-| underlineStyle     | NSUnderlineStyleAttributeName     | NSNumber          |
-| verticalGlyphForm  | NSVerticalGlyphFormAttributeName  | NSNumber          |
-| writingDirection   | NSWritingDirectionAttributeName   | Array\<NSNumber\> |
+| TextAttribute      | Expected Type     | Native Equivalent                 |
+|--------------------|-------------------|-----------------------------------|
+| attachment         | NSTextAttachment  | NSAttachmentAttributeName         |
+| backgroundColor    | UIColor           | NSBackgroundColorAttributeName    |
+| baselineOffset     | NSNumber          | NSBaselineOffsetAttributeName     |
+| expansion          | NSNumber          | NSExpansionAttributeName          |
+| font               | UIFont            | NSFontAttributeName               |
+| foregroundColor    | UIColor           | NSForegroundColorAttributeName    |
+| kern               | NSNumber          | NSKernAttributeName               |
+| ligature           | NSNumber          | NSLigatureAttributeName           |
+| link               | NSURL or NSString | NSLinkAttributeName               |
+| obliqueness        | NSNumber          | NSObliquenessAttributeName        |
+| paragraphStyle     | NSParagraphStyle  | NSParagraphStyleAttributeName     |
+| shadow             | NSShadow          | NSShadowAttributeName             |
+| strikethroughColor | UIColor           | NSStrikethroughColorAttributeName |
+| strikethroughStyle | NSNumber          | NSStrikethroughStyleAttributeName |
+| strokeColor        | UIColor           | NSStrokeColorAttributeName        |
+| strokeWidth        | NSNumber          | NSStrokeWidthAttributeName        |
+| textEffect         | NSString          | NSTextEffectAttributeName         |
+| underlineColor     | UIColor           | NSUnderlineColorAttributeName     |
+| underlineStyle     | NSNumber          | NSUnderlineStyleAttributeName     |
+| verticalGlyphForm  | NSNumber          | NSVerticalGlyphFormAttributeName  |
+| writingDirection   | Array\<NSNumber\> | NSWritingDirectionAttributeName   |
 
 More information about each attribute can be found in Apple's [documentation](https://developer.apple.com/reference/foundation/nsattributedstring/character_attributes).
 
