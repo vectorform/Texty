@@ -4,12 +4,69 @@
 [![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
 # Texty
-Created and maintained by Vectorform, LLC.
-
 Texty's goal is to make styling text clean and easy. This is accomplished using things like style containers, styled label initializers, and string styling via XML-like tags.
 
+Created and maintained by Vectorform, LLC.
 
-## Getting started
+
+## Requirements:
+- iOS 8.0+
+- Xcode 8.0+
+- Swift 3.0+
+
+
+## Installation
+### CocoaPods
+[CocoaPods](http://cocoapods.org) is a dependency manager for Cocoa projects. You can install it with the following command:
+```bash
+$ gem install cocoapods
+```
+
+> CocoaPods 1.0.0+ is required to build Texty.
+
+To integrate Texty into your Xcode project using CocoaPods, specify it in your `Podfile`:
+
+```ruby
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '10.0'
+use_frameworks!
+
+target '<Your Target Name>' do
+    pod 'Texty', '~> 0.1.4'
+end
+```
+
+Then, run the following command:
+
+```bash
+$ pod install
+```
+
+### Carthage
+[Carthage](https://github.com/Carthage/Carthage) is a decentralized dependency manager that builds your dependencies and provides you with binary frameworks.
+
+You can install Carthage with [Homebrew](http://brew.sh/) using the following command:
+```bash
+$ brew update
+$ brew install carthage
+```
+
+To integrate Texty into your Xcode project using Carthage, specify it in your `Cartfile`:
+```ogdl
+github "Vectorform/Texty" ~> 0.1.4
+```
+
+Run `carthage update` to build the framework and drag the built `Texty.framework` into your Xcode project.
+
+
+### Manually
+If you prefer not to use any of the listed dependency managers, you can integrate Texty into your project manually.
+
+
+---
+
+
+## Usage
 ### Creating styles
 The TextStyle struct was designed to be created once and reused across your entire application.
 ```swift
@@ -86,26 +143,10 @@ self.titleLabel.text = "This is a <underline>TextyLabel</underline>"
 ```
 
 
-## Requirements:
-- CocoaPods 1.0.0+
+---
 
 
-## Installation
-### Cocoapods
-Texty can be added to your project using [CocoaPods](http://blog.cocoapods.org/Pod-Authors-Guide-to-CocoaPods-Frameworks/) by adding the following line to your `Podfile`:
-
-```ruby
-pod 'Texty', '~> 0.1.4'
-```
-
-### Carthage
-Texty can be added to your project using [Carthage](https://github.com/Carthage/Carthage/) by adding the following line to your `Cartfile`:
-
-```ogdl
-github "Vectorform/Texty" ~> 0.1.4
-```
-
-## Authors
+## Credits
 [Igor Efremov](https://github.com/igorefremov), [iefremov@vectorform.com](mailto:iefremov@vectorform.com)
 
 
