@@ -59,23 +59,22 @@ class ViewController: UIViewController {
 More information about each attribute can be found in Apple's [documentation](https://developer.apple.com/reference/foundation/nsattributedstring/character_attributes).
 
 
-### Create TextyLabels with style!
+### TextyLabel
+TextyLabel is a subclass of UILabel created specifically to work with TextStyle structs. The core power of TextyLabel comes from its initializer.
 ```swift
-let titleLabel: TextyLabel = TextyLabel(style: Styles.Header1)
-
-/// Properties available in UILabel can be changed directly or through the .style
-/// property.
-///
-/// The .font, .linebreakMode, .textAlignment, and .textColor properties of UILabel
-/// are overridden and automatically fall through to the .style property.
-titleLabel.textAlignment = .right
-titleLabel.textColor = UIColor.blue
-
-/// Properties not available in UILabel must be changed through the .style
-/// property.
-titleLabel.style.kern = someValue
-titleLabel.style.underlineStyle = someStyle
+let titleLabel: TextyLabel = TextyLabel(style: Style.Header1)
 ```
+Be careful when subclassing TextyLabel as some properties are overriden to be referenced from the associated style struct rather than their native locations. 
+
+Subclassing TextyLabel and overriding one of these properties without calling the super class ***will*** result in undefined behavior.
+
+| Property      | Overriden Target                   |
+|---------------|------------------------------------|
+| font          | style.font                         |
+| lineBreakMode | style.paragraphStyle.lineBreakMode |
+| text          | attributedText                     |
+| textAlignment | style.paragraphStyle.alignment     |
+| textColor     | style.foregroundColor              |
 
 
 ### Associating TextStyles with tags in strings
