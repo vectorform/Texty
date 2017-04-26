@@ -6,7 +6,7 @@
 # Texty
 Created and maintained by Vectorform, LLC.
 
-Texty's goal is to make managing styles and annotated strings clean and easy.
+Texty's goal is to make styling text clean and easy. This is accomplished using things like style containers, styled label initializers, and string styling via XML-like tags.
 
 
 ## Getting started
@@ -97,4 +97,4 @@ github "Vectorform/Texty" ~> 0.1.4
 
 
 ## License
-Texty is available under the BSD 3-clause "New" or "Revised" License. See the [LICENSE](LICENSE) file for more info.
+Texty is available under the [BSD-3-Clause](https://opensource.org/licenses/BSD-3-Clause) License. See the [LICENSE](LICENSE) file for more info.
