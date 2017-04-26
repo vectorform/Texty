@@ -12,18 +12,18 @@
 		672577FF1E3A88A000E04DEE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 672577FD1E3A88A000E04DEE /* LaunchScreen.storyboard */; };
 		6746E6481E425D2600C29100 /* AdjustAlignView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6746E6471E425D2600C29100 /* AdjustAlignView.swift */; };
 		6746E64C1E42784800C29100 /* AdjustKernView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6746E64B1E42784800C29100 /* AdjustKernView.swift */; };
-		67C84BE61EA9A608003C4700 /* Scanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C84BDF1EA9A608003C4700 /* Scanner.swift */; };
-		67C84BE71EA9A608003C4700 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C84BE01EA9A608003C4700 /* String.swift */; };
-		67C84BE81EA9A608003C4700 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C84BE11EA9A608003C4700 /* Tag.swift */; };
-		67C84BE91EA9A608003C4700 /* TextAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C84BE21EA9A608003C4700 /* TextAttribute.swift */; };
-		67C84BEA1EA9A608003C4700 /* TextStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C84BE31EA9A608003C4700 /* TextStyle.swift */; };
-		67C84BEB1EA9A608003C4700 /* TextyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C84BE51EA9A608003C4700 /* TextyLabel.swift */; };
 		67CFF70C1E3FE43000352CA5 /* LabelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67CFF70B1E3FE43000352CA5 /* LabelViewController.swift */; };
 		67CFF70E1E3FE49700352CA5 /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67CFF70D1E3FE49700352CA5 /* Styles.swift */; };
 		67CFF7101E4129E900352CA5 /* AdjustColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67CFF70F1E4129E900352CA5 /* AdjustColorView.swift */; };
 		67CFF7121E412AE600352CA5 /* PopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67CFF7111E412AE600352CA5 /* PopupView.swift */; };
 		67CFF7141E4136C100352CA5 /* AdjustValueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67CFF7131E4136C100352CA5 /* AdjustValueView.swift */; };
 		67CFF7161E413BF300352CA5 /* AdjustSizeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67CFF7151E413BF300352CA5 /* AdjustSizeView.swift */; };
+		67F7E8951EB1407B00336F03 /* Scanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F7E88F1EB1407B00336F03 /* Scanner.swift */; };
+		67F7E8961EB1407B00336F03 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F7E8901EB1407B00336F03 /* String.swift */; };
+		67F7E8971EB1407B00336F03 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F7E8911EB1407B00336F03 /* Tag.swift */; };
+		67F7E8981EB1407B00336F03 /* TextAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F7E8921EB1407B00336F03 /* TextAttribute.swift */; };
+		67F7E8991EB1407B00336F03 /* TextStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F7E8931EB1407B00336F03 /* TextStyle.swift */; };
+		67F7E89A1EB1407B00336F03 /* TextyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F7E8941EB1407B00336F03 /* TextyLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -47,19 +47,18 @@
 		672578001E3A88A000E04DEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6746E6471E425D2600C29100 /* AdjustAlignView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdjustAlignView.swift; sourceTree = "<group>"; };
 		6746E64B1E42784800C29100 /* AdjustKernView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdjustKernView.swift; sourceTree = "<group>"; };
-		67C84BDF1EA9A608003C4700 /* Scanner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Scanner.swift; path = ../Pod/Classes/Scanner.swift; sourceTree = "<group>"; };
-		67C84BE01EA9A608003C4700 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = String.swift; path = ../Pod/Classes/String.swift; sourceTree = "<group>"; };
-		67C84BE11EA9A608003C4700 /* Tag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Tag.swift; path = ../Pod/Classes/Tag.swift; sourceTree = "<group>"; };
-		67C84BE21EA9A608003C4700 /* TextAttribute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextAttribute.swift; path = ../Pod/Classes/TextAttribute.swift; sourceTree = "<group>"; };
-		67C84BE31EA9A608003C4700 /* TextStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextStyle.swift; path = ../Pod/Classes/TextStyle.swift; sourceTree = "<group>"; };
-		67C84BE41EA9A608003C4700 /* Texty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Texty.h; path = ../Pod/Classes/Texty.h; sourceTree = "<group>"; };
-		67C84BE51EA9A608003C4700 /* TextyLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextyLabel.swift; path = ../Pod/Classes/TextyLabel.swift; sourceTree = "<group>"; };
 		67CFF70B1E3FE43000352CA5 /* LabelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelViewController.swift; sourceTree = "<group>"; };
 		67CFF70D1E3FE49700352CA5 /* Styles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
 		67CFF70F1E4129E900352CA5 /* AdjustColorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdjustColorView.swift; sourceTree = "<group>"; };
 		67CFF7111E412AE600352CA5 /* PopupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupView.swift; sourceTree = "<group>"; };
 		67CFF7131E4136C100352CA5 /* AdjustValueView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdjustValueView.swift; sourceTree = "<group>"; };
 		67CFF7151E413BF300352CA5 /* AdjustSizeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdjustSizeView.swift; sourceTree = "<group>"; };
+		67F7E88F1EB1407B00336F03 /* Scanner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Scanner.swift; path = ../Source/Scanner.swift; sourceTree = "<group>"; };
+		67F7E8901EB1407B00336F03 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = String.swift; path = ../Source/String.swift; sourceTree = "<group>"; };
+		67F7E8911EB1407B00336F03 /* Tag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Tag.swift; path = ../Source/Tag.swift; sourceTree = "<group>"; };
+		67F7E8921EB1407B00336F03 /* TextAttribute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextAttribute.swift; path = ../Source/TextAttribute.swift; sourceTree = "<group>"; };
+		67F7E8931EB1407B00336F03 /* TextStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextStyle.swift; path = ../Source/TextStyle.swift; sourceTree = "<group>"; };
+		67F7E8941EB1407B00336F03 /* TextyLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextyLabel.swift; path = ../Source/TextyLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,13 +127,12 @@
 		67C84BDE1EA9A5EA003C4700 /* Texty */ = {
 			isa = PBXGroup;
 			children = (
-				67C84BDF1EA9A608003C4700 /* Scanner.swift */,
-				67C84BE01EA9A608003C4700 /* String.swift */,
-				67C84BE11EA9A608003C4700 /* Tag.swift */,
-				67C84BE21EA9A608003C4700 /* TextAttribute.swift */,
-				67C84BE31EA9A608003C4700 /* TextStyle.swift */,
-				67C84BE41EA9A608003C4700 /* Texty.h */,
-				67C84BE51EA9A608003C4700 /* TextyLabel.swift */,
+				67F7E88F1EB1407B00336F03 /* Scanner.swift */,
+				67F7E8901EB1407B00336F03 /* String.swift */,
+				67F7E8911EB1407B00336F03 /* Tag.swift */,
+				67F7E8921EB1407B00336F03 /* TextAttribute.swift */,
+				67F7E8931EB1407B00336F03 /* TextStyle.swift */,
+				67F7E8941EB1407B00336F03 /* TextyLabel.swift */,
 			);
 			name = Texty;
 			sourceTree = "<group>";
@@ -212,20 +210,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				67C84BE91EA9A608003C4700 /* TextAttribute.swift in Sources */,
-				67C84BE81EA9A608003C4700 /* Tag.swift in Sources */,
+				67F7E8981EB1407B00336F03 /* TextAttribute.swift in Sources */,
+				67F7E8971EB1407B00336F03 /* Tag.swift in Sources */,
 				67CFF70E1E3FE49700352CA5 /* Styles.swift in Sources */,
-				67C84BE71EA9A608003C4700 /* String.swift in Sources */,
-				67C84BEB1EA9A608003C4700 /* TextyLabel.swift in Sources */,
+				67F7E8961EB1407B00336F03 /* String.swift in Sources */,
+				67F7E89A1EB1407B00336F03 /* TextyLabel.swift in Sources */,
 				6746E6481E425D2600C29100 /* AdjustAlignView.swift in Sources */,
 				67CFF7101E4129E900352CA5 /* AdjustColorView.swift in Sources */,
 				67CFF70C1E3FE43000352CA5 /* LabelViewController.swift in Sources */,
 				67CFF7141E4136C100352CA5 /* AdjustValueView.swift in Sources */,
 				67CFF7121E412AE600352CA5 /* PopupView.swift in Sources */,
 				67CFF7161E413BF300352CA5 /* AdjustSizeView.swift in Sources */,
-				67C84BEA1EA9A608003C4700 /* TextStyle.swift in Sources */,
+				67F7E8991EB1407B00336F03 /* TextStyle.swift in Sources */,
 				6746E64C1E42784800C29100 /* AdjustKernView.swift in Sources */,
-				67C84BE61EA9A608003C4700 /* Scanner.swift in Sources */,
+				67F7E8951EB1407B00336F03 /* Scanner.swift in Sources */,
 				672577F51E3A88A000E04DEE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
