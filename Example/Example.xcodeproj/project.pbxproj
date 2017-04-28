@@ -24,6 +24,8 @@
 		67F7E8981EB1407B00336F03 /* TextAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F7E8921EB1407B00336F03 /* TextAttribute.swift */; };
 		67F7E8991EB1407B00336F03 /* TextStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F7E8931EB1407B00336F03 /* TextStyle.swift */; };
 		67F7E89A1EB1407B00336F03 /* TextyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F7E8941EB1407B00336F03 /* TextyLabel.swift */; };
+		F054A0741EB3E2A6000B32B6 /* ButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F054A0731EB3E2A6000B32B6 /* ButtonViewController.swift */; };
+		F0A7BEB61EB265D000160253 /* TextyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A7BEB51EB265D000160253 /* TextyButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -59,6 +61,8 @@
 		67F7E8921EB1407B00336F03 /* TextAttribute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextAttribute.swift; path = ../Source/TextAttribute.swift; sourceTree = "<group>"; };
 		67F7E8931EB1407B00336F03 /* TextStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextStyle.swift; path = ../Source/TextStyle.swift; sourceTree = "<group>"; };
 		67F7E8941EB1407B00336F03 /* TextyLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextyLabel.swift; path = ../Source/TextyLabel.swift; sourceTree = "<group>"; };
+		F054A0731EB3E2A6000B32B6 /* ButtonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonViewController.swift; sourceTree = "<group>"; };
+		F0A7BEB51EB265D000160253 /* TextyButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextyButton.swift; path = ../Source/TextyButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +98,8 @@
 			children = (
 				672577F41E3A88A000E04DEE /* AppDelegate.swift */,
 				67CFF70D1E3FE49700352CA5 /* Styles.swift */,
+				6746E64A1E4277A900C29100 /* Popups */,
+				F054A0751EB3E2D1000B32B6 /* ButtonViewController */,
 				6746E6491E42778E00C29100 /* LabelViewController */,
 				672577FB1E3A88A000E04DEE /* Assets.xcassets */,
 				672577FD1E3A88A000E04DEE /* LaunchScreen.storyboard */,
@@ -105,7 +111,6 @@
 		6746E6491E42778E00C29100 /* LabelViewController */ = {
 			isa = PBXGroup;
 			children = (
-				6746E64A1E4277A900C29100 /* Popups */,
 				67CFF70B1E3FE43000352CA5 /* LabelViewController.swift */,
 			);
 			name = LabelViewController;
@@ -132,9 +137,18 @@
 				67F7E8911EB1407B00336F03 /* Tag.swift */,
 				67F7E8921EB1407B00336F03 /* TextAttribute.swift */,
 				67F7E8931EB1407B00336F03 /* TextStyle.swift */,
+				F0A7BEB51EB265D000160253 /* TextyButton.swift */,
 				67F7E8941EB1407B00336F03 /* TextyLabel.swift */,
 			);
 			name = Texty;
+			sourceTree = "<group>";
+		};
+		F054A0751EB3E2D1000B32B6 /* ButtonViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F054A0731EB3E2A6000B32B6 /* ButtonViewController.swift */,
+			);
+			name = ButtonViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -170,7 +184,7 @@
 				TargetAttributes = {
 					672577F01E3A88A000E04DEE = {
 						CreatedOnToolsVersion = 8.2;
-						DevelopmentTeam = 7Q6Y3MFEAE;
+						DevelopmentTeam = D3F43CM6W7;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -216,8 +230,10 @@
 				67F7E8961EB1407B00336F03 /* String.swift in Sources */,
 				67F7E89A1EB1407B00336F03 /* TextyLabel.swift in Sources */,
 				6746E6481E425D2600C29100 /* AdjustAlignView.swift in Sources */,
+				F0A7BEB61EB265D000160253 /* TextyButton.swift in Sources */,
 				67CFF7101E4129E900352CA5 /* AdjustColorView.swift in Sources */,
 				67CFF70C1E3FE43000352CA5 /* LabelViewController.swift in Sources */,
+				F054A0741EB3E2A6000B32B6 /* ButtonViewController.swift in Sources */,
 				67CFF7141E4136C100352CA5 /* AdjustValueView.swift in Sources */,
 				67CFF7121E412AE600352CA5 /* PopupView.swift in Sources */,
 				67CFF7161E413BF300352CA5 /* AdjustSizeView.swift in Sources */,
@@ -339,7 +355,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 7Q6Y3MFEAE;
+				DEVELOPMENT_TEAM = D3F43CM6W7;
 				INFOPLIST_FILE = Example/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.vectorform.Example;
@@ -353,7 +369,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 7Q6Y3MFEAE;
+				DEVELOPMENT_TEAM = D3F43CM6W7;
 				INFOPLIST_FILE = Example/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.vectorform.Example;

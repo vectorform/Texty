@@ -14,6 +14,7 @@
 		F0742EC21EAE84E0005ADB12 /* TextAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0742EBC1EAE84E0005ADB12 /* TextAttribute.swift */; };
 		F0742EC31EAE84E0005ADB12 /* TextStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0742EBD1EAE84E0005ADB12 /* TextStyle.swift */; };
 		F0742EC41EAE84E0005ADB12 /* TextyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0742EBE1EAE84E0005ADB12 /* TextyLabel.swift */; };
+		F0A7BEB81EB2660500160253 /* TextyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A7BEB71EB2660500160253 /* TextyButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		F0742EBC1EAE84E0005ADB12 /* TextAttribute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextAttribute.swift; path = Source/TextAttribute.swift; sourceTree = SOURCE_ROOT; };
 		F0742EBD1EAE84E0005ADB12 /* TextStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextStyle.swift; path = Source/TextStyle.swift; sourceTree = SOURCE_ROOT; };
 		F0742EBE1EAE84E0005ADB12 /* TextyLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextyLabel.swift; path = Source/TextyLabel.swift; sourceTree = SOURCE_ROOT; };
+		F0A7BEB71EB2660500160253 /* TextyButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextyButton.swift; path = Source/TextyButton.swift; sourceTree = SOURCE_ROOT; };
 		F0E3719B1EAE82FF00BDEC7F /* Texty.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Texty.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -47,6 +49,7 @@
 				F0742EBB1EAE84E0005ADB12 /* Tag.swift */,
 				F0742EBC1EAE84E0005ADB12 /* TextAttribute.swift */,
 				F0742EBD1EAE84E0005ADB12 /* TextStyle.swift */,
+				F0A7BEB71EB2660500160253 /* TextyButton.swift */,
 				F0742EBE1EAE84E0005ADB12 /* TextyLabel.swift */,
 			);
 			name = Source;
@@ -162,6 +165,7 @@
 				F0742EC31EAE84E0005ADB12 /* TextStyle.swift in Sources */,
 				F0742EC41EAE84E0005ADB12 /* TextyLabel.swift in Sources */,
 				F0742EC11EAE84E0005ADB12 /* Tag.swift in Sources */,
+				F0A7BEB81EB2660500160253 /* TextyButton.swift in Sources */,
 				F0742EC01EAE84E0005ADB12 /* String.swift in Sources */,
 				F0742EBF1EAE84E0005ADB12 /* Scanner.swift in Sources */,
 				F0742EC21EAE84E0005ADB12 /* TextAttribute.swift in Sources */,

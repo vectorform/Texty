@@ -33,6 +33,9 @@ import UIKit
 open class TextyLabel: UILabel, TextStyleDelegate {
     
     public var style: TextStyle!
+//    {
+//        didSet { self.style.delegate = self }
+//    }
     
     
     /// In each of the below setters, style is accessed using self.style? because
