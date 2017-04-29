@@ -64,9 +64,10 @@ open class TextyButton: UIButton {
     // Delegates for the different control states
     fileprivate var styleDelegates = [UIControlState: TextButtonTextStyleDelegate]()
     
-    // Set a style for a state
+    // Set a style for a state. This copies the TextStyle.
     open func setStyle(_ style: TextStyle, for state: UIControlState) {
         
+        // Copy any incoming style. This will make it so changes aren't made outside of here
         let style = TextStyle(with: style)
         
         // See if there's existing text for this state. It's stored in the style delegate.
@@ -118,6 +119,7 @@ open class TextyButton: UIButton {
         // Set the attributed string
         self.setAttributedTitle(title == nil ? nil : style.attributedString(with: title!), for: state)
         
+        // Set text for non-normal states that have no text
         if state == .normal{
             for (otherState, styleDelegate) in self.styleDelegates{
                 if(otherState != state){
@@ -149,6 +151,7 @@ open class TextyButton: UIButton {
             shadow?.shadowOffset = CGSize(width: -2.0, height: -2.0)
         }
         shadow?.shadowColor = color
+        // Styles only react to changes in their properties, so reassign shadow
         style.shadow = shadow
     }
     
@@ -156,10 +159,12 @@ open class TextyButton: UIButton {
         return self.style(for: state).shadow?.shadowColor as? UIColor
     }
     
+    // Init with default style
     public convenience init() {
         self.init(style: TextStyle())
     }
     
+    // Init with a TextStyle. This copies the TextStyle.
     public required init(style: TextStyle, frame: CGRect = .zero) {
         super.init(frame: frame)
         self.setStyle(style, for: .normal)
