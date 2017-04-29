@@ -80,7 +80,7 @@ fileprivate class VCButton: UIButton {
 }
 
 
-class ButtonViewController: UIViewController, AdjustValueViewDelegate {
+class ButtonViewController1: UIViewController, AdjustValueViewDelegate {
     
     private let changeColorButton: VCButton = VCButton()
     private let changeKernButton: VCButton = VCButton()
@@ -89,7 +89,7 @@ class ButtonViewController: UIViewController, AdjustValueViewDelegate {
 
   
     private lazy var titleButton: TextyButton = {
-        var style = Styles.Header
+        var style = TextStyle(with: Styles.Header)
         
         style.setAttributes([TextAttribute.obliqueness : 0.2], forTag: "italic")
         style.setAttributes([TextAttribute.underlineStyle : NSUnderlineStyle.styleSingle.rawValue], forTag: "underline")
@@ -97,11 +97,11 @@ class ButtonViewController: UIViewController, AdjustValueViewDelegate {
         
         let button = TextyButton(style: style)
         
-        var highlightedStyle = Styles.Header
+        var highlightedStyle = TextStyle(with: Styles.Header)
         
-        highlightedStyle.setAttributes([TextAttribute.obliqueness : 0.5], forTag: "italic")
+        highlightedStyle.setAttributes([TextAttribute.obliqueness : -0.5], forTag: "italic")
         highlightedStyle.setAttributes([TextAttribute.underlineStyle : NSUnderlineStyle.styleDouble.rawValue], forTag: "underline")
-        
+        highlightedStyle.foregroundColor = UIColor.blue
        
         button.setStyle(highlightedStyle, for: .highlighted)
         
@@ -118,19 +118,19 @@ class ButtonViewController: UIViewController, AdjustValueViewDelegate {
     override func loadView() {
         super.loadView()
         
-        self.changeColorButton.addTarget(self, action: #selector(ButtonViewController.changeColorButtonPressed), for: .touchUpInside)
+        self.changeColorButton.addTarget(self, action: #selector(ButtonViewController1.changeColorButtonPressed), for: .touchUpInside)
         self.changeColorButton.setTitle("Color", for: .normal)
         self.changeColorButton.translatesAutoresizingMaskIntoConstraints = false
         
-        self.changeSizeButton.addTarget(self, action: #selector(ButtonViewController.changeSizeButtonPressed), for: .touchUpInside)
+        self.changeSizeButton.addTarget(self, action: #selector(ButtonViewController1.changeSizeButtonPressed), for: .touchUpInside)
         self.changeSizeButton.setTitle("Size", for: .normal)
         self.changeSizeButton.translatesAutoresizingMaskIntoConstraints = false
         
-        self.changeKernButton.addTarget(self, action: #selector(ButtonViewController.changeKernButtonPressed), for: .touchUpInside)
+        self.changeKernButton.addTarget(self, action: #selector(ButtonViewController1.changeKernButtonPressed), for: .touchUpInside)
         self.changeKernButton.setTitle("Kern", for: .normal)
         self.changeKernButton.translatesAutoresizingMaskIntoConstraints = false
         
-        self.titleButton.setTitle("This <italic>is a <underline>TextyLabel</italic> Example</underline>", for: .normal)
+        self.titleButton.setTitle("This <italic>is a <underline>TextButton</italic> Example</underline>", for: .normal)
         self.titleButton.setTitleColor(UIColor(hue: 0.0, saturation: 1.0, brightness: 1.0, alpha: 1.0), for: .normal)
         self.titleButton.translatesAutoresizingMaskIntoConstraints = false
         
@@ -280,13 +280,9 @@ class ButtonViewController: UIViewController, AdjustValueViewDelegate {
         if(view is AdjustColorView) {
             self.titleButton.setTitleColor((view as! AdjustColorView).color, for: .normal)
         } else if(view is AdjustSizeView) {
-            var style = self.titleButton.style(for: .normal)
-            style.font = style.font?.withSize(CGFloat(view.value))
-            self.titleButton.setStyle(style, for: .normal)
+            self.titleButton.style(for: .normal).font = self.titleButton.style(for: .normal).font?.withSize(CGFloat(view.value))
         } else if(view is AdjustKernView) {
-            var style = self.titleButton.style(for: .normal)
-            style.kern = NSNumber(value: view.value)
-            self.titleButton.setStyle(style, for: .normal)
+            self.titleButton.style(for: .normal).kern = NSNumber(value: view.value)
         }
     }
     

@@ -24,8 +24,9 @@
 		67F7E8981EB1407B00336F03 /* TextAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F7E8921EB1407B00336F03 /* TextAttribute.swift */; };
 		67F7E8991EB1407B00336F03 /* TextStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F7E8931EB1407B00336F03 /* TextStyle.swift */; };
 		67F7E89A1EB1407B00336F03 /* TextyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F7E8941EB1407B00336F03 /* TextyLabel.swift */; };
-		F054A0741EB3E2A6000B32B6 /* ButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F054A0731EB3E2A6000B32B6 /* ButtonViewController.swift */; };
 		F0A7BEB61EB265D000160253 /* TextyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A7BEB51EB265D000160253 /* TextyButton.swift */; };
+		F0E458651EB4133B00FFA725 /* ButtonViewController1.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E458631EB4133B00FFA725 /* ButtonViewController1.swift */; };
+		F0E458661EB4133B00FFA725 /* ButtonViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E458641EB4133B00FFA725 /* ButtonViewController2.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -61,8 +62,9 @@
 		67F7E8921EB1407B00336F03 /* TextAttribute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextAttribute.swift; path = ../Source/TextAttribute.swift; sourceTree = "<group>"; };
 		67F7E8931EB1407B00336F03 /* TextStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextStyle.swift; path = ../Source/TextStyle.swift; sourceTree = "<group>"; };
 		67F7E8941EB1407B00336F03 /* TextyLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextyLabel.swift; path = ../Source/TextyLabel.swift; sourceTree = "<group>"; };
-		F054A0731EB3E2A6000B32B6 /* ButtonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonViewController.swift; sourceTree = "<group>"; };
 		F0A7BEB51EB265D000160253 /* TextyButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextyButton.swift; path = ../Source/TextyButton.swift; sourceTree = "<group>"; };
+		F0E458631EB4133B00FFA725 /* ButtonViewController1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonViewController1.swift; sourceTree = "<group>"; };
+		F0E458641EB4133B00FFA725 /* ButtonViewController2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonViewController2.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,7 +148,8 @@
 		F054A0751EB3E2D1000B32B6 /* ButtonViewController */ = {
 			isa = PBXGroup;
 			children = (
-				F054A0731EB3E2A6000B32B6 /* ButtonViewController.swift */,
+				F0E458631EB4133B00FFA725 /* ButtonViewController1.swift */,
+				F0E458641EB4133B00FFA725 /* ButtonViewController2.swift */,
 			);
 			name = ButtonViewController;
 			sourceTree = "<group>";
@@ -226,6 +229,7 @@
 			files = (
 				67F7E8981EB1407B00336F03 /* TextAttribute.swift in Sources */,
 				67F7E8971EB1407B00336F03 /* Tag.swift in Sources */,
+				F0E458651EB4133B00FFA725 /* ButtonViewController1.swift in Sources */,
 				67CFF70E1E3FE49700352CA5 /* Styles.swift in Sources */,
 				67F7E8961EB1407B00336F03 /* String.swift in Sources */,
 				67F7E89A1EB1407B00336F03 /* TextyLabel.swift in Sources */,
@@ -233,7 +237,6 @@
 				F0A7BEB61EB265D000160253 /* TextyButton.swift in Sources */,
 				67CFF7101E4129E900352CA5 /* AdjustColorView.swift in Sources */,
 				67CFF70C1E3FE43000352CA5 /* LabelViewController.swift in Sources */,
-				F054A0741EB3E2A6000B32B6 /* ButtonViewController.swift in Sources */,
 				67CFF7141E4136C100352CA5 /* AdjustValueView.swift in Sources */,
 				67CFF7121E412AE600352CA5 /* PopupView.swift in Sources */,
 				67CFF7161E413BF300352CA5 /* AdjustSizeView.swift in Sources */,
@@ -241,6 +244,7 @@
 				6746E64C1E42784800C29100 /* AdjustKernView.swift in Sources */,
 				67F7E8951EB1407B00336F03 /* Scanner.swift in Sources */,
 				672577F51E3A88A000E04DEE /* AppDelegate.swift in Sources */,
+				F0E458661EB4133B00FFA725 /* ButtonViewController2.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

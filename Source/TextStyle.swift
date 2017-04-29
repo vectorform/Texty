@@ -37,13 +37,26 @@ internal protocol TextStyleDelegate: class {
 }
 
 
-public struct TextStyle {
+public class TextStyle {
     
     internal weak var delegate: TextStyleDelegate?
     
     fileprivate var attributes: [String : Any] = [:]
     fileprivate var taggedAttributes: [String : TextStyle] = [:]
     
+    public init(with textStyle: TextStyle){
+       
+        for (key, attribute) in textStyle.attributes{
+            if let attribute = attribute as? NSCopying{
+                self.attributes[key] = attribute.copy()
+            }else{
+                self.attributes[key] = attribute
+            }
+        }
+        for (key, textStyle) in textStyle.taggedAttributes{
+            self.taggedAttributes[key] = TextStyle(with: textStyle)
+        }
+    }
     
     public init(attributes: [TextAttribute : Any]? = nil) {
         guard let attributes = attributes else {
@@ -57,7 +70,7 @@ public struct TextStyle {
         return self.taggedAttributes.filter { $0.key == forTag }.first?.value
     }
     
-    fileprivate mutating func set(value: Any?, for key: TextAttribute) {
+    fileprivate func set(value: Any?, for key: TextAttribute) {
         if let v = value {
             self.attributes[key.NSAttribute] = v
         } else {
@@ -87,11 +100,11 @@ public struct TextStyle {
         return attributedString
     }
     
-    public mutating func setAttributes(_ attributes: [TextAttribute : Any], forTag: String) {
+    public func setAttributes(_ attributes: [TextAttribute : Any], forTag: String) {
         self.setStyle(TextStyle(attributes: attributes), forTag: forTag)
     }
     
-    public mutating func setStyle(_ style: TextStyle, forTag: String) {
+    public func setStyle(_ style: TextStyle, forTag: String) {
         self.taggedAttributes[forTag] = style
         self.delegate?.didUpdate(style: self)
     }

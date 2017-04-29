@@ -29,6 +29,7 @@
 import Foundation
 import UIKit
 
+// Extend UIControlState so it can be used as a key in a dictionary
 extension UIControlState: Hashable {
     
     public var hashValue: Int {
@@ -37,9 +38,10 @@ extension UIControlState: Hashable {
     
 }
 
+// To stay organized, there will be an instance of this class for every TextStyle
 internal class TextButtonTextStyleDelegate: TextStyleDelegate{
  
-    fileprivate let button: TextyButton
+    fileprivate weak var button: TextyButton?
     fileprivate let state: UIControlState
     fileprivate var possiblyTaggedText: String?
     
@@ -50,57 +52,81 @@ internal class TextButtonTextStyleDelegate: TextStyleDelegate{
     }
     
     internal func didUpdate(style: TextStyle) {
-        self.button.setTitle(self.possiblyTaggedText, for: self.state)
+        self.button?.setTitle(self.possiblyTaggedText, for: self.state)
     }
-    
 }
 
 open class TextyButton: UIButton {
     
+    // Styles for the different control states
     fileprivate var styles = [UIControlState:TextStyle]()
+    
+    // Delegates for the different control states
     fileprivate var styleDelegates = [UIControlState: TextButtonTextStyleDelegate]()
     
-    open func setStyle(_ style: TextStyle?, for state: UIControlState) {
-        var style = style
+    // Set a style for a state
+    open func setStyle(_ style: TextStyle, for state: UIControlState) {
+        
+        let style = TextStyle(with: style)
+        
+        // See if there's existing text for this state. It's stored in the style delegate.
         var possiblyTaggedText = self.styleDelegates[state]?.possiblyTaggedText
+        
+        // Either use that existing text, or grab it from the normal style
         possiblyTaggedText = possiblyTaggedText ?? self.styleDelegates[.normal]?.possiblyTaggedText
+        
+        // Create a new style delegate for this style
         let styleDelegate = TextButtonTextStyleDelegate(button: self, state: state, possiblyTaggedText: possiblyTaggedText)
-        style?.delegate = styleDelegate
+        
+        // Set the delegate on the style
+        style.delegate = styleDelegate
+        
+        // Save the delegate to our array of delegates
         self.styleDelegates[state] = styleDelegate
+        
+        // Save the style to our array of styles
         self.styles[state] = style
         
+        // Finally, set the title again to let the style take effect
         self.setTitle(possiblyTaggedText, for: state)
     }
 
+    // Get a style for a state
     open func style(for state: UIControlState) -> TextStyle{
+        
+        // Try to the style from our array
         var style = self.styles[state]
         
+        // If it doesn't exist, create it
         if(style == nil){
-            style = TextStyle()
-            self.setStyle(style, for: state)
+            self.setStyle(self.styles[.normal]!, for: state)
+            style = self.style(for: state)
         }
         
+        // There shouldn't be a case where style is nil at this point
         return style!
     }
     
     open override func setTitle(_ title: String?, for state: UIControlState) {
+        
+        // Get the style for this state
         let style = self.style(for: state)
-        let styleDelegate = self.styleDelegates[state]
-        styleDelegate?.possiblyTaggedText = title
+        
+        // Set the text on the delegate
+        (style.delegate as? TextButtonTextStyleDelegate)?.possiblyTaggedText = title
+        
+        // Set the attributed string
         self.setAttributedTitle(title == nil ? nil : style.attributedString(with: title!), for: state)
         
         if state == .normal{
             for (otherState, styleDelegate) in self.styleDelegates{
-                if state != otherState {
-                    if styleDelegate.possiblyTaggedText == nil {
-                        styleDelegate.possiblyTaggedText = title
+                if(otherState != state){
+                    if(styleDelegate.possiblyTaggedText == nil || styleDelegate.possiblyTaggedText?.characters.count == 0){
                         self.setTitle(title, for: otherState)
                     }
                 }
-               
             }
         }
-       
     }
     
     open override func title(for state: UIControlState) -> String? {
@@ -108,30 +134,26 @@ open class TextyButton: UIButton {
     }
     
     open override func setTitleColor(_ color: UIColor?, for state: UIControlState) {
-        var style = self.style(for: state)
-        style.foregroundColor = color
-        self.setStyle(style, for: state)
+        self.style(for: state).foregroundColor = color
     }
     
     open override func titleColor(for state: UIControlState) -> UIColor? {
-        let style = self.style(for: state)
-        return style.foregroundColor
+        return self.style(for: state).foregroundColor
     }
     
     open override func setTitleShadowColor(_ color: UIColor?, for state: UIControlState) {
-        var style = self.style(for: state)
+        let style = self.style(for: state)
         var shadow = style.shadow
         if(shadow == nil){
             shadow = NSShadow()
-            style.shadow = shadow
+            shadow?.shadowOffset = CGSize(width: -2.0, height: -2.0)
         }
         shadow?.shadowColor = color
-        self.setStyle(style, for: state)
+        style.shadow = shadow
     }
     
     open override func titleShadowColor(for state: UIControlState) -> UIColor? {
-        let style = self.style(for: state)
-        return style.shadow?.shadowColor as? UIColor
+        return self.style(for: state).shadow?.shadowColor as? UIColor
     }
     
     public convenience init() {
@@ -151,23 +173,16 @@ open class TextyButton: UIButton {
     private func setDefaults() {
         /// If the font/textColor are not set yet by the TextStyle passed in, then set some default values
         self.setTitle(nil, for: .normal)
-        var style = self.style(for: .normal)
+        
+        let style = self.style(for: .normal)
         
         if style.font == nil  {
-            style.font = UIFont.systemFont(ofSize: 17.0)
+            style.font = self.titleLabel?.font
         }
         
         if style.foregroundColor == nil {
-            style.foregroundColor = UIColor.black
+            style.foregroundColor = super.titleColor(for: .normal)
         }
-        
-        if style.paragraphStyle == nil {
-            let pstyle: NSMutableParagraphStyle = NSMutableParagraphStyle()
-            pstyle.alignment = .natural
-            pstyle.lineBreakMode = .byTruncatingTail
-            style.paragraphStyle = pstyle
-        }
-        self.setStyle(style, for: .normal)
     }
     
   
