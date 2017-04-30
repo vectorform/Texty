@@ -40,9 +40,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.window!.frame = UIScreen.main.bounds
         self.window!.backgroundColor = UIColor.black
-//        self.window!.rootViewController = LabelViewController()
+        self.window!.rootViewController = LabelViewController()
 //        self.window!.rootViewController = ButtonViewController1()
-        self.window!.rootViewController = ButtonViewController2()
+//        self.window!.rootViewController = ButtonViewController2()
         
         self.window!.makeKeyAndVisible()
         

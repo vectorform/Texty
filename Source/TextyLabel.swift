@@ -32,12 +32,23 @@ import UIKit
 
 open class TextyLabel: UILabel, TextStyleDelegate {
     
-    public var style: TextStyle!
-
-    
+    // A copy will be created when setting this property
+    public var style: TextStyle!{
+        didSet{
+            self.style = TextStyle(with: style)
+            
+            let possiblyTaggedText = self.possiblyTaggedText
+            
+            // Set the delegate on the style
+            style.delegate = self
+            
+            // Finally, set the title again to let the style take effect
+            self.text = possiblyTaggedText
+        }
+    }
     
     /// In each of the below setters, style is accessed using self.style? because
-    /// the super.init() call will attempt to set default values, at which point 
+    /// the super.init() call will attempt to set default values, at which point
     /// style does not exist yet.
     
     open override var font: UIFont! {
@@ -50,7 +61,7 @@ open class TextyLabel: UILabel, TextStyleDelegate {
         set {
             let pstyle: NSMutableParagraphStyle = self.style.paragraphStyle!.mutableCopy() as! NSMutableParagraphStyle
             pstyle.lineBreakMode = newValue
-            self.style?.paragraphStyle = pstyle
+            self.style.paragraphStyle = pstyle
         }
     }
     
@@ -68,7 +79,7 @@ open class TextyLabel: UILabel, TextStyleDelegate {
         set {
             let pstyle: NSMutableParagraphStyle = self.style.paragraphStyle!.mutableCopy() as! NSMutableParagraphStyle
             pstyle.alignment = newValue
-            self.style?.paragraphStyle = pstyle
+            self.style.paragraphStyle = pstyle
         }
     }
     
@@ -76,21 +87,27 @@ open class TextyLabel: UILabel, TextStyleDelegate {
         get { return self.style.foregroundColor }
         set { self.style?.foregroundColor = newValue }
     }
-
+    
     
     public convenience init() {
         self.init(style: TextStyle())
     }
     
+    // A copy of style will be created
     public required init(style: TextStyle, frame: CGRect = .zero) {
+        
+        
         super.init(frame: frame)
-        self.style = style
-        self.setDefaults()
-        self.style.delegate = self
+        // Set style and ensure that didSet is called
+        ({
+            self.style = style
+            self.setDefaults()
+            self.style.delegate = self
+        })()
     }
     
     public required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
+        fatalError("not supported")
     }
     
     
