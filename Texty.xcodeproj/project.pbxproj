@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F0653ECF1ECA3FF200F53406 /* TextyTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0653ECE1ECA3FF200F53406 /* TextyTextView.swift */; };
 		F0742EB81EAE84A3005ADB12 /* Texty.h in Headers */ = {isa = PBXBuildFile; fileRef = F0742EB61EAE84A3005ADB12 /* Texty.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F0742EBF1EAE84E0005ADB12 /* Scanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0742EB91EAE84E0005ADB12 /* Scanner.swift */; };
 		F0742EC01EAE84E0005ADB12 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0742EBA1EAE84E0005ADB12 /* String.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F0653ECE1ECA3FF200F53406 /* TextyTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextyTextView.swift; path = Source/TextyTextView.swift; sourceTree = SOURCE_ROOT; };
 		F0742EB51EAE84A3005ADB12 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Source/Info.plist; sourceTree = SOURCE_ROOT; };
 		F0742EB61EAE84A3005ADB12 /* Texty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Texty.h; path = Source/Texty.h; sourceTree = SOURCE_ROOT; };
 		F0742EB91EAE84E0005ADB12 /* Scanner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Scanner.swift; path = Source/Scanner.swift; sourceTree = SOURCE_ROOT; };
@@ -51,6 +53,7 @@
 				F0742EBD1EAE84E0005ADB12 /* TextStyle.swift */,
 				F0A7BEB71EB2660500160253 /* TextyButton.swift */,
 				F0742EBE1EAE84E0005ADB12 /* TextyLabel.swift */,
+				F0653ECE1ECA3FF200F53406 /* TextyTextView.swift */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -166,6 +169,7 @@
 				F0742EC41EAE84E0005ADB12 /* TextyLabel.swift in Sources */,
 				F0742EC11EAE84E0005ADB12 /* Tag.swift in Sources */,
 				F0A7BEB81EB2660500160253 /* TextyButton.swift in Sources */,
+				F0653ECF1ECA3FF200F53406 /* TextyTextView.swift in Sources */,
 				F0742EC01EAE84E0005ADB12 /* String.swift in Sources */,
 				F0742EBF1EAE84E0005ADB12 /* Scanner.swift in Sources */,
 				F0742EC21EAE84E0005ADB12 /* TextAttribute.swift in Sources */,

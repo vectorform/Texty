@@ -26,45 +26,36 @@
 // POSSIBILITY OF SUCH DAMAGE.
 
 
+import Foundation
 import UIKit
 
 
-@UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    var window: UIWindow?
+
+class TextViewViewController: UIViewController{
     
-
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        self.window = UIWindow()
+    
+    override func loadView() {
+        super.loadView()
         
-        self.window!.frame = UIScreen.main.bounds
-        self.window!.backgroundColor = UIColor.black
-//        self.window!.rootViewController = LabelViewController()
-//        self.window!.rootViewController = ButtonViewController1()
-//        self.window!.rootViewController = ButtonViewController2()
-        self.window!.rootViewController = TextViewViewController()
+        self.view.backgroundColor = UIColor.white
         
-        self.window!.makeKeyAndVisible()
+        let textView = TextyTextView(style: Styles.Header)
+        textView.text = "hello@gmail.com"
+        textView.isEditable = false
+        textView.dataDetectorTypes = .all
+        self.view.addSubview(textView)
         
-        return true
-    }
-
-    func applicationWillResignActive(_ application: UIApplication) {
+        textView.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint(item: textView, attribute: .left, relatedBy: .equal, toItem: self.view, attribute: .left, multiplier: 1.0, constant: 0.0).isActive = true
+        NSLayoutConstraint(item: textView, attribute: .right, relatedBy: .equal, toItem: self.view, attribute: .right, multiplier: 1.0, constant: 0.0).isActive = true
+        NSLayoutConstraint(item: textView, attribute: .top, relatedBy: .equal, toItem: self.view, attribute: .top, multiplier: 1.0, constant: 0.0).isActive = true
+        NSLayoutConstraint(item: textView, attribute: .bottom, relatedBy: .equal, toItem: self.view, attribute: .bottom, multiplier: 1.0, constant: 0.0).isActive = true
+        
         
     }
-
-    func applicationDidEnterBackground(_ application: UIApplication) {
-    }
-
-    func applicationWillEnterForeground(_ application: UIApplication) {
-    }
-
-    func applicationDidBecomeActive(_ application: UIApplication) {
-    }
-
-    func applicationWillTerminate(_ application: UIApplication) {
-    }
-
+    
+    
+    
 }
-
