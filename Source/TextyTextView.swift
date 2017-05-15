@@ -107,17 +107,17 @@ open class TextyTextView: UITextView, TextStyleDelegate {
         self.text = nil
         
         if self.style.font == nil  {
-            self.style.font = UIFont.systemFont(ofSize: 17.0)
+            self.style.font = super.font
         }
         
         if self.style.foregroundColor == nil {
-            self.style.foregroundColor = UIColor.black
+            self.style.foregroundColor = super.textColor
         }
         
         if self.style.paragraphStyle == nil {
             let pstyle: NSMutableParagraphStyle = NSMutableParagraphStyle()
             pstyle.alignment = .natural
-            pstyle.lineBreakMode = .byTruncatingTail
+            pstyle.lineBreakMode = .byWordWrapping
             self.style.paragraphStyle = pstyle
         }
     }

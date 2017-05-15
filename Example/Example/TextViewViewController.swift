@@ -41,7 +41,7 @@ class TextViewViewController: UIViewController{
         self.view.backgroundColor = UIColor.white
         
         let textView = TextyTextView(style: Styles.Header)
-        textView.text = "hello@gmail.com"
+        textView.text = "this text is not editable this text is not editable this text is not editable hello@gmail.com"
         textView.isEditable = false
         textView.dataDetectorTypes = .all
         self.view.addSubview(textView)
