@@ -32,7 +32,7 @@ platform :ios, '10.0'
 use_frameworks!
 
 target '<Your Target Name>' do
-    pod 'Texty', '~> 0.1.4'
+    pod 'Texty', '~> 0.2.1'
 end
 ```
 
@@ -53,7 +53,7 @@ $ brew install carthage
 
 To integrate Texty into your Xcode project using Carthage, specify it in your `Cartfile`:
 ```ogdl
-github "Vectorform/Texty" ~> 0.1.4
+github "Vectorform/Texty" ~> 0.2.1
 ```
 
 Run `carthage update` to build the framework and drag the built `Texty.framework` into your Xcode project.
@@ -68,7 +68,7 @@ If you prefer not to use any of the listed dependency managers, you can integrat
 
 ## Usage
 ### Creating styles
-The TextStyle struct was designed to be created once and reused across your entire application.
+The TextStyle class was designed to be created once and reused across your entire application. If you need to manipulate a TextStyle without affecting the original, you'll need to use the copy initializer `UITextStyle(with: TextStyle)`
 ```swift
 /// Create static references to reusable styles
 struct Style {
@@ -119,11 +119,13 @@ More information about each attribute can be found in Apple's [documentation](ht
 
 
 ### TextyLabel
-TextyLabel is a subclass of UILabel created specifically to work with TextStyle structs. The core power of TextyLabel comes from its initializer.
+TextyLabel is a subclass of UILabel created specifically to work with TextStyle objects. The core power of TextyLabel comes from its initializer. TextyLabel will create a copy of the TextStyle object.
 ```swift
 let titleLabel: TextyLabel = TextyLabel(style: Style.Header1)
 ```
-Be careful when subclassing TextyLabel as some properties are overriden to be referenced from the associated style struct rather than their native locations. 
+You can manipulate or replace the style later using the `style` property.
+
+Be careful when subclassing TextyLabel as some properties are overriden to be referenced from the associated style object rather than their native locations. 
 
 Subclassing TextyLabel and overriding one of these properties without calling the super class ***will*** result in undefined behavior.
 
@@ -135,6 +137,50 @@ Subclassing TextyLabel and overriding one of these properties without calling th
 | textAlignment | style.paragraphStyle.alignment     |
 | textColor     | style.foregroundColor              |
 
+### TextyButton
+TextyButton is a subclass of UIButton created specifically to work with TextStyle objects. TextyButton can be initialized in the same way as TextyLabel. Internally this will be used as the style for all button states. TextyButton will create a copy of the TextStyle object.
+```swift
+let button: TextyButton = TextyButton(style: Style.Header1)
+```
+You can manipulate or replace the styles later using the following functions:
+```swift
+style(for state: UIControlState)
+setStyle(_ style: TextStyle, for state: UIControlState)
+```
+
+Be careful when subclassing TextyButton as some properties are overriden to be referenced from the associated style object rather than their native locations. 
+
+Subclassing TextyButton and overriding one of these properties without calling the super class ***will*** result in undefined behavior.
+
+| Function      | Overriden Target                   |
+|---------------|------------------------------------|
+| setTitle(_ title: String?, for state: UIControlState) | setAttributedTitle(_ title: NSAttributedString?, for state: UIControlState) |
+| title(for state: UIControlState)          | attributedTitle(for: state)                     |
+| setTitleColor(_ color: UIColor?, for state: UIControlState) | style(for: state).foregroundColor
+| titleColor(for state: UIControlState)     | style(for: state).foregroundColor              |
+| setTitleShadowColor(_ color: UIColor?, for state: UIControlState) | style(for: state).shadow |
+| titleShadowColor(for state: UIControlState)| style(for: state).shadow |
+
+### TextyTextView
+TextyTextView is a subclass of UITextView created specifically to work with TextStyle objects. The core power of TextyTextView comes from its initializer. TextyTextView will create a copy of the TextStyle object. 
+```swift
+let titleLabel: TextyLabel = TextyLabel(style: Style.Header1)
+```
+**TextyTextView does not currently support editing text** so you should have `isEditable` set to `false`.
+
+You can manipulate or replace the style later using the `style` property.
+
+Be careful when subclassing TextyTextView as some properties are overriden to be referenced from the associated style object rather than their native locations. 
+
+Subclassing TextyTextView and overriding one of these properties without calling the super class ***will*** result in undefined behavior.
+
+| Property      | Overriden Target                   |
+|---------------|------------------------------------|
+| font          | style.font                         |
+| lineBreakMode | style.paragraphStyle.lineBreakMode |
+| text          | attributedText                     |
+| textAlignment | style.paragraphStyle.alignment     |
+| textColor     | style.foregroundColor              |
 
 ### Styling text via tags
 Texty provides the ability to style parts of a string using XML-like tags within the string.
