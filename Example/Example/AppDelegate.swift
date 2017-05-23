@@ -40,10 +40,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.window!.frame = UIScreen.main.bounds
         self.window!.backgroundColor = UIColor.black
-//        self.window!.rootViewController = LabelViewController()
-//        self.window!.rootViewController = ButtonViewController1()
-//        self.window!.rootViewController = ButtonViewController2()
-        self.window!.rootViewController = TextViewViewController()
+        let tabController = UITabBarController()
+        tabController.setViewControllers([LabelViewController(), ButtonViewController1(), ButtonViewController2(), TextViewViewController()], animated: false)
+        tabController.tabBar.items?[0].title = "Label"
+        tabController.tabBar.items?[1].title = "Button1"
+        tabController.tabBar.items?[2].title = "Button2"
+        tabController.tabBar.items?[3].title = "TextView"
+        self.window!.rootViewController = tabController
         
         self.window!.makeKeyAndVisible()
         
