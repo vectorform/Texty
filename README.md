@@ -217,7 +217,7 @@ Forward slashes at the end of a tag will cause the tag to be detected as a *shor
 
 ## Credits
 [Igor Efremov](https://github.com/igorefremov), [iefremov@vectorform.com](mailto:iefremov@vectorform.com)
-
+[Jeff Meador](https://github.com/jeffMeador), [jmeador@vectorform.com](mailto:jmeador@vectorform.com)
 
 ## License
 Texty is available under the [BSD-3-Clause](https://opensource.org/licenses/BSD-3-Clause) License. See the [LICENSE](LICENSE) file for more info.
