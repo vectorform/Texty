@@ -216,7 +216,7 @@ Forward slashes at the end of a tag will cause the tag to be detected as a *shor
 
 
 ## Credits
-[Igor Efremov](https://github.com/igorefremov), [iefremov@vectorform.com](mailto:iefremov@vectorform.com)
+[Igor Efremov](https://github.com/igorefremov), [igor@efremov.io](mailto:igor@efremov.io)
 
 [Jeff Meador](https://github.com/jeffMeador), [jmeador@vectorform.com](mailto:jmeador@vectorform.com)
 
