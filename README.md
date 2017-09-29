@@ -11,8 +11,8 @@ Created and maintained by Vectorform, LLC.
 
 ## Requirements:
 - iOS 8.0+
-- Xcode 8.0+
-- Swift 3.0+
+- Xcode 9.0+
+- Swift 4.0+
 
 
 ## Installation
@@ -91,31 +91,31 @@ class ViewController: UIViewController {
 
 
 ### Available attributes
-| TextAttribute      | Expected Type     | Native Equivalent                 |
-|--------------------|-------------------|-----------------------------------|
-| attachment         | NSTextAttachment  | NSAttachmentAttributeName         |
-| backgroundColor    | UIColor           | NSBackgroundColorAttributeName    |
-| baselineOffset     | NSNumber          | NSBaselineOffsetAttributeName     |
-| expansion          | NSNumber          | NSExpansionAttributeName          |
-| font               | UIFont            | NSFontAttributeName               |
-| foregroundColor    | UIColor           | NSForegroundColorAttributeName    |
-| kern               | NSNumber          | NSKernAttributeName               |
-| ligature           | NSNumber          | NSLigatureAttributeName           |
-| link               | NSURL or NSString | NSLinkAttributeName               |
-| obliqueness        | NSNumber          | NSObliquenessAttributeName        |
-| paragraphStyle     | NSParagraphStyle  | NSParagraphStyleAttributeName     |
-| shadow             | NSShadow          | NSShadowAttributeName             |
-| strikethroughColor | UIColor           | NSStrikethroughColorAttributeName |
-| strikethroughStyle | NSNumber          | NSStrikethroughStyleAttributeName |
-| strokeColor        | UIColor           | NSStrokeColorAttributeName        |
-| strokeWidth        | NSNumber          | NSStrokeWidthAttributeName        |
-| textEffect         | NSString          | NSTextEffectAttributeName         |
-| underlineColor     | UIColor           | NSUnderlineColorAttributeName     |
-| underlineStyle     | NSNumber          | NSUnderlineStyleAttributeName     |
-| verticalGlyphForm  | NSNumber          | NSVerticalGlyphFormAttributeName  |
-| writingDirection   | Array\<NSNumber\> | NSWritingDirectionAttributeName   |
+| TextAttribute      | Expected Type     | Native Equivalent                        |
+|--------------------|-------------------|------------------------------------------|
+| attachment         | NSTextAttachment  | NSAttributedStringKey.attachment         |
+| backgroundColor    | UIColor           | NSAttributedStringKey.backgroundColor    |
+| baselineOffset     | NSNumber          | NSAttributedStringKey.baselineOffset     |
+| expansion          | NSNumber          | NSAttributedStringKey.expansion          |
+| font               | UIFont            | NSAttributedStringKey.font               |
+| foregroundColor    | UIColor           | NSAttributedStringKey.foregroundColor    |
+| kern               | NSNumber          | NSAttributedStringKey.kern               |
+| ligature           | NSNumber          | NSAttributedStringKey.ligature           |
+| link               | NSURL or NSString | NSAttributedStringKey.link               |
+| obliqueness        | NSNumber          | NSAttributedStringKey.obliqueness        |
+| paragraphStyle     | NSParagraphStyle  | NSAttributedStringKey.paragraphStyle     |
+| shadow             | NSShadow          | NSAttributedStringKey.shadow             |
+| strikethroughColor | UIColor           | NSAttributedStringKey.strikethroughColor |
+| strikethroughStyle | NSNumber          | NSAttributedStringKey.strikethroughStyle |
+| strokeColor        | UIColor           | NSAttributedStringKey.strokeColor        |
+| strokeWidth        | NSNumber          | NSAttributedStringKey.strokeWidth        |
+| textEffect         | NSString          | NSAttributedStringKey.textEffect         |
+| underlineColor     | UIColor           | NSAttributedStringKey.underlineColor     |
+| underlineStyle     | NSNumber          | NSAttributedStringKey.underlineStyle     |
+| verticalGlyphForm  | NSNumber          | NSAttributedStringKey.verticalGlyphForm  |
+| writingDirection   | Array\<NSNumber\> | NSAttributedStringKey.writingDirection   |
 
-More information about each attribute can be found in Apple's [documentation](https://developer.apple.com/reference/foundation/nsattributedstring/character_attributes).
+More information about each attribute can be found in Apple's [documentation](https://developer.apple.com/documentation/foundation/nsattributedstringkey).
 
 
 ### TextyLabel

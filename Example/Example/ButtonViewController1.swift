@@ -111,7 +111,7 @@ class ButtonViewController1: UIViewController, AdjustValueViewDelegate {
     
     private var shownPopup: UIView?
     
-    func textyButtonPressed() {
+    @objc private func textyButtonPressed() {
         print("textyButtonPressed")
     }
     

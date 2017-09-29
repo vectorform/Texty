@@ -63,30 +63,30 @@ public enum TextAttribute: String {
     // case toolTip
     
     
-    internal var NSAttribute: String {
+    internal var NSAttribute: NSAttributedStringKey {
         switch(self) {
             
-        case .attachment:           return NSAttachmentAttributeName
-        case .backgroundColor:      return NSBackgroundColorAttributeName
-        case .baselineOffset:       return NSBaselineOffsetAttributeName
-        case .expansion:            return NSExpansionAttributeName
-        case .font:                 return NSFontAttributeName
-        case .foregroundColor:      return NSForegroundColorAttributeName
-        case .kern:                 return NSKernAttributeName
-        case .ligature:             return NSLigatureAttributeName
-        case .link:                 return NSLinkAttributeName
-        case .obliqueness:          return NSObliquenessAttributeName
-        case .paragraphStyle:       return NSParagraphStyleAttributeName
-        case .shadow:               return NSShadowAttributeName
-        case .strikethroughColor:   return NSStrikethroughColorAttributeName
-        case .strikethroughStyle:   return NSStrikethroughStyleAttributeName
-        case .strokeColor:          return NSStrokeColorAttributeName
-        case .strokeWidth:          return NSStrokeWidthAttributeName
-        case .textEffect:           return NSTextEffectAttributeName
-        case .underlineColor:       return NSUnderlineColorAttributeName
-        case .underlineStyle:       return NSUnderlineStyleAttributeName
-        case .verticalGlyphForm:    return NSVerticalGlyphFormAttributeName
-        case .writingDirection:     return NSWritingDirectionAttributeName
+        case .attachment:           return NSAttributedStringKey.attachment
+        case .backgroundColor:      return NSAttributedStringKey.backgroundColor
+        case .baselineOffset:       return NSAttributedStringKey.baselineOffset
+        case .expansion:            return NSAttributedStringKey.expansion
+        case .font:                 return NSAttributedStringKey.font
+        case .foregroundColor:      return NSAttributedStringKey.foregroundColor
+        case .kern:                 return NSAttributedStringKey.kern
+        case .ligature:             return NSAttributedStringKey.ligature
+        case .link:                 return NSAttributedStringKey.link
+        case .obliqueness:          return NSAttributedStringKey.obliqueness
+        case .paragraphStyle:       return NSAttributedStringKey.paragraphStyle
+        case .shadow:               return NSAttributedStringKey.shadow
+        case .strikethroughColor:   return NSAttributedStringKey.strikethroughColor
+        case .strikethroughStyle:   return NSAttributedStringKey.strikethroughStyle
+        case .strokeColor:          return NSAttributedStringKey.strokeColor
+        case .strokeWidth:          return NSAttributedStringKey.strokeWidth
+        case .textEffect:           return NSAttributedStringKey.textEffect
+        case .underlineColor:       return NSAttributedStringKey.underlineColor
+        case .underlineStyle:       return NSAttributedStringKey.underlineStyle
+        case .verticalGlyphForm:    return NSAttributedStringKey.verticalGlyphForm
+        case .writingDirection:     return NSAttributedStringKey.writingDirection
             
         }
     }
@@ -108,8 +108,8 @@ public enum TextAttribute: String {
         }
     }
     
-    internal static func convert(attributes: [TextAttribute : Any]) -> [String : Any] {
-        var convertedAttributes: [String : Any] = [:]
+    internal static func convert(attributes: [TextAttribute : Any]) -> [NSAttributedStringKey : Any] {
+        var convertedAttributes: [NSAttributedStringKey : Any] = [:]
         
         for (k, v) in attributes {
             assert(k.isProperType(object: v), "value for attribute \"\(k.rawValue)\" is \"\(String(describing: type(of: v)))\" - should be \"\(k.properTypeString)\"")
