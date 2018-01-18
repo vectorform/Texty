@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:Example.xcodeproj">
+      location = "self:/Users/jmeador/Documents/dev/textygit/Texty/Example/Texty_Example.xcodeproj">
    </FileRef>
 </Workspace>

@@ -28,67 +28,67 @@
 
 import Foundation
 import UIKit
+import Texty
 
 
-protocol AdjustAlignViewDelegate: class {
+protocol AdjustValueViewDelegate: class {
     
-    func alignmentChanged(view: AdjustAlignView, alignment: NSTextAlignment)
+    func valueAdjusted(view: AdjustValueView)
     
 }
 
-class AdjustAlignView: PopupView {
+
+class AdjustValueView: PopupView {
     
-    weak var delegate: AdjustAlignViewDelegate?
+    weak var delegate: AdjustValueViewDelegate?
     
     
     private let titleLabel: TextyLabel = TextyLabel(style: Styles.PopupHeader)
     
-    private let segmentedControl: UISegmentedControl = UISegmentedControl(items: ["Left", "Center", "Right"])
+    private let sliderView: UISlider = UISlider()
     
     
-    convenience init(alignment: NSTextAlignment) {
-        self.init(frame: .zero)
-        
-        switch(alignment) {
-        case .left:
-            self.segmentedControl.selectedSegmentIndex = 0
-            break
-        
-        case .center:
-            self.segmentedControl.selectedSegmentIndex = 1
-            break
-        
-        case .right:
-            self.segmentedControl.selectedSegmentIndex = 2
-            break
-            
-        default:
-            break
-        }
+    var minimumValue: Float {
+        get { return self.sliderView.minimumValue }
+        set { self.sliderView.minimumValue = newValue }
     }
+    
+    var maximumValue: Float {
+        get { return self.sliderView.maximumValue }
+        set { self.sliderView.maximumValue = newValue }
+    }
+    
+    var value: Float {
+        get { return self.sliderView.value }
+        set { self.sliderView.value = newValue }
+    }
+    
+    var title: String? {
+        get { return self.titleLabel.text }
+        set { self.titleLabel.text = newValue }
+    }
+    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        self.titleLabel.text = "Adjust Alignment"
+        self.sliderView.addTarget(self, action: #selector(AdjustValueView.sliderValueChanged), for: UIControlEvents.valueChanged)
+        self.sliderView.translatesAutoresizingMaskIntoConstraints = false
+        
         self.titleLabel.textAlignment = .center
         self.titleLabel.translatesAutoresizingMaskIntoConstraints = false
         
-        self.segmentedControl.addTarget(self, action: #selector(AdjustAlignView.valueChanged), for: .valueChanged)
-        self.segmentedControl.translatesAutoresizingMaskIntoConstraints = false
-        
         
         self.addSubview(self.titleLabel)
-        self.addSubview(self.segmentedControl)
+        self.addSubview(self.sliderView)
         
         NSLayoutConstraint(item: self.titleLabel, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX, multiplier: 1.0, constant: 0.0).isActive = true
         NSLayoutConstraint(item: self.titleLabel, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1.0, constant: 10.0).isActive = true
         
-        NSLayoutConstraint(item: self.segmentedControl, attribute: .left, relatedBy: .equal, toItem: self, attribute: .left, multiplier: 1.0, constant: 10.0).isActive = true
-        NSLayoutConstraint(item: self.segmentedControl, attribute: .right, relatedBy: .equal, toItem: self, attribute: .right, multiplier: 1.0, constant: -10.0).isActive = true
-        NSLayoutConstraint(item: self.segmentedControl, attribute: .top, relatedBy: .equal, toItem: self.titleLabel, attribute: .bottom, multiplier: 1.0, constant: 10.0).isActive = true
-        NSLayoutConstraint(item: self.segmentedControl, attribute: .bottom, relatedBy: .equal, toItem: self, attribute: .bottom, multiplier: 1.0, constant: -10.0).isActive = true
-        
+        NSLayoutConstraint(item: self.sliderView, attribute: .left, relatedBy: .equal, toItem: self, attribute: .left, multiplier: 1.0, constant: 15.0).isActive = true
+        NSLayoutConstraint(item: self.sliderView, attribute: .right, relatedBy: .equal, toItem: self, attribute: .right, multiplier: 1.0, constant: -15.0).isActive = true
+        NSLayoutConstraint(item: self.sliderView, attribute: .top, relatedBy: .equal, toItem: self.titleLabel, attribute: .bottom, multiplier: 1.0, constant: 5.0).isActive = true
+        NSLayoutConstraint(item: self.sliderView, attribute: .bottom, relatedBy: .equal, toItem: self, attribute: .bottom, multiplier: 1.0, constant: -10.0).isActive = true
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -96,8 +96,8 @@ class AdjustAlignView: PopupView {
     }
     
     
-    @objc private func valueChanged() {
-        self.delegate?.alignmentChanged(view: self, alignment: (self.segmentedControl.selectedSegmentIndex == 0 ? .left : self.segmentedControl.selectedSegmentIndex == 1 ? .center : .right))
+    @objc private func sliderValueChanged() {
+        self.delegate?.valueAdjusted(view: self)
     }
     
 }

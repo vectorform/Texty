@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'Texty'
-  s.version          = '0.2.1'
+  s.version          = '0.2.2'
   s.summary          = 'Enjoy clean and easy text styling using a simplified and structured syntax.'
 
   s.description      = <<-DESC
@@ -10,7 +10,7 @@ DESC
 
   s.homepage         = 'https://github.com/vectorform/Texty'
   s.license          = { :type => 'BSD', :file => 'LICENSE' }
-  s.author           = { 'Vectorform' => 'iefremov@vectorform.com' }
+  s.author           = { 'Vectorform' => 'jmeador@vectorform.com', 'Igor Efremov' => 'igor@efremov.io' }
   s.source           = { :git => 'https://github.com/vectorform/Texty.git', :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/vectorform'
 

@@ -123,7 +123,7 @@ open class TextyButton: UIButton {
         if state == .normal{
             for (otherState, styleDelegate) in self.styleDelegates{
                 if(otherState != state){
-                    if(styleDelegate.possiblyTaggedText == nil || styleDelegate.possiblyTaggedText?.characters.count == 0){
+                    if(styleDelegate.possiblyTaggedText == nil || styleDelegate.possiblyTaggedText?.count == 0){
                         self.setTitle(title, for: otherState)
                     }
                 }

@@ -1,0 +1,6 @@
+framework module Texty {
+  umbrella header "Texty-umbrella.h"
+
+  export *
+  module * { export * }
+}

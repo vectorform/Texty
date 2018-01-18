@@ -32,7 +32,7 @@ platform :ios, '10.0'
 use_frameworks!
 
 target '<Your Target Name>' do
-    pod 'Texty', '~> 0.2.1'
+    pod 'Texty', '~> 0.2.2'
 end
 ```
 
@@ -53,7 +53,7 @@ $ brew install carthage
 
 To integrate Texty into your Xcode project using Carthage, specify it in your `Cartfile`:
 ```ogdl
-github "Vectorform/Texty" ~> 0.2.1
+github "Vectorform/Texty" ~> 0.2.2
 ```
 
 Run `carthage update` to build the framework and drag the built `Texty.framework` into your Xcode project.
@@ -77,7 +77,7 @@ struct Style {
     static let Header2: TextStyle = TextStyle(attributes: [.foregroundColor : UIColor.black, .font : UIFont.boldSystemFont(ofSize: 20.0)])
 
     static let Normal: TextStyle = TextStyle(attributes: [.foregroundColor : UIColor.black, .font : UIFont.systemFont(ofSize: 17.0)])
-    
+
     static let Underline: TextStyle = TextStyle(attributes: [TextAttribute.underlineStyle : NSUnderlineStyle.styleSingle])
 }
 ```
@@ -125,7 +125,7 @@ let titleLabel: TextyLabel = TextyLabel(style: Style.Header1)
 ```
 You can manipulate or replace the style later using the `style` property.
 
-Be careful when subclassing TextyLabel as some properties are overriden to be referenced from the associated style object rather than their native locations. 
+Be careful when subclassing TextyLabel as some properties are overriden to be referenced from the associated style object rather than their native locations.
 
 Subclassing TextyLabel and overriding one of these properties without calling the super class ***will*** result in undefined behavior.
 
@@ -148,7 +148,7 @@ style(for state: UIControlState)
 setStyle(_ style: TextStyle, for state: UIControlState)
 ```
 
-Be careful when subclassing TextyButton as some properties are overriden to be referenced from the associated style object rather than their native locations. 
+Be careful when subclassing TextyButton as some properties are overriden to be referenced from the associated style object rather than their native locations.
 
 Subclassing TextyButton and overriding one of these properties without calling the super class ***will*** result in undefined behavior.
 
@@ -162,7 +162,7 @@ Subclassing TextyButton and overriding one of these properties without calling t
 | titleShadowColor(for state: UIControlState)| style(for: state).shadow |
 
 ### TextyTextView
-TextyTextView is a subclass of UITextView created specifically to work with TextStyle objects. The core power of TextyTextView comes from its initializer. TextyTextView will create a copy of the TextStyle object. 
+TextyTextView is a subclass of UITextView created specifically to work with TextStyle objects. The core power of TextyTextView comes from its initializer. TextyTextView will create a copy of the TextStyle object.
 ```swift
 let titleLabel: TextyLabel = TextyLabel(style: Style.Header1)
 ```
@@ -170,7 +170,7 @@ let titleLabel: TextyLabel = TextyLabel(style: Style.Header1)
 
 You can manipulate or replace the style later using the `style` property.
 
-Be careful when subclassing TextyTextView as some properties are overriden to be referenced from the associated style object rather than their native locations. 
+Be careful when subclassing TextyTextView as some properties are overriden to be referenced from the associated style object rather than their native locations.
 
 Subclassing TextyTextView and overriding one of these properties without calling the super class ***will*** result in undefined behavior.
 

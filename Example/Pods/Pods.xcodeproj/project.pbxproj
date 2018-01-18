@@ -1,0 +1,588 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		034337AA8A684BECB2BDF2751B7CEAD9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		120473F985691DD1FD4488F57BE308A6 /* TextyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DCB61E12536DB3FB744FAD8C3A3C14 /* TextyLabel.swift */; };
+		2404E9CE93DD4EAA94A0615EB69998FC /* Texty-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F8DB82632604339EBEFCF8B60F4A84DA /* Texty-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		491D8A6E3C14716B80F6F7157EB656BB /* TextyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EC7DE10E5D09473459021A47E71E02 /* TextyButton.swift */; };
+		4AD3EC63A76DFB54D7AAAE89360696BF /* TextStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376A295FB66336F0BA8DFC7410D2C40C /* TextStyle.swift */; };
+		60BB9EBCD50D57AB8A71387E843D400F /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE3225AC1C7E137BB2BD341BEE7F5F9 /* String.swift */; };
+		618E4AEA448897598A570BF1E7A879D0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		63BF5410B798A5C5E5F32747DFCEB23C /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA0FB494472D8E44875365C4BE8FF67 /* Tag.swift */; };
+		64420649358B4E542488BB2DC796BFF9 /* TextAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F980443D9A867B437C3E194481BD52 /* TextAttribute.swift */; };
+		7B12EA2B2DAFFC5DD110A3E4E37B7609 /* Scanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E12A15EFB9DACAE6DDDE6291168FAC7 /* Scanner.swift */; };
+		8D0E4280AD6C4E27107D27E3C602291D /* Texty-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F6BEE2F89B9B36FD6589548BF855C74 /* Texty-dummy.m */; };
+		C4817744BEFE4A1EAA26DCC9CBC558C0 /* Pods-Texty_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F851E150AA37FE530370C56256A5D2B /* Pods-Texty_Example-dummy.m */; };
+		EBB3B8342A178BD280579BAFC213359D /* TextyTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9BF30D5E42A2F1B3FD7998DF074955 /* TextyTextView.swift */; };
+		ED82AFAE199E9AE3845C15BF08D60527 /* Pods-Texty_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C1F1DFCD31A789DA5C5CABA54C8503A2 /* Pods-Texty_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0DEB4B3D7E012748C13DF27D4878D941 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8C86C8105A8C670BBDDCE18D3AE2A751;
+			remoteInfo = Texty;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0DBE8BC8F81B55AFA450E626123F733D /* Texty.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Texty.xcconfig; sourceTree = "<group>"; };
+		10F980443D9A867B437C3E194481BD52 /* TextAttribute.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TextAttribute.swift; path = Source/TextAttribute.swift; sourceTree = "<group>"; };
+		116AEC4AC89797DA169CE7F6B8BB742E /* Pods-Texty_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Texty_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		1E12A15EFB9DACAE6DDDE6291168FAC7 /* Scanner.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Scanner.swift; path = Source/Scanner.swift; sourceTree = "<group>"; };
+		33A3A85C82ED14C17837749672A3633F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		376A295FB66336F0BA8DFC7410D2C40C /* TextStyle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TextStyle.swift; path = Source/TextStyle.swift; sourceTree = "<group>"; };
+		3F851E150AA37FE530370C56256A5D2B /* Pods-Texty_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Texty_Example-dummy.m"; sourceTree = "<group>"; };
+		56EC7DE10E5D09473459021A47E71E02 /* TextyButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TextyButton.swift; path = Source/TextyButton.swift; sourceTree = "<group>"; };
+		5EE595357515E8564516935F0CF5F2CC /* Texty.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Texty.modulemap; sourceTree = "<group>"; };
+		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		6F6BEE2F89B9B36FD6589548BF855C74 /* Texty-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Texty-dummy.m"; sourceTree = "<group>"; };
+		7187F161C2535C71FF440F5DBF8C0303 /* Pods-Texty_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Texty_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		7240D6F879BC7ADD5576D96DD121D028 /* Pods-Texty_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Texty_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		74101A3B06CCBC58297CF5E0636CC8FE /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		795589AA1D8D9A8C1E7D3EF26FD2D241 /* Pods-Texty_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Texty_Example.release.xcconfig"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9BA0FB494472D8E44875365C4BE8FF67 /* Tag.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Tag.swift; path = Source/Tag.swift; sourceTree = "<group>"; };
+		A4DCB61E12536DB3FB744FAD8C3A3C14 /* TextyLabel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TextyLabel.swift; path = Source/TextyLabel.swift; sourceTree = "<group>"; };
+		ACC6D83B6B1597B60B6D0063B13D16D7 /* Texty.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Texty.framework; path = Texty.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B75C3148AEAEF69ACE3CD86F578D80D1 /* Pods-Texty_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Texty_Example-resources.sh"; sourceTree = "<group>"; };
+		C1F1DFCD31A789DA5C5CABA54C8503A2 /* Pods-Texty_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Texty_Example-umbrella.h"; sourceTree = "<group>"; };
+		D68AE7915073EB182DD89D1006AB4455 /* Pods_Texty_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Texty_Example.framework; path = "Pods-Texty_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA44E19F7F784115697A02349AB0C23F /* Texty-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Texty-prefix.pch"; sourceTree = "<group>"; };
+		DB9BF30D5E42A2F1B3FD7998DF074955 /* TextyTextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TextyTextView.swift; path = Source/TextyTextView.swift; sourceTree = "<group>"; };
+		E5477E979CB79341330EC27F9ADBFF9F /* Pods-Texty_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-Texty_Example.modulemap"; sourceTree = "<group>"; };
+		F5BAE048D900E8DB5A5AFAA007692024 /* Pods-Texty_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Texty_Example-frameworks.sh"; sourceTree = "<group>"; };
+		F8DB82632604339EBEFCF8B60F4A84DA /* Texty-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Texty-umbrella.h"; sourceTree = "<group>"; };
+		FEE3225AC1C7E137BB2BD341BEE7F5F9 /* String.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = String.swift; path = Source/String.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0913ED38177AD3291728E3BA9AEBC7A4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				034337AA8A684BECB2BDF2751B7CEAD9 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DCC4BA1DB7EB4A780E534E9773782B17 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				618E4AEA448897598A570BF1E7A879D0 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2404DECD0B181658B2EEDE26D4891D34 /* Pods-Texty_Example */ = {
+			isa = PBXGroup;
+			children = (
+				74101A3B06CCBC58297CF5E0636CC8FE /* Info.plist */,
+				E5477E979CB79341330EC27F9ADBFF9F /* Pods-Texty_Example.modulemap */,
+				7187F161C2535C71FF440F5DBF8C0303 /* Pods-Texty_Example-acknowledgements.markdown */,
+				116AEC4AC89797DA169CE7F6B8BB742E /* Pods-Texty_Example-acknowledgements.plist */,
+				3F851E150AA37FE530370C56256A5D2B /* Pods-Texty_Example-dummy.m */,
+				F5BAE048D900E8DB5A5AFAA007692024 /* Pods-Texty_Example-frameworks.sh */,
+				B75C3148AEAEF69ACE3CD86F578D80D1 /* Pods-Texty_Example-resources.sh */,
+				C1F1DFCD31A789DA5C5CABA54C8503A2 /* Pods-Texty_Example-umbrella.h */,
+				7240D6F879BC7ADD5576D96DD121D028 /* Pods-Texty_Example.debug.xcconfig */,
+				795589AA1D8D9A8C1E7D3EF26FD2D241 /* Pods-Texty_Example.release.xcconfig */,
+			);
+			name = "Pods-Texty_Example";
+			path = "Target Support Files/Pods-Texty_Example";
+			sourceTree = "<group>";
+		};
+		24DB554B05D371A55E96B320B23D631C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D68AE7915073EB182DD89D1006AB4455 /* Pods_Texty_Example.framework */,
+				ACC6D83B6B1597B60B6D0063B13D16D7 /* Texty.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		43D19662DE03890CE4012E759783CE0B /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				2404DECD0B181658B2EEDE26D4891D34 /* Pods-Texty_Example */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		482946D7F39A29F8F23BA06286B83EBA /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DC18B371153A657E4AF5DB5B2CB80090 /* Texty */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				482946D7F39A29F8F23BA06286B83EBA /* Development Pods */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				24DB554B05D371A55E96B320B23D631C /* Products */,
+				43D19662DE03890CE4012E759783CE0B /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D35AF013A5F0BAD4F32504907A52519E /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D35AF013A5F0BAD4F32504907A52519E /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		DC18B371153A657E4AF5DB5B2CB80090 /* Texty */ = {
+			isa = PBXGroup;
+			children = (
+				1E12A15EFB9DACAE6DDDE6291168FAC7 /* Scanner.swift */,
+				FEE3225AC1C7E137BB2BD341BEE7F5F9 /* String.swift */,
+				9BA0FB494472D8E44875365C4BE8FF67 /* Tag.swift */,
+				10F980443D9A867B437C3E194481BD52 /* TextAttribute.swift */,
+				376A295FB66336F0BA8DFC7410D2C40C /* TextStyle.swift */,
+				56EC7DE10E5D09473459021A47E71E02 /* TextyButton.swift */,
+				A4DCB61E12536DB3FB744FAD8C3A3C14 /* TextyLabel.swift */,
+				DB9BF30D5E42A2F1B3FD7998DF074955 /* TextyTextView.swift */,
+				E9344F2F4845C209A85C5FAC940AEAED /* Support Files */,
+			);
+			name = Texty;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		E9344F2F4845C209A85C5FAC940AEAED /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				33A3A85C82ED14C17837749672A3633F /* Info.plist */,
+				5EE595357515E8564516935F0CF5F2CC /* Texty.modulemap */,
+				0DBE8BC8F81B55AFA450E626123F733D /* Texty.xcconfig */,
+				6F6BEE2F89B9B36FD6589548BF855C74 /* Texty-dummy.m */,
+				DA44E19F7F784115697A02349AB0C23F /* Texty-prefix.pch */,
+				F8DB82632604339EBEFCF8B60F4A84DA /* Texty-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/Texty";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		140794A111B098237B4CA0892DF41F0E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED82AFAE199E9AE3845C15BF08D60527 /* Pods-Texty_Example-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6F3224AF3DC7503FA513708D53829763 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2404E9CE93DD4EAA94A0615EB69998FC /* Texty-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		67BB396F4E6A4B06A3E7A5FC21B39FA6 /* Pods-Texty_Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8AB09A0B2B8FAD3EE37725A862687DFF /* Build configuration list for PBXNativeTarget "Pods-Texty_Example" */;
+			buildPhases = (
+				E6E8DDCCF3D531CFDACE3BE682158347 /* Sources */,
+				DCC4BA1DB7EB4A780E534E9773782B17 /* Frameworks */,
+				140794A111B098237B4CA0892DF41F0E /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				45C26766F825F1C68FA911F941C6AD70 /* PBXTargetDependency */,
+			);
+			name = "Pods-Texty_Example";
+			productName = "Pods-Texty_Example";
+			productReference = D68AE7915073EB182DD89D1006AB4455 /* Pods_Texty_Example.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		8C86C8105A8C670BBDDCE18D3AE2A751 /* Texty */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CBC20242C95D6F7833758AF48C67638A /* Build configuration list for PBXNativeTarget "Texty" */;
+			buildPhases = (
+				5336BC57682189A3DF0DCF840165F313 /* Sources */,
+				0913ED38177AD3291728E3BA9AEBC7A4 /* Frameworks */,
+				6F3224AF3DC7503FA513708D53829763 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Texty;
+			productName = Texty;
+			productReference = ACC6D83B6B1597B60B6D0063B13D16D7 /* Texty.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 24DB554B05D371A55E96B320B23D631C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				67BB396F4E6A4B06A3E7A5FC21B39FA6 /* Pods-Texty_Example */,
+				8C86C8105A8C670BBDDCE18D3AE2A751 /* Texty */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5336BC57682189A3DF0DCF840165F313 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7B12EA2B2DAFFC5DD110A3E4E37B7609 /* Scanner.swift in Sources */,
+				60BB9EBCD50D57AB8A71387E843D400F /* String.swift in Sources */,
+				63BF5410B798A5C5E5F32747DFCEB23C /* Tag.swift in Sources */,
+				64420649358B4E542488BB2DC796BFF9 /* TextAttribute.swift in Sources */,
+				4AD3EC63A76DFB54D7AAAE89360696BF /* TextStyle.swift in Sources */,
+				8D0E4280AD6C4E27107D27E3C602291D /* Texty-dummy.m in Sources */,
+				491D8A6E3C14716B80F6F7157EB656BB /* TextyButton.swift in Sources */,
+				120473F985691DD1FD4488F57BE308A6 /* TextyLabel.swift in Sources */,
+				EBB3B8342A178BD280579BAFC213359D /* TextyTextView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E6E8DDCCF3D531CFDACE3BE682158347 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C4817744BEFE4A1EAA26DCC9CBC558C0 /* Pods-Texty_Example-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		45C26766F825F1C68FA911F941C6AD70 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Texty;
+			target = 8C86C8105A8C670BBDDCE18D3AE2A751 /* Texty */;
+			targetProxy = 0DEB4B3D7E012748C13DF27D4878D941 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		575C3C286444DC481B76B56D24D601E7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0DBE8BC8F81B55AFA450E626123F733D /* Texty.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Texty/Texty-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Texty/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Texty/Texty.modulemap";
+				PRODUCT_NAME = Texty;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		62CC82FE1DFD6FEAD42420A3DBD99500 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7240D6F879BC7ADD5576D96DD121D028 /* Pods-Texty_Example.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Texty_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Texty_Example/Pods-Texty_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Texty_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		7C07ED8089F70A31B83996A8910D7F18 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		93EBE37FA4C3429B5C79073B23D1F3AD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0DBE8BC8F81B55AFA450E626123F733D /* Texty.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Texty/Texty-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Texty/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Texty/Texty.modulemap";
+				PRODUCT_NAME = Texty;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		98F29E7567052F62660DDD7069ADF73C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		BF964624CEC9727D8F1FB133438254D3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 795589AA1D8D9A8C1E7D3EF26FD2D241 /* Pods-Texty_Example.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Texty_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Texty_Example/Pods-Texty_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Texty_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7C07ED8089F70A31B83996A8910D7F18 /* Debug */,
+				98F29E7567052F62660DDD7069ADF73C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8AB09A0B2B8FAD3EE37725A862687DFF /* Build configuration list for PBXNativeTarget "Pods-Texty_Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				62CC82FE1DFD6FEAD42420A3DBD99500 /* Debug */,
+				BF964624CEC9727D8F1FB133438254D3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CBC20242C95D6F7833758AF48C67638A /* Build configuration list for PBXNativeTarget "Texty" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				93EBE37FA4C3429B5C79073B23D1F3AD /* Debug */,
+				575C3C286444DC481B76B56D24D601E7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

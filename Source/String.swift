@@ -44,14 +44,14 @@ internal extension String {
             
             scanner.incrementLocation()
             self.append(left)
-            length += left.characters.count
+            length += left.count
             
             if let tag: String = scanner.scan(upto: ">") {
                 scanner.incrementLocation()
                 
                 if(tag.hasSuffix("/")) {
-                    let correctedTag = String(tag.characters.dropLast())
-                    locationOffset += 2 + tag.characters.count
+                    let correctedTag = String(tag.dropLast())
+                    locationOffset += 2 + tag.count
                     
                     assert(lastOpenTag != nil, "found closing tag \"<\(correctedTag)/>\" without opening tag")
                     assert(correctedTag == lastOpenTag!, "found nonmatcing tags \"<\(lastOpenTag!)>\" and \"<\(correctedTag)\"/>")
@@ -60,7 +60,7 @@ internal extension String {
                     return length
                 } else {
                     tags[tag] = NSRange(location: openLocation - locationOffset, length: 0)
-                    locationOffset += 2 + tag.characters.count
+                    locationOffset += 2 + tag.count
                     length += self.stripTags(scanner: scanner, tags: &tags, lastOpenTag: tag, locationOffset: &locationOffset)
                 }
             }
@@ -118,15 +118,15 @@ internal extension String {
             
             if(mutableTagString.hasPrefix("/")) {
                 isClosingTag = true
-                mutableTagString = String(mutableTagString.characters.dropFirst())
+                mutableTagString = String(mutableTagString.dropFirst())
             } else if(mutableTagString.hasSuffix("/")) {
                 isShortTag = true
-                mutableTagString = String(mutableTagString.characters.dropLast())
+                mutableTagString = String(mutableTagString.dropLast())
             }
             mutableTagString = mutableTagString.trimmingCharacters(in: .whitespaces)
             
             tags.append(Tag(string: mutableTagString, location: tagLocation - lengthOffset, closing: isClosingTag, short: isShortTag))
-            lengthOffset += 2 + tagString.characters.count
+            lengthOffset += 2 + tagString.count
         }
         
         for tag: Tag in tags {
