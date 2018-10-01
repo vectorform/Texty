@@ -69,4 +69,9 @@ class TextViewViewController: UIViewController{
             NSLayoutConstraint(item: self.textView, attribute: .bottom, relatedBy: .equal, toItem: self.view, attribute: .bottom, multiplier: 1.0, constant: -60.0).isActive = true
         }
     }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        self.textView.setContentOffset(CGPoint(x: 0.0, y: 0.0), animated: false)
+    }
 }

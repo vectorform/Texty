@@ -136,6 +136,15 @@ class LabelViewController: UIViewController, AdjustValueViewDelegate, AdjustAlig
         
         self.view.isUserInteractionEnabled = false
         
+        popup.alpha = 0.0
+        popup.translatesAutoresizingMaskIntoConstraints = false
+        
+        self.view.addSubview(popup)
+        
+        NSLayoutConstraint(item: popup, attribute: .left, relatedBy: .equal, toItem: self.view, attribute: .left, multiplier: 1.0, constant: 5.0).isActive = true
+        NSLayoutConstraint(item: popup, attribute: .right, relatedBy: .equal, toItem: self.view, attribute: .right, multiplier: 1.0, constant: -5.0).isActive = true
+        NSLayoutConstraint(item: popup, attribute: .bottom, relatedBy: .equal, toItem: self.changeColorButton, attribute: .top, multiplier: 1.0, constant: -15.0).isActive = true
+        
         UIView.animate(withDuration: 0.25, animations: { 
             popup.alpha = 1.0
         }) { (result) in
@@ -152,17 +161,7 @@ class LabelViewController: UIViewController, AdjustValueViewDelegate, AdjustAlig
         }
         
         let alignView: AdjustAlignView = AdjustAlignView(alignment: self.titleLabel.textAlignment)
-        
-        alignView.alpha = 0.0
         alignView.delegate = self
-        alignView.translatesAutoresizingMaskIntoConstraints = false
-        
-        self.view.addSubview(alignView)
-        
-        NSLayoutConstraint(item: alignView, attribute: .left, relatedBy: .equal, toItem: self.view, attribute: .left, multiplier: 1.0, constant: 5.0).isActive = true
-        NSLayoutConstraint(item: alignView, attribute: .right, relatedBy: .equal, toItem: self.view, attribute: .right, multiplier: 1.0, constant: -5.0).isActive = true
-        NSLayoutConstraint(item: alignView, attribute: .bottom, relatedBy: .equal, toItem: self.changeColorButton, attribute: .top, multiplier: 1.0, constant: -15.0).isActive = true
-        
         self.showPopup(alignView, completion: nil)
     }
     
@@ -174,18 +173,9 @@ class LabelViewController: UIViewController, AdjustValueViewDelegate, AdjustAlig
         
         var hue: CGFloat = 0.0
         self.titleLabel.textColor.getHue(&hue, saturation: nil, brightness: nil, alpha: nil)
+        
         let colorView: AdjustColorView = AdjustColorView(hue: hue)
-        
-        colorView.alpha = 0.0
         colorView.delegate = self
-        colorView.translatesAutoresizingMaskIntoConstraints = false
-        
-        self.view.addSubview(colorView)
-        
-        NSLayoutConstraint(item: colorView, attribute: .left, relatedBy: .equal, toItem: self.view, attribute: .left, multiplier: 1.0, constant: 5.0).isActive = true
-        NSLayoutConstraint(item: colorView, attribute: .right, relatedBy: .equal, toItem: self.view, attribute: .right, multiplier: 1.0, constant: -5.0).isActive = true
-        NSLayoutConstraint(item: colorView, attribute: .bottom, relatedBy: .equal, toItem: self.changeColorButton, attribute: .top, multiplier: 1.0, constant: -15.0).isActive = true
-        
         self.showPopup(colorView, completion: nil)
     }
     
@@ -197,18 +187,10 @@ class LabelViewController: UIViewController, AdjustValueViewDelegate, AdjustAlig
         
         let kernView: AdjustKernView = AdjustKernView()
         
-        kernView.alpha = 0.0
         kernView.delegate = self
         kernView.maximumValue = 30.0
         kernView.minimumValue = 0.0
-        kernView.translatesAutoresizingMaskIntoConstraints = false
         kernView.value = Float(self.titleLabel.style.kern == nil ? 0.0 : self.titleLabel.style.kern!.floatValue)          //Has to be set after minimum/maximum values have been adjusted
-        
-        self.view.addSubview(kernView)
-        
-        NSLayoutConstraint(item: kernView, attribute: .left, relatedBy: .equal, toItem: self.view, attribute: .left, multiplier: 1.0, constant: 5.0).isActive = true
-        NSLayoutConstraint(item: kernView, attribute: .right, relatedBy: .equal, toItem: self.view, attribute: .right, multiplier: 1.0, constant: -5.0).isActive = true
-        NSLayoutConstraint(item: kernView, attribute: .bottom, relatedBy: .equal, toItem: self.changeColorButton, attribute: .top, multiplier: 1.0, constant: -15.0).isActive = true
         
         self.showPopup(kernView, completion: nil)
     }
@@ -221,18 +203,10 @@ class LabelViewController: UIViewController, AdjustValueViewDelegate, AdjustAlig
         
         let sizeView: AdjustSizeView = AdjustSizeView()
         
-        sizeView.alpha = 0.0
         sizeView.delegate = self
         sizeView.maximumValue = 30.0
         sizeView.minimumValue = 10.0
-        sizeView.translatesAutoresizingMaskIntoConstraints = false
         sizeView.value = Float(self.titleLabel.font.pointSize)          //Has to be set after minimum/maximum values have been adjusted
-        
-        self.view.addSubview(sizeView)
-        
-        NSLayoutConstraint(item: sizeView, attribute: .left, relatedBy: .equal, toItem: self.view, attribute: .left, multiplier: 1.0, constant: 5.0).isActive = true
-        NSLayoutConstraint(item: sizeView, attribute: .right, relatedBy: .equal, toItem: self.view, attribute: .right, multiplier: 1.0, constant: -5.0).isActive = true
-        NSLayoutConstraint(item: sizeView, attribute: .bottom, relatedBy: .equal, toItem: self.changeColorButton, attribute: .top, multiplier: 1.0, constant: -15.0).isActive = true
         
         self.showPopup(sizeView, completion: nil)
     }
