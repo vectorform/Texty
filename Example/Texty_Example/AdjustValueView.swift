@@ -72,7 +72,7 @@ class AdjustValueView: PopupView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        self.sliderView.addTarget(self, action: #selector(AdjustValueView.sliderValueChanged), for: UIControlEvents.valueChanged)
+        self.sliderView.addTarget(self, action: #selector(AdjustValueView.sliderValueChanged), for: UIControl.Event.valueChanged)
         self.sliderView.translatesAutoresizingMaskIntoConstraints = false
         
         self.titleLabel.textAlignment = .center

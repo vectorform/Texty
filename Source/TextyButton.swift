@@ -30,7 +30,7 @@ import Foundation
 import UIKit
 
 // Extend UIControlState so it can be used as a key in a dictionary
-extension UIControlState: Hashable {
+extension UIControl.State: Hashable {
     
     public var hashValue: Int {
         return self.rawValue.hashValue
@@ -42,10 +42,10 @@ extension UIControlState: Hashable {
 internal class TextButtonTextStyleDelegate: TextStyleDelegate{
  
     fileprivate weak var button: TextyButton?
-    fileprivate let state: UIControlState
+    fileprivate let state: UIControl.State
     fileprivate var possiblyTaggedText: String?
     
-    init(button: TextyButton, state: UIControlState, possiblyTaggedText: String?){
+    init(button: TextyButton, state: UIControl.State, possiblyTaggedText: String?){
         self.button = button
         self.state = state
         self.possiblyTaggedText = possiblyTaggedText
@@ -59,13 +59,13 @@ internal class TextButtonTextStyleDelegate: TextStyleDelegate{
 open class TextyButton: UIButton {
     
     // Styles for the different control states
-    fileprivate var styles = [UIControlState:TextStyle]()
+    fileprivate var styles = [UIControl.State:TextStyle]()
     
     // Delegates for the different control states
-    fileprivate var styleDelegates = [UIControlState: TextButtonTextStyleDelegate]()
+    fileprivate var styleDelegates = [UIControl.State: TextButtonTextStyleDelegate]()
     
     // Set a style for a state. This copies the TextStyle.
-    open func setStyle(_ style: TextStyle, for state: UIControlState) {
+    open func setStyle(_ style: TextStyle, for state: UIControl.State) {
         
         // Copy any incoming style. This will make it so changes aren't made outside of here
         let style = TextStyle(with: style)
@@ -93,7 +93,7 @@ open class TextyButton: UIButton {
     }
 
     // Get a style for a state
-    open func style(for state: UIControlState) -> TextStyle{
+    open func style(for state: UIControl.State) -> TextStyle{
         
         // Try to the style from our array
         var style = self.styles[state]
@@ -108,7 +108,7 @@ open class TextyButton: UIButton {
         return style!
     }
     
-    open override func setTitle(_ title: String?, for state: UIControlState) {
+    open override func setTitle(_ title: String?, for state: UIControl.State) {
         
         // Get the style for this state
         let style = self.style(for: state)
@@ -131,19 +131,19 @@ open class TextyButton: UIButton {
         }
     }
     
-    open override func title(for state: UIControlState) -> String? {
+    open override func title(for state: UIControl.State) -> String? {
         return self.attributedTitle(for: state)?.string
     }
     
-    open override func setTitleColor(_ color: UIColor?, for state: UIControlState) {
+    open override func setTitleColor(_ color: UIColor?, for state: UIControl.State) {
         self.style(for: state).foregroundColor = color
     }
     
-    open override func titleColor(for state: UIControlState) -> UIColor? {
+    open override func titleColor(for state: UIControl.State) -> UIColor? {
         return self.style(for: state).foregroundColor
     }
     
-    open override func setTitleShadowColor(_ color: UIColor?, for state: UIControlState) {
+    open override func setTitleShadowColor(_ color: UIColor?, for state: UIControl.State) {
         let style = self.style(for: state)
         var shadow = style.shadow
         if(shadow == nil){
@@ -155,7 +155,7 @@ open class TextyButton: UIButton {
         style.shadow = shadow
     }
     
-    open override func titleShadowColor(for state: UIControlState) -> UIColor? {
+    open override func titleShadowColor(for state: UIControl.State) -> UIColor? {
         return self.style(for: state).shadow?.shadowColor as? UIColor
     }
     
