@@ -1,4 +1,4 @@
-// Copyright (c) 2017 Vectorform, LLC
+// Copyright (c) 2018 Vectorform, LLC
 //
 // Redistribution and use in source and binary forms, with or without modification,
 // are permitted provided that the following conditions are met:
@@ -25,15 +25,38 @@
 // ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 // POSSIBILITY OF SUCH DAMAGE.
 
-
 import Foundation
 import UIKit
-import Texty
 
-struct Styles {
+class ModificationButton: UIButton {
+    convenience init() {
+        self.init(frame: .zero)
+    }
     
-    static let Header: TextStyle = TextStyle(attributes: [.foregroundColor : UIColor.black, .font : UIFont.boldSystemFont(ofSize: 24.0)])
-    static let Body: TextStyle = TextStyle(attributes: [.foregroundColor : UIColor.black, .font : UIFont.systemFont(ofSize: 12.0)])
-    static let PopupHeader: TextStyle = TextStyle(attributes: [.foregroundColor : UIColor.black, .font : UIFont.systemFont(ofSize: 20.0)])
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        self.backgroundColor = UIColor.white
+        self.setTitleColor(UIColor.lightGray, for: .normal)
+        self.layer.borderColor = UIColor.lightGray.cgColor
+        self.layer.borderWidth = 3.0
+        self.layer.cornerRadius = 5.0
+        
+        self.addTarget(self, action: #selector(onTouchDown), for: .allTouchDownEvents)
+        self.addTarget(self, action: #selector(onTouchUp), for: .allTouchUpEvents)
+    }
     
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("not supported")
+    }
+    
+    @objc private func onTouchDown() {
+        self.backgroundColor = UIColor.lightGray
+        self.setTitleColor(UIColor.white, for: .normal)
+    }
+    
+    @objc private func onTouchUp() {
+        self.backgroundColor = UIColor.white
+        self.setTitleColor(UIColor.lightGray, for: .normal)
+    }
 }

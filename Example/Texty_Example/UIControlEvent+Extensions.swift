@@ -1,4 +1,4 @@
-// Copyright (c) 2017 Vectorform, LLC
+// Copyright (c) 2018 Vectorform, LLC
 //
 // Redistribution and use in source and binary forms, with or without modification,
 // are permitted provided that the following conditions are met:
@@ -25,15 +25,15 @@
 // ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 // POSSIBILITY OF SUCH DAMAGE.
 
-
 import Foundation
 import UIKit
-import Texty
 
-struct Styles {
+extension UIControl.Event {
+    static var allTouchDownEvents: UIControl.Event {
+        return UIControl.Event(rawValue: UIControl.Event.touchDragEnter.rawValue | UIControl.Event.touchDown.rawValue)
+    }
     
-    static let Header: TextStyle = TextStyle(attributes: [.foregroundColor : UIColor.black, .font : UIFont.boldSystemFont(ofSize: 24.0)])
-    static let Body: TextStyle = TextStyle(attributes: [.foregroundColor : UIColor.black, .font : UIFont.systemFont(ofSize: 12.0)])
-    static let PopupHeader: TextStyle = TextStyle(attributes: [.foregroundColor : UIColor.black, .font : UIFont.systemFont(ofSize: 20.0)])
-    
+    static var allTouchUpEvents: UIControl.Event {
+        return UIControl.Event(rawValue: UIControl.Event.touchCancel.rawValue | UIControl.Event.touchDragExit.rawValue | UIControl.Event.touchUpInside.rawValue | UIControl.Event.touchUpOutside.rawValue)
+    }
 }
