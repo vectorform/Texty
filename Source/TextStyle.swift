@@ -1,4 +1,4 @@
-// Copyright (c) 2017 Vectorform, LLC
+// Copyright (c) 2018 Vectorform, LLC
 //
 // Redistribution and use in source and binary forms, with or without modification,
 // are permitted provided that the following conditions are met:
@@ -79,8 +79,10 @@ public class TextStyle {
         self.delegate?.didUpdate(style: self)
     }
     
-    public func attributedString(with string: String) -> NSAttributedString {
-        var mutableString: String = string
+    public func attributedString(with string: String?) -> NSAttributedString? {
+        guard var mutableString: String = string else {
+            return nil
+        }
         var attributedString: NSMutableAttributedString
         
         if(self.taggedAttributes.count > 0) {

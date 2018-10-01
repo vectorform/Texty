@@ -1,4 +1,4 @@
-// Copyright (c) 2017 Vectorform, LLC
+// Copyright (c) 2018 Vectorform, LLC
 //
 // Redistribution and use in source and binary forms, with or without modification,
 // are permitted provided that the following conditions are met:
@@ -29,102 +29,112 @@
 import Foundation
 import UIKit
 
-// Texty Text View Currently DOES NOT SUPPORT EDITING
 open class TextyTextView: UITextView, TextStyleDelegate {
-    
-    // A copy will be created when setting this property
-    public var style: TextStyle!{
-        didSet{
-            self.style = TextStyle(with: style)
+    public var style: TextStyle? {
+        willSet { self.style?.delegate = nil }
+        didSet {
+            if let newStyle: TextStyle = self.style {
+                self.style = TextStyle(with: newStyle)
+                newStyle.delegate = self
+            }
             
-            let possiblyTaggedText = self.possiblyTaggedText
-            
-            // Set the delegate on the style
-            style.delegate = self
-            
-            // Finally, set the title again to let the style take effect
-            self.text = possiblyTaggedText
+            self.redrawText()
         }
     }
     
-    /// In each of the below setters, style is accessed using self.style? because
-    /// the super.init() call will attempt to set default values, at which point
-    /// style does not exist yet.
+    // The purpose of this variable is to keep a reference to the original text, including all contained tags. Once a
+    // style is applied to a string, all tags are stripped and lost forever.
+    private var taggedText: String?
     
-    open override var font: UIFont! {
-        get { return self.style.font }
-        set { self.style?.font = newValue }
-    }
-  
-    internal var possiblyTaggedText: String?            //A seperate property is needed in order to support tags properly
-    open override var text: String? {
-        get { return self.attributedText?.string }
+    open override var font: UIFont? {
+        get { return self.style?.font ?? super.font }
         set {
-            self.possiblyTaggedText = newValue
-            self.attributedText = newValue == nil ? nil : self.style.attributedString(with: newValue!)
+            if let style: TextStyle = self.style {
+                style.font = newValue
+            } else {
+                super.font = newValue
+            }
+        }
+    }
+    
+    open override var text: String? {
+        get { return (self.style == nil ? super.text : self.attributedText?.string) }
+        set {
+            self.taggedText = newValue
+            self.redrawText()
         }
     }
     
     open override var textAlignment: NSTextAlignment {
-        get { return self.style.paragraphStyle!.alignment }
+        get { return self.style?.paragraphStyle!.alignment ?? super.textAlignment }
         set {
-            let pstyle: NSMutableParagraphStyle = self.style.paragraphStyle!.mutableCopy() as! NSMutableParagraphStyle
-            pstyle.alignment = newValue
-            self.style.paragraphStyle = pstyle
+            if let style: TextStyle = self.style {
+                let paragraphStyle: NSMutableParagraphStyle = style.paragraphStyle!.mutableCopy() as! NSMutableParagraphStyle
+                paragraphStyle.alignment = newValue
+                style.paragraphStyle = paragraphStyle
+            } else {
+                super.textAlignment = newValue
+            }
         }
     }
     
     open override var textColor: UIColor! {
-        get { return self.style.foregroundColor }
-        set { self.style?.foregroundColor = newValue }
+        get { return self.style?.foregroundColor ?? super.textColor }
+        set {
+            if let style: TextStyle = self.style {
+                style.foregroundColor = newValue
+            } else {
+                super.textColor = newValue
+            }
+        }
     }
-    
     
     public convenience init() {
         self.init(style: TextStyle())
     }
     
-    // A copy of style will be created
-    public required init(style: TextStyle, frame: CGRect = .zero) {
-        
-        
+    public required init(style: TextStyle?, frame: CGRect = .zero) {
         super.init(frame: frame, textContainer: nil)
-        // Set style and ensure that didSet is called
-        ({
-            self.style = style
-            self.setDefaults()
-            self.style.delegate = self
-        })()
+        self.isEditable = false
+        
+        // Ensure didSet is called in self.style
+        ({ self.style = style })()
+        
+        // Set defaults values where needed
+        if let style: TextStyle = self.style {
+            if style.font == nil {
+                style.font = super.font
+            }
+            
+            if style.foregroundColor == nil {
+                style.foregroundColor = super.textColor
+            }
+            
+            if style.paragraphStyle == nil {
+                let paragraphStyle: NSMutableParagraphStyle = NSMutableParagraphStyle()
+                paragraphStyle.alignment = .natural
+                paragraphStyle.lineBreakMode = .byWordWrapping
+                style.paragraphStyle = paragraphStyle
+            }
+        }
     }
     
     public required init?(coder aDecoder: NSCoder) {
-        fatalError("not supported")
-    }
-    
-    
-    private func setDefaults() {
-        /// If the font/textColor are not set yet by the TextStyle passed in, then set some default values
-        self.text = nil
-        
-        if self.style.font == nil  {
-            self.style.font = super.font
-        }
-        
-        if self.style.foregroundColor == nil {
-            self.style.foregroundColor = super.textColor
-        }
-        
-        if self.style.paragraphStyle == nil {
-            let pstyle: NSMutableParagraphStyle = NSMutableParagraphStyle()
-            pstyle.alignment = .natural
-            pstyle.lineBreakMode = .byWordWrapping
-            self.style.paragraphStyle = pstyle
-        }
+        super.init(coder: aDecoder)
+        self.isEditable = false
     }
     
     internal func didUpdate(style: TextStyle) {
-        /// Update attributed string with new attributes called by the textStyle when it detects an update
-        self.text = possiblyTaggedText
+        self.redrawText()
     }
     
+    private func redrawText() {
+        if let style: TextStyle = self.style {
+            super.text = nil
+            self.attributedText = style.attributedString(with: self.taggedText)
+        } else {
+            self.attributedText = nil
+            super.text = self.taggedText
+        }
+    }
 }

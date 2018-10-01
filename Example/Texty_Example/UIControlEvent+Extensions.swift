@@ -25,20 +25,15 @@
 // ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 // POSSIBILITY OF SUCH DAMAGE.
 
-
 import Foundation
 import UIKit
 
-
-class AdjustSizeView: AdjustValueView {
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        self.title = "Adjust Size"
+extension UIControl.Event {
+    static var allTouchDownEvents: UIControl.Event {
+        return UIControl.Event(rawValue: UIControl.Event.touchDragEnter.rawValue | UIControl.Event.touchDown.rawValue)
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("not supported")
+    static var allTouchUpEvents: UIControl.Event {
+        return UIControl.Event(rawValue: UIControl.Event.touchCancel.rawValue | UIControl.Event.touchDragExit.rawValue | UIControl.Event.touchUpInside.rawValue | UIControl.Event.touchUpOutside.rawValue)
     }
-    
 }
