@@ -79,8 +79,10 @@ public class TextStyle {
         self.delegate?.didUpdate(style: self)
     }
     
-    public func attributedString(with string: String) -> NSAttributedString {
-        var mutableString: String = string
+    public func attributedString(with string: String?) -> NSAttributedString? {
+        guard var mutableString: String = string else {
+            return nil
+        }
         var attributedString: NSMutableAttributedString
         
         if(self.taggedAttributes.count > 0) {
