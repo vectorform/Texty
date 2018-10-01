@@ -63,30 +63,30 @@ public enum TextAttribute: String {
     // case toolTip
     
     
-    internal var NSAttribute: NSAttributedStringKey {
+    internal var NSAttribute: NSAttributedString.Key {
         switch(self) {
             
-        case .attachment:           return NSAttributedStringKey.attachment
-        case .backgroundColor:      return NSAttributedStringKey.backgroundColor
-        case .baselineOffset:       return NSAttributedStringKey.baselineOffset
-        case .expansion:            return NSAttributedStringKey.expansion
-        case .font:                 return NSAttributedStringKey.font
-        case .foregroundColor:      return NSAttributedStringKey.foregroundColor
-        case .kern:                 return NSAttributedStringKey.kern
-        case .ligature:             return NSAttributedStringKey.ligature
-        case .link:                 return NSAttributedStringKey.link
-        case .obliqueness:          return NSAttributedStringKey.obliqueness
-        case .paragraphStyle:       return NSAttributedStringKey.paragraphStyle
-        case .shadow:               return NSAttributedStringKey.shadow
-        case .strikethroughColor:   return NSAttributedStringKey.strikethroughColor
-        case .strikethroughStyle:   return NSAttributedStringKey.strikethroughStyle
-        case .strokeColor:          return NSAttributedStringKey.strokeColor
-        case .strokeWidth:          return NSAttributedStringKey.strokeWidth
-        case .textEffect:           return NSAttributedStringKey.textEffect
-        case .underlineColor:       return NSAttributedStringKey.underlineColor
-        case .underlineStyle:       return NSAttributedStringKey.underlineStyle
-        case .verticalGlyphForm:    return NSAttributedStringKey.verticalGlyphForm
-        case .writingDirection:     return NSAttributedStringKey.writingDirection
+        case .attachment:           return NSAttributedString.Key.attachment
+        case .backgroundColor:      return NSAttributedString.Key.backgroundColor
+        case .baselineOffset:       return NSAttributedString.Key.baselineOffset
+        case .expansion:            return NSAttributedString.Key.expansion
+        case .font:                 return NSAttributedString.Key.font
+        case .foregroundColor:      return NSAttributedString.Key.foregroundColor
+        case .kern:                 return NSAttributedString.Key.kern
+        case .ligature:             return NSAttributedString.Key.ligature
+        case .link:                 return NSAttributedString.Key.link
+        case .obliqueness:          return NSAttributedString.Key.obliqueness
+        case .paragraphStyle:       return NSAttributedString.Key.paragraphStyle
+        case .shadow:               return NSAttributedString.Key.shadow
+        case .strikethroughColor:   return NSAttributedString.Key.strikethroughColor
+        case .strikethroughStyle:   return NSAttributedString.Key.strikethroughStyle
+        case .strokeColor:          return NSAttributedString.Key.strokeColor
+        case .strokeWidth:          return NSAttributedString.Key.strokeWidth
+        case .textEffect:           return NSAttributedString.Key.textEffect
+        case .underlineColor:       return NSAttributedString.Key.underlineColor
+        case .underlineStyle:       return NSAttributedString.Key.underlineStyle
+        case .verticalGlyphForm:    return NSAttributedString.Key.verticalGlyphForm
+        case .writingDirection:     return NSAttributedString.Key.writingDirection
             
         }
     }
@@ -108,8 +108,8 @@ public enum TextAttribute: String {
         }
     }
     
-    internal static func convert(attributes: [TextAttribute : Any]) -> [NSAttributedStringKey : Any] {
-        var convertedAttributes: [NSAttributedStringKey : Any] = [:]
+    internal static func convert(attributes: [TextAttribute : Any]) -> [NSAttributedString.Key : Any] {
+        var convertedAttributes: [NSAttributedString.Key : Any] = [:]
         
         for (k, v) in attributes {
             assert(k.isProperType(object: v), "value for attribute \"\(k.rawValue)\" is \"\(String(describing: type(of: v)))\" - should be \"\(k.properTypeString)\"")

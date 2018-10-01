@@ -41,7 +41,7 @@ public class TextStyle {
     
     internal weak var delegate: TextStyleDelegate?
     
-    fileprivate var attributes: [NSAttributedStringKey : Any] = [:]
+    fileprivate var attributes: [NSAttributedString.Key : Any] = [:]
     fileprivate var taggedAttributes: [String : TextStyle] = [:]
     
     public init(with textStyle: TextStyle){

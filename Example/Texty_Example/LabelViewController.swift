@@ -31,14 +31,14 @@ import UIKit
 import Texty
 
 
-fileprivate extension UIControlEvents {
+fileprivate extension UIControl.Event {
     
-    fileprivate static var allTouchDownEvents: UIControlEvents {
-        return UIControlEvents(rawValue: UIControlEvents.touchDragEnter.rawValue | UIControlEvents.touchDown.rawValue)
+    fileprivate static var allTouchDownEvents: UIControl.Event {
+        return UIControl.Event(rawValue: UIControl.Event.touchDragEnter.rawValue | UIControl.Event.touchDown.rawValue)
     }
     
-    fileprivate static var allTouchUpEvents: UIControlEvents {
-        return UIControlEvents(rawValue: UIControlEvents.touchCancel.rawValue | UIControlEvents.touchDragExit.rawValue | UIControlEvents.touchUpInside.rawValue | UIControlEvents.touchUpOutside.rawValue)
+    fileprivate static var allTouchUpEvents: UIControl.Event {
+        return UIControl.Event(rawValue: UIControl.Event.touchCancel.rawValue | UIControl.Event.touchDragExit.rawValue | UIControl.Event.touchUpInside.rawValue | UIControl.Event.touchUpOutside.rawValue)
     }
     
 }
@@ -113,7 +113,7 @@ class LabelViewController: UIViewController, AdjustValueViewDelegate, AdjustAlig
         self.changeKernButton.translatesAutoresizingMaskIntoConstraints = false
         
         self.titleLabel.style.setAttributes([TextAttribute.obliqueness : 0.2], forTag: "italic")
-        self.titleLabel.style.setAttributes([TextAttribute.underlineStyle : NSUnderlineStyle.styleSingle.rawValue], forTag: "underline")
+        self.titleLabel.style.setAttributes([TextAttribute.underlineStyle : NSUnderlineStyle.single.rawValue], forTag: "underline")
         self.titleLabel.text = "This <italic>is a <underline>TextyLabel</italic> Example</underline>"
         self.titleLabel.textAlignment = .center
         self.titleLabel.textColor = UIColor(hue: 0.0, saturation: 1.0, brightness: 1.0, alpha: 1.0)

@@ -75,7 +75,7 @@ class ButtonViewController2: UIViewController{
         }
         
         let uiButton5 = UIButton()
-        uiButton5.setAttributedTitle(NSAttributedString(string: "hello", attributes: [NSAttributedStringKey.foregroundColor : UIColor.black, NSAttributedStringKey.font : UIFont.boldSystemFont(ofSize: 24.0)]), for: .normal)
+        uiButton5.setAttributedTitle(NSAttributedString(string: "hello", attributes: [NSAttributedString.Key.foregroundColor : UIColor.black, NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 24.0)]), for: .normal)
         uiButton5.titleLabel?.font = uiButton5.titleLabel?.font.withSize(50)
         uiButton5.setTitleShadowColor(UIColor.purple, for: .normal)
         uiButton5.setTitleShadowColor(UIColor.yellow, for: .highlighted)
