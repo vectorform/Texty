@@ -3,7 +3,7 @@ This application makes use of the following third party libraries:
 
 ## Texty
 
-Copyright (c) 2017 Vectorform, LLC
+Copyright (c) 2018 Vectorform, LLC
 
 Redistribution and use in source and binary forms, with or without modification,
 are permitted provided that the following conditions are met:
