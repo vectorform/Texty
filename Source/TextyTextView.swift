@@ -25,88 +25,75 @@
 // ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 // POSSIBILITY OF SUCH DAMAGE.
 
-
 import Foundation
 import UIKit
 
-// Texty Text View Currently DOES NOT SUPPORT EDITING
 open class TextyTextView: UITextView, TextStyleDelegate {
-    
-    // A copy will be created when setting this property
-    public var style: TextStyle!{
-        didSet{
-            self.style = TextStyle(with: style)
-            
-            let possiblyTaggedText = self.possiblyTaggedText
-            
-            // Set the delegate on the style
-            style.delegate = self
-            
-            // Finally, set the title again to let the style take effect
-            self.text = possiblyTaggedText
+    public var style: TextStyle {
+        willSet { self.style.delegate = nil }
+        didSet {
+            self.style = TextStyle(with: self.style)
+            self.style.delegate = self
+            self.redrawText()
         }
     }
     
-    /// In each of the below setters, style is accessed using self.style? because
-    /// the super.init() call will attempt to set default values, at which point
-    /// style does not exist yet.
+    // The purpose of this variable is to keep a reference to the original text, including all contained tags. Once a
+    // style is applied to a string, all tags are stripped and lost forever.
+    private var taggedText: String?
     
-    open override var font: UIFont! {
+    open override var font: UIFont? {
         get { return self.style.font }
-        set { self.style?.font = newValue }
+        set { self.style.font = newValue }
     }
-  
-    internal var possiblyTaggedText: String?            //A seperate property is needed in order to support tags properly
+    
     open override var text: String? {
         get { return self.attributedText?.string }
         set {
-            self.possiblyTaggedText = newValue
-            self.attributedText = newValue == nil ? nil : self.style.attributedString(with: newValue!)
+            self.taggedText = newValue
+            self.redrawText()
         }
     }
     
     open override var textAlignment: NSTextAlignment {
         get { return self.style.paragraphStyle!.alignment }
         set {
-            let pstyle: NSMutableParagraphStyle = self.style.paragraphStyle!.mutableCopy() as! NSMutableParagraphStyle
-            pstyle.alignment = newValue
-            self.style.paragraphStyle = pstyle
+            let paragraphStyle: NSMutableParagraphStyle = style.paragraphStyle!.mutableCopy() as! NSMutableParagraphStyle
+            paragraphStyle.alignment = newValue
+            style.paragraphStyle = paragraphStyle
         }
     }
     
     open override var textColor: UIColor! {
         get { return self.style.foregroundColor }
-        set { self.style?.foregroundColor = newValue }
+        set { self.style.foregroundColor = newValue }
     }
-    
     
     public convenience init() {
         self.init(style: TextStyle())
     }
     
-    // A copy of style will be created
     public required init(style: TextStyle, frame: CGRect = .zero) {
-        
+        self.style = style
         
         super.init(frame: frame, textContainer: nil)
-        // Set style and ensure that didSet is called
-        ({
-            self.style = style
-            self.setDefaults()
-            self.style.delegate = self
-        })()
+        self.isEditable = false
+        
+        // Ensure didSet is called in self.style
+        ({ self.style = style })()
+        self.loadDefaults()
     }
     
     public required init?(coder aDecoder: NSCoder) {
-        fatalError("not supported")
+        fatalError("Interface Builder is not supported")
     }
     
+    internal func didUpdate(style: TextStyle) {
+        self.redrawText()
+    }
     
-    private func setDefaults() {
-        /// If the font/textColor are not set yet by the TextStyle passed in, then set some default values
-        self.text = nil
-        
-        if self.style.font == nil  {
+    private func loadDefaults() {
+        if self.style.font == nil {
             self.style.font = super.font
         }
         
@@ -115,16 +102,14 @@ open class TextyTextView: UITextView, TextStyleDelegate {
         }
         
         if self.style.paragraphStyle == nil {
-            let pstyle: NSMutableParagraphStyle = NSMutableParagraphStyle()
-            pstyle.alignment = .natural
-            pstyle.lineBreakMode = .byWordWrapping
-            self.style.paragraphStyle = pstyle
+            let paragraphStyle: NSMutableParagraphStyle = NSMutableParagraphStyle()
+            paragraphStyle.alignment = .natural
+            paragraphStyle.lineBreakMode = .byWordWrapping
+            self.style.paragraphStyle = paragraphStyle
         }
     }
     
-    internal func didUpdate(style: TextStyle) {
-        /// Update attributed string with new attributes called by the textStyle when it detects an update
-        self.text = possiblyTaggedText
+    private func redrawText() {
+        self.attributedText = style.attributedString(with: self.taggedText)
     }
-    
 }
