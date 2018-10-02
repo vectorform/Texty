@@ -30,12 +30,7 @@ import Foundation
 import UIKit
 import Texty
 
-
-
-
 class ButtonViewController2: UIViewController{
-    
-    
     override func loadView() {
         super.loadView()
         
@@ -88,12 +83,10 @@ class ButtonViewController2: UIViewController{
         textyButton5.setTitleShadowColor(UIColor.yellow, for: .highlighted)
         textyButton5.titleLabel?.shadowOffset = CGSize(width: 2.0, height: 2.0);
         
-        
         let uiButtonStackView = UIStackView(arrangedSubviews: [test1Buttons[0],test2Buttons[0],test3Buttons[0],test4Buttons[0],uiButton5])
         uiButtonStackView.axis = .vertical
         uiButtonStackView.spacing = 10
         uiButtonStackView.distribution = .fillEqually
-        
         
         let textyButtonStackView = UIStackView(arrangedSubviews: [test1Buttons[1],test2Buttons[1],test3Buttons[1],test4Buttons[1],textyButton5])
         textyButtonStackView.axis = .vertical
@@ -110,12 +103,13 @@ class ButtonViewController2: UIViewController{
         
         NSLayoutConstraint(item: columnStackView, attribute: .left, relatedBy: .equal, toItem: self.view, attribute: .left, multiplier: 1.0, constant: 0.0).isActive = true
         NSLayoutConstraint(item: columnStackView, attribute: .right, relatedBy: .equal, toItem: self.view, attribute: .right, multiplier: 1.0, constant: 0.0).isActive = true
-        NSLayoutConstraint(item: columnStackView, attribute: .top, relatedBy: .equal, toItem: self.view, attribute: .top, multiplier: 1.0, constant: 0.0).isActive = true
-        NSLayoutConstraint(item: columnStackView, attribute: .bottom, relatedBy: .equal, toItem: self.view, attribute: .bottom, multiplier: 1.0, constant: -60.0).isActive = true
-        
-        
+    
+        if #available(iOS 11.0, *) {
+            NSLayoutConstraint(item: columnStackView, attribute: .top, relatedBy: .equal, toItem: self.view.safeAreaLayoutGuide, attribute: .top, multiplier: 1.0, constant: 0.0).isActive = true
+            NSLayoutConstraint(item: columnStackView, attribute: .bottom, relatedBy: .equal, toItem: self.view.safeAreaLayoutGuide, attribute: .bottom, multiplier: 1.0, constant: -60.0).isActive = true
+        } else {
+            NSLayoutConstraint(item: columnStackView, attribute: .top, relatedBy: .equal, toItem: self.view, attribute: .top, multiplier: 1.0, constant: 0.0).isActive = true
+            NSLayoutConstraint(item: columnStackView, attribute: .bottom, relatedBy: .equal, toItem: self.view, attribute: .bottom, multiplier: 1.0, constant: -60.0).isActive = true
+        }
     }
-    
-    
-    
 }

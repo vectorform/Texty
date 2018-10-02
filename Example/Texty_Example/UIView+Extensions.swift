@@ -1,8 +1,8 @@
-// Copyright (c) 2017 Vectorform, LLC
+// Copyright (c) 2018 Vectorform, LLC
 //
 // Redistribution and use in source and binary forms, with or without modification,
 // are permitted provided that the following conditions are met:
-//
+///Users/cbechtel/Desktop/Yarp Repo/Yarp/README.md
 // 1. Redistributions of source code must retain the above copyright notice, this
 // list of conditions and the following disclaimer.
 //
@@ -28,10 +28,22 @@
 import Foundation
 import UIKit
 
-import Texty
-
-struct Styles {
-    static let Header: TextStyle = TextStyle(attributes: [.foregroundColor : UIColor.black, .font : UIFont.boldSystemFont(ofSize: 24.0)])
-    static let Body: TextStyle = TextStyle(attributes: [.foregroundColor : UIColor.black, .font : UIFont.systemFont(ofSize: 12.0)])
-    static let PopupHeader: TextStyle = TextStyle(attributes: [.foregroundColor : UIColor.black, .font : UIFont.systemFont(ofSize: 20.0)])
+extension UIView {
+    func constrainEdgesToSuperview() {
+        guard let superview: UIView = self.superview else {
+            return
+        }
+        
+        let toView: Any
+        if #available(iOS 11.0, *) {
+            toView = superview.safeAreaLayoutGuide
+        } else {
+            toView = superview
+        }
+        
+        NSLayoutConstraint(item: self, attribute: .left, relatedBy: .equal, toItem: toView, attribute: .left, multiplier: 1.0, constant: 0.0).isActive = true
+        NSLayoutConstraint(item: self, attribute: .right, relatedBy: .equal, toItem: toView, attribute: .right, multiplier: 1.0, constant: 0.0).isActive = true
+        NSLayoutConstraint(item: self, attribute: .top, relatedBy: .equal, toItem: toView, attribute: .top, multiplier: 1.0, constant: 0.0).isActive = true
+        NSLayoutConstraint(item: self, attribute: .bottom, relatedBy: .equal, toItem: toView, attribute: .bottom, multiplier: 1.0, constant: 0.0).isActive = true
+    }
 }
