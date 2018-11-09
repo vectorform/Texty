@@ -1,4 +1,4 @@
-// Copyright (c) 2017 Vectorform, LLC
+// Copyright (c) 2018 Vectorform, LLC
 //
 // Redistribution and use in source and binary forms, with or without modification,
 // are permitted provided that the following conditions are met:
@@ -25,13 +25,10 @@
 // ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 // POSSIBILITY OF SUCH DAMAGE.
 
-
 import Foundation
 import UIKit
 
-
 public enum TextAttribute: String {
-    
     case attachment = "attachment"
     case backgroundColor = "backgroundColor"
     case baselineOffset = "baselineOffset"
@@ -62,10 +59,8 @@ public enum TextAttribute: String {
     // case textAlternatives
     // case toolTip
     
-    
     internal var NSAttribute: NSAttributedString.Key {
         switch(self) {
-            
         case .attachment:           return NSAttributedString.Key.attachment
         case .backgroundColor:      return NSAttributedString.Key.backgroundColor
         case .baselineOffset:       return NSAttributedString.Key.baselineOffset
@@ -87,13 +82,11 @@ public enum TextAttribute: String {
         case .underlineStyle:       return NSAttributedString.Key.underlineStyle
         case .verticalGlyphForm:    return NSAttributedString.Key.verticalGlyphForm
         case .writingDirection:     return NSAttributedString.Key.writingDirection
-            
         }
     }
     
     internal var properTypeString: String {
         switch(self) {
-            
         case .attachment:           return "NSTextAttachment"
         case .font:                 return "UIFont"
         case .link:                 return "NSURL or NSString"
@@ -104,23 +97,22 @@ public enum TextAttribute: String {
             
         case .backgroundColor, .foregroundColor, .strikethroughColor, .strokeColor, .underlineColor:                                                return "UIColor"
         case .baselineOffset, .expansion, .kern, .ligature, .obliqueness, .strikethroughStyle, .strokeWidth, .underlineStyle, .verticalGlyphForm:   return "NSNumber"
-            
         }
     }
     
-    internal static func convert(attributes: [TextAttribute : Any]) -> [NSAttributedString.Key : Any] {
+    internal static func convertToNative(_ attributes: [TextAttribute : Any]) -> [NSAttributedString.Key: Any] {
         var convertedAttributes: [NSAttributedString.Key : Any] = [:]
         
-        for (k, v) in attributes {
-            assert(k.isProperType(object: v), "value for attribute \"\(k.rawValue)\" is \"\(String(describing: type(of: v)))\" - should be \"\(k.properTypeString)\"")
-            convertedAttributes[k.NSAttribute] = v
+        attributes.forEach { (key, value) in
+            assert(key.isProperType(object: value), "value for attribute \"\(key.rawValue)\" is \"\(String(describing: type(of: value)))\" - should be \"\(key.properTypeString)\"")
+            convertedAttributes[key.NSAttribute] = value
         }
+        
         return convertedAttributes
     }
     
     internal func isProperType(object: Any) -> Bool {
         switch(self) {
-            
         case .attachment:           return (object is NSTextAttachment)
         case .font:                 return (object is UIFont)
         case .paragraphStyle:       return (object is NSParagraphStyle)
@@ -131,9 +123,7 @@ public enum TextAttribute: String {
             
         case .backgroundColor, .foregroundColor, .strikethroughColor, .strokeColor, .underlineColor:                                                return (object is UIColor)
         case .baselineOffset, .expansion, .kern, .ligature, .obliqueness, .strikethroughStyle, .strokeWidth, .underlineStyle, .verticalGlyphForm:   return (object is NSNumber)
-        
         }
     }
-    
 }
 

@@ -25,20 +25,38 @@
 // ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 // POSSIBILITY OF SUCH DAMAGE.
 
-
 import Foundation
 import UIKit
 
-
-class AdjustSizeView: AdjustValueView {
+class ModificationButton: UIButton {
+    convenience init() {
+        self.init(frame: .zero)
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.title = "Adjust Size"
+        
+        self.backgroundColor = UIColor.white
+        self.setTitleColor(UIColor.lightGray, for: .normal)
+        self.layer.borderColor = UIColor.lightGray.cgColor
+        self.layer.borderWidth = 3.0
+        self.layer.cornerRadius = 5.0
+        
+        self.addTarget(self, action: #selector(onTouchDown), for: .allTouchDownEvents)
+        self.addTarget(self, action: #selector(onTouchUp), for: .allTouchUpEvents)
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("not supported")
     }
     
+    @objc private func onTouchDown() {
+        self.backgroundColor = UIColor.lightGray
+        self.setTitleColor(UIColor.white, for: .normal)
+    }
+    
+    @objc private func onTouchUp() {
+        self.backgroundColor = UIColor.white
+        self.setTitleColor(UIColor.lightGray, for: .normal)
+    }
 }

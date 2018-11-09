@@ -1,4 +1,4 @@
-// Copyright (c) 2017 Vectorform, LLC
+// Copyright (c) 2018 Vectorform, LLC
 //
 // Redistribution and use in source and binary forms, with or without modification,
 // are permitted provided that the following conditions are met:
@@ -25,36 +25,30 @@
 // ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 // POSSIBILITY OF SUCH DAMAGE.
 
-
 import Foundation
 import UIKit
 
-
 internal protocol TextStyleDelegate: class {
-    
     func didUpdate(style: TextStyle) -> Void
-    
 }
 
-
 public class TextStyle {
-    
     internal weak var delegate: TextStyleDelegate?
     
     fileprivate var attributes: [NSAttributedString.Key : Any] = [:]
     fileprivate var taggedAttributes: [String : TextStyle] = [:]
     
-    public init(with textStyle: TextStyle){
-       
-        for (key, attribute) in textStyle.attributes{
-            if let attribute = attribute as? NSCopying{
+    public init(with textStyle: TextStyle) {
+        textStyle.attributes.forEach { (key, attribute) in
+            if let attribute = attribute as? NSCopying {
                 self.attributes[key] = attribute.copy()
-            }else{
+            } else {
                 self.attributes[key] = attribute
             }
         }
-        for (key, textStyle) in textStyle.taggedAttributes{
-            self.taggedAttributes[key] = TextStyle(with: textStyle)
+        
+        textStyle.taggedAttributes.forEach { (key, style) in
+            self.taggedAttributes[key] = TextStyle(with: style)
         }
     }
     
@@ -62,9 +56,8 @@ public class TextStyle {
         guard let attributes = attributes else {
             return
         }
-        self.attributes = TextAttribute.convert(attributes: attributes)
+        self.attributes = TextAttribute.convertToNative(attributes)
     }
-    
     
     private func findStyle(forTag: String) -> TextStyle? {
         return self.taggedAttributes.filter { $0.key == forTag }.first?.value
@@ -79,8 +72,11 @@ public class TextStyle {
         self.delegate?.didUpdate(style: self)
     }
     
-    public func attributedString(with string: String) -> NSAttributedString {
-        var mutableString: String = string
+    public func attributedString(with string: String?) -> NSAttributedString? {
+        guard var mutableString: String = string else {
+            return nil
+        }
+        
         var attributedString: NSMutableAttributedString
         
         if(self.taggedAttributes.count > 0) {
@@ -96,7 +92,6 @@ public class TextStyle {
             attributedString = NSMutableAttributedString(string: mutableString, attributes: self.attributes)
         }
         
-        
         return attributedString
     }
     
@@ -108,12 +103,9 @@ public class TextStyle {
         self.taggedAttributes[forTag] = style
         self.delegate?.didUpdate(style: self)
     }
-    
 }
 
-
 public extension TextStyle {
-    
     public var attachment: NSTextAttachment? {
         get { return self.attributes[TextAttribute.attachment.NSAttribute] as? NSTextAttachment }
         set { self.set(value: newValue, for: TextAttribute.attachment) }
@@ -223,5 +215,4 @@ public extension TextStyle {
         get { return self.attributes[TextAttribute.writingDirection.NSAttribute] as? [NSNumber] }
         set { self.set(value: newValue, for: TextAttribute.writingDirection) }
     }
-
 }

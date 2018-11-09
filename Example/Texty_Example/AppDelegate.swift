@@ -1,4 +1,4 @@
-// Copyright (c) 2017 Vectorform, LLC
+// Copyright (c) 2018 Vectorform, LLC
 //
 // Redistribution and use in source and binary forms, with or without modification,
 // are permitted provided that the following conditions are met:
@@ -25,27 +25,24 @@
 // ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 // POSSIBILITY OF SUCH DAMAGE.
 
-
 import UIKit
-
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
     var window: UIWindow?
     
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        let tabController: UITabBarController = UITabBarController()
         self.window = UIWindow()
         
-        self.window!.frame = UIScreen.main.bounds
-        self.window!.backgroundColor = UIColor.black
-        let tabController = UITabBarController()
         tabController.setViewControllers([LabelViewController(), ButtonViewController1(), ButtonViewController2(), TextViewViewController()], animated: false)
         tabController.tabBar.items?[0].title = "Label"
         tabController.tabBar.items?[1].title = "Button1"
         tabController.tabBar.items?[2].title = "Button2"
         tabController.tabBar.items?[3].title = "TextView"
+        
+        self.window!.backgroundColor = UIColor.black
+        self.window!.frame = UIScreen.main.bounds
         self.window!.rootViewController = tabController
         
         self.window!.makeKeyAndVisible()
@@ -54,7 +51,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
-        
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {
@@ -68,6 +64,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(_ application: UIApplication) {
     }
-
 }
 
