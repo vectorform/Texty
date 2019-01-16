@@ -85,7 +85,7 @@ public class TextStyle {
             
             tags.forEach { (name, range) in
                 let style: TextStyle! = self.findStyle(forTag: name)
-                assert(style != nil, "unregistered tag \"<\(name)>\" found in string")
+                assert(style != nil, "unregistered tag \"<\(name)>\" found in string. Use TextStyle.setStyle(style:forTag:) to register a tag")
                 attributedString.addAttributes(style.attributes, range: range)
             }
         } else {
