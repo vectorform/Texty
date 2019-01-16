@@ -1,4 +1,4 @@
-[![Swift 4 Compatible](https://img.shields.io/badge/swift4-compatible-4BC51D.svg?style=flat)](https://developer.apple.com/swift)
+[![Build Status](https://travis-ci.org/vectorform/Texty.svg)](https://travis-ci.org/vectorform/Texty)
 [![Platform](https://img.shields.io/cocoapods/p/Texty.svg?style=flat)](http://cocoadocs.org/docsets/Texty)
 [![CocoaPods Compatible](https://img.shields.io/cocoapods/v/Texty.svg)](https://img.shields.io/cocoapods/v/Texty.svg)
 [![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
