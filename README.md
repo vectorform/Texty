@@ -32,7 +32,7 @@ platform :ios, '10.0'
 use_frameworks!
 
 target '<Your Target Name>' do
-    pod 'Texty', '~> 0.2.2'
+    pod 'Texty', '~> 0.2.3'
 end
 ```
 
