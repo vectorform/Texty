@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<testsuites name='TextyTests.xctest' tests='2' failures='0'>
+  <testsuite name='TextyTests.TextyTests' tests='2' failures='0'>
+    <testcase classname='TextyTests.TextyTests' name='testExample' time='0.001'/>
+    <testcase classname='TextyTests.TextyTests' name='testPerformanceExample' time='0.358'/>
+  </testsuite>
+</testsuites>

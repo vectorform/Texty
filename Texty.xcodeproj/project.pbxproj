@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F02F713C21EFE86A009F9F2A /* TextyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02F713B21EFE86A009F9F2A /* TextyTests.swift */; };
+		F02F713E21EFE86B009F9F2A /* Texty.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0E3719B1EAE82FF00BDEC7F /* Texty.framework */; };
 		F0653ECF1ECA3FF200F53406 /* TextyTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0653ECE1ECA3FF200F53406 /* TextyTextView.swift */; };
 		F0742EB81EAE84A3005ADB12 /* Texty.h in Headers */ = {isa = PBXBuildFile; fileRef = F0742EB61EAE84A3005ADB12 /* Texty.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F0742EBF1EAE84E0005ADB12 /* Scanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0742EB91EAE84E0005ADB12 /* Scanner.swift */; };
@@ -18,7 +20,20 @@
 		F0A7BEB81EB2660500160253 /* TextyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A7BEB71EB2660500160253 /* TextyButton.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		F02F713F21EFE86B009F9F2A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F0E371921EAE82FF00BDEC7F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F0E3719A1EAE82FF00BDEC7F;
+			remoteInfo = Texty;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		F02F713921EFE86A009F9F2A /* TextyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TextyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F02F713B21EFE86A009F9F2A /* TextyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextyTests.swift; sourceTree = "<group>"; };
+		F02F713D21EFE86A009F9F2A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F0653ECE1ECA3FF200F53406 /* TextyTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextyTextView.swift; path = Source/TextyTextView.swift; sourceTree = SOURCE_ROOT; };
 		F0742EB51EAE84A3005ADB12 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Source/Info.plist; sourceTree = SOURCE_ROOT; };
 		F0742EB61EAE84A3005ADB12 /* Texty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Texty.h; path = Source/Texty.h; sourceTree = SOURCE_ROOT; };
@@ -33,6 +48,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		F02F713621EFE86A009F9F2A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F02F713E21EFE86B009F9F2A /* Texty.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F0E371971EAE82FF00BDEC7F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -43,6 +66,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F02F713A21EFE86A009F9F2A /* TextyTests */ = {
+			isa = PBXGroup;
+			children = (
+				F02F713B21EFE86A009F9F2A /* TextyTests.swift */,
+				F02F713D21EFE86A009F9F2A /* Info.plist */,
+			);
+			path = TextyTests;
+			sourceTree = "<group>";
+		};
 		F0742EC51EAE84F2005ADB12 /* Source */ = {
 			isa = PBXGroup;
 			children = (
@@ -62,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				F0E3719D1EAE82FF00BDEC7F /* Texty */,
+				F02F713A21EFE86A009F9F2A /* TextyTests */,
 				F0E3719C1EAE82FF00BDEC7F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -70,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				F0E3719B1EAE82FF00BDEC7F /* Texty.framework */,
+				F02F713921EFE86A009F9F2A /* TextyTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -98,6 +132,24 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		F02F713821EFE86A009F9F2A /* TextyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F02F714321EFE86B009F9F2A /* Build configuration list for PBXNativeTarget "TextyTests" */;
+			buildPhases = (
+				F02F713521EFE86A009F9F2A /* Sources */,
+				F02F713621EFE86A009F9F2A /* Frameworks */,
+				F02F713721EFE86A009F9F2A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F02F714021EFE86B009F9F2A /* PBXTargetDependency */,
+			);
+			name = TextyTests;
+			productName = TextyTests;
+			productReference = F02F713921EFE86A009F9F2A /* TextyTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		F0E3719A1EAE82FF00BDEC7F /* Texty */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = F0E371A31EAE82FF00BDEC7F /* Build configuration list for PBXNativeTarget "Texty" */;
@@ -122,9 +174,15 @@
 		F0E371921EAE82FF00BDEC7F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 1010;
 				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = Vectorform;
 				TargetAttributes = {
+					F02F713821EFE86A009F9F2A = {
+						CreatedOnToolsVersion = 10.1;
+						DevelopmentTeam = D3F43CM6W7;
+						ProvisioningStyle = Automatic;
+					};
 					F0E3719A1EAE82FF00BDEC7F = {
 						CreatedOnToolsVersion = 8.3;
 						LastSwiftMigration = 0900;
@@ -145,11 +203,19 @@
 			projectRoot = "";
 			targets = (
 				F0E3719A1EAE82FF00BDEC7F /* Texty */,
+				F02F713821EFE86A009F9F2A /* TextyTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		F02F713721EFE86A009F9F2A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F0E371991EAE82FF00BDEC7F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -160,6 +226,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		F02F713521EFE86A009F9F2A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F02F713C21EFE86A009F9F2A /* TextyTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F0E371961EAE82FF00BDEC7F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -177,7 +251,58 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		F02F714021EFE86B009F9F2A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F0E3719A1EAE82FF00BDEC7F /* Texty */;
+			targetProxy = F02F713F21EFE86B009F9F2A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		F02F714121EFE86B009F9F2A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D3F43CM6W7;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = TextyTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = vectorform.TextyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F02F714221EFE86B009F9F2A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D3F43CM6W7;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = TextyTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = vectorform.TextyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		F0E371A11EAE82FF00BDEC7F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -341,6 +466,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		F02F714321EFE86B009F9F2A /* Build configuration list for PBXNativeTarget "TextyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F02F714121EFE86B009F9F2A /* Debug */,
+				F02F714221EFE86B009F9F2A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		F0E371951EAE82FF00BDEC7F /* Build configuration list for PBXProject "Texty" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

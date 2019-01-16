@@ -1,0 +1,5 @@
+language: swift
+osx_image: xcode10
+
+script:
+  - fastlane run_unit_tests
