@@ -104,7 +104,7 @@ public enum TextAttribute: String {
         var convertedAttributes: [NSAttributedString.Key : Any] = [:]
         
         attributes.forEach { (key, value) in
-            assert(key.isProperType(object: value), "value for attribute \"\(key.rawValue)\" is \"\(String(describing: type(of: value)))\" - should be \"\(key.properTypeString)\"")
+            assert(key.isProperType(object: value), "Texty: value for attribute \"\(key.rawValue)\" is \"\(String(describing: type(of: value)))\" - should be \"\(key.properTypeString)\"")
             convertedAttributes[key.NSAttribute] = value
         }
         

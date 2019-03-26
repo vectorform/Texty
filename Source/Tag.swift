@@ -45,7 +45,7 @@ internal struct Tag: Hashable {
     
     
     public init(string: String, location: Int, closing: Bool, short: Bool) {
-        assert(!(closing && short), "a tag can be closing, short, or neither, but not both closing and short")
+        assert(!(closing && short), "Texty: a tag can be closing, short, or neither, but not both closing and short")
         self.closing = closing
         self.short = short
         self.name = string
