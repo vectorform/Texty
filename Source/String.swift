@@ -53,8 +53,8 @@ internal extension String {
                     let correctedTag = String(tag.dropLast())
                     locationOffset += 2 + tag.count
                     
-                    assert(lastOpenTag != nil, "found closing tag \"<\(correctedTag)/>\" without opening tag")
-                    assert(correctedTag == lastOpenTag!, "found nonmatcing tags \"<\(lastOpenTag!)>\" and \"<\(correctedTag)\"/>")
+                    assert(lastOpenTag != nil, "Texty: found closing tag \"<\(correctedTag)/>\" without opening tag")
+                    assert(correctedTag == lastOpenTag!, "Texty: found nonmatcing tags \"<\(lastOpenTag!)>\" and \"<\(correctedTag)\"/>")
                     
                     tags[correctedTag]!.length = length
                     return length
@@ -143,17 +143,17 @@ internal extension String {
             //The tag is closing, and we need to find the first opening tag for it
             //== compares Tag.name properties only
             guard let index = openTags.index(of: tag) else {
-                fatalError("unbalanced tags found in string")
+                assertionFailure("Texty: closing tag found without opening tag (unbalanced tags found in string)")
+                continue
             }
             
             ret.append((tag: tag.name, range: NSRange(location: openTags[index].location, length: tag.location - openTags[index].location)))
             openTags.remove(at: index)
         }
         
-        guard openTags.count == 0 else {
-            fatalError("unbalanced tags found in string")
+        if openTags.count == 0  {
+            assertionFailure("Texty: open tags without matching closing tags (unbalanced tags found in string)")
         }
-        
         
         self = newString
         return ret

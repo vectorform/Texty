@@ -84,9 +84,12 @@ public class TextStyle {
             attributedString = NSMutableAttributedString(string: mutableString, attributes: self.attributes)
             
             tags.forEach { (name, range) in
-                let style: TextStyle! = self.findStyle(forTag: name)
-                assert(style != nil, "unregistered tag \"<\(name)>\" found in string. Use TextStyle.setStyle(style:forTag:) to register a tag")
-                attributedString.addAttributes(style.attributes, range: range)
+                if let style = self.findStyle(forTag: name) {
+                    attributedString.addAttributes(style.attributes, range: range)
+                }
+                else {
+                    print("Texty: unregistered tag \"<\(name)>\" found in string. Use TextStyle.setStyle(style:forTag:) to register a tag")
+                }
             }
         } else {
             attributedString = NSMutableAttributedString(string: mutableString, attributes: self.attributes)
