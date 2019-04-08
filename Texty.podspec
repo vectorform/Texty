@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'Texty'
-  s.version          = '0.2.4'
+  s.version          = '0.2.5'
   s.summary          = 'Enjoy clean and easy text styling using a simplified and structured syntax.'
 
   s.description      = <<-DESC
