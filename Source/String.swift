@@ -151,7 +151,7 @@ internal extension String {
             openTags.remove(at: index)
         }
         
-        if openTags.count == 0  {
+        guard openTags.count == 0 else {
             assertionFailure("Texty: open tags without matching closing tags (unbalanced tags found in string)")
         }
         
