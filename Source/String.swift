@@ -153,7 +153,7 @@ internal extension String {
         
         guard openTags.count == 0 else {
             assertionFailure("Texty: open tags without matching closing tags (unbalanced tags found in string)")
-            return
+            return ret
         }
         
         self = newString
