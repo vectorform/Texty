@@ -102,9 +102,9 @@ internal extension String {
                 newString += "<"
                 break
             }
-            
+ 
             //This will check for consecutive '<' characters (i.e. <underline> < </underline>)
-            if(String(self[self.index(self.startIndex, offsetBy: scanner.scanLocation)]) == "<") {
+            if scanner.scanLocation < self.count, String(self[self.index(self.startIndex, offsetBy: scanner.scanLocation)]) == "<" {
                 //The next loop will catch the next '<'
                 newString += "<" + tagString
                 continue
