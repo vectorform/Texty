@@ -12,7 +12,7 @@ Created and maintained by Vectorform, LLC.
 ## Requirements:
 - iOS 8.0+
 - Xcode 10.0+
-- Swift 4.2+
+- Swift 5.0+
 
 
 ## Installation
