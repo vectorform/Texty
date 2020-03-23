@@ -109,112 +109,112 @@ public class TextStyle {
 }
 
 public extension TextStyle {
-    public var attachment: NSTextAttachment? {
+    var attachment: NSTextAttachment? {
         get { return self.attributes[TextAttribute.attachment.NSAttribute] as? NSTextAttachment }
         set { self.set(value: newValue, for: TextAttribute.attachment) }
     }
     
-    public var backgroundColor: UIColor? {
+    var backgroundColor: UIColor? {
         get { return self.attributes[TextAttribute.backgroundColor.NSAttribute] as? UIColor }
         set { self.set(value: newValue, for: TextAttribute.backgroundColor) }
     }
     
-    public var baselineOffset: NSNumber? {
+    var baselineOffset: NSNumber? {
         get { return self.attributes[TextAttribute.baselineOffset.NSAttribute] as? NSNumber }
         set { self.set(value: newValue, for: TextAttribute.baselineOffset) }
     }
     
-    public var expansion: NSNumber? {
+    var expansion: NSNumber? {
         get { return self.attributes[TextAttribute.expansion.NSAttribute] as? NSNumber }
         set { self.set(value: newValue, for: TextAttribute.expansion) }
     }
     
-    public var font: UIFont? {
+    var font: UIFont? {
         get { return self.attributes[TextAttribute.font.NSAttribute] as? UIFont }
         set { self.set(value: newValue, for: TextAttribute.font) }
     }
     
-    public var foregroundColor: UIColor? {
+    var foregroundColor: UIColor? {
         get { return self.attributes[TextAttribute.foregroundColor.NSAttribute] as? UIColor }
         set { self.set(value: newValue, for: TextAttribute.foregroundColor) }
     }
     
-    public var kern: NSNumber? {
+    var kern: NSNumber? {
         get { return self.attributes[TextAttribute.kern.NSAttribute] as? NSNumber }
         set { self.set(value: newValue, for: TextAttribute.kern) }
     }
     
-    public var ligature: NSNumber? {
+    var ligature: NSNumber? {
         get { return self.attributes[TextAttribute.ligature.NSAttribute] as? NSNumber }
         set { self.set(value: newValue, for: TextAttribute.ligature) }
     }
     
-    public var linkString: NSString? {
+    var linkString: NSString? {
         get { return self.attributes[TextAttribute.link.NSAttribute] as? NSString }
         set { self.set(value: newValue, for: TextAttribute.link) }
     }
     
-    public var linkURL: NSURL? {
+    var linkURL: NSURL? {
         get { return self.attributes[TextAttribute.link.NSAttribute] as? NSURL }
         set { self.set(value: newValue, for: TextAttribute.link) }
     }
     
-    public var obliqueness: NSNumber? {
+    var obliqueness: NSNumber? {
         get { return self.attributes[TextAttribute.obliqueness.NSAttribute] as? NSNumber }
         set { self.set(value: newValue, for: TextAttribute.obliqueness) }
     }
     
-    public var paragraphStyle: NSParagraphStyle? {
+    var paragraphStyle: NSParagraphStyle? {
         get { return self.attributes[TextAttribute.paragraphStyle.NSAttribute] as? NSParagraphStyle }
         set { self.set(value: newValue, for: TextAttribute.paragraphStyle) }
     }
     
-    public var shadow: NSShadow? {
+    var shadow: NSShadow? {
         get { return self.attributes[TextAttribute.shadow.NSAttribute] as? NSShadow }
         set { self.set(value: newValue, for: TextAttribute.shadow) }
     }
     
-    public var strikethroughColor: UIColor? {
+    var strikethroughColor: UIColor? {
         get { return self.attributes[TextAttribute.strikethroughColor.NSAttribute] as? UIColor }
         set { self.set(value: newValue, for: TextAttribute.strikethroughColor) }
     }
     
-    public var strikethroughStyle: NSNumber? {
+    var strikethroughStyle: NSNumber? {
         get { return self.attributes[TextAttribute.strikethroughStyle.NSAttribute] as? NSNumber }
         set { self.set(value: newValue, for: TextAttribute.strikethroughStyle) }
     }
     
-    public var strokeColor: UIColor? {
+    var strokeColor: UIColor? {
         get { return self.attributes[TextAttribute.strokeColor.NSAttribute] as? UIColor }
         set { self.set(value: newValue, for: TextAttribute.strokeColor) }
     }
     
-    public var strokeWidth: NSNumber? {
+    var strokeWidth: NSNumber? {
         get { return self.attributes[TextAttribute.strokeWidth.NSAttribute] as? NSNumber }
         set { self.set(value: newValue, for: TextAttribute.strokeWidth) }
     }
     
-    public var textEffect: NSString? {
+    var textEffect: NSString? {
         get { return self.attributes[TextAttribute.textEffect.NSAttribute] as? NSString }
         set { self.set(value: newValue, for: TextAttribute.textEffect) }
     }
     
-    public var underlineColor: UIColor? {
+    var underlineColor: UIColor? {
         get { return self.attributes[TextAttribute.underlineColor.NSAttribute] as? UIColor }
         set { self.set(value: newValue, for: TextAttribute.underlineColor) }
     }
     
-    public var underlineStyle: NSNumber? {
+    var underlineStyle: NSNumber? {
         get { return self.attributes[TextAttribute.underlineStyle.NSAttribute] as? NSNumber }
         set { self.set(value: newValue, for: TextAttribute.underlineStyle) }
     }
     
-    public var verticalGlyphForm: NSNumber? {
+    var verticalGlyphForm: NSNumber? {
         get { return self.attributes[TextAttribute.verticalGlyphForm.NSAttribute] as? NSNumber }
         set { self.set(value: newValue, for: TextAttribute.verticalGlyphForm) }
     }
     
-    public var writingDirection: [NSNumber]? {
+    var writingDirection: [NSNumber]? {
         get { return self.attributes[TextAttribute.writingDirection.NSAttribute] as? [NSNumber] }
         set { self.set(value: newValue, for: TextAttribute.writingDirection) }
     }

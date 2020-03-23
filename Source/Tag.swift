@@ -40,8 +40,9 @@ internal struct Tag: Hashable {
     internal let name: String
     internal let location: Int
     
-    
-    public var hashValue: Int { return self.name.hashValue }
+    func hash(into hasher: inout Hasher) {
+        return self.name.hash(into: &hasher)
+    }
     
     
     public init(string: String, location: Int, closing: Bool, short: Bool) {

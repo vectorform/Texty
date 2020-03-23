@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'Texty'
-  s.version          = '0.2.5'
+  s.version          = '0.2.6'
   s.summary          = 'Enjoy clean and easy text styling using a simplified and structured syntax.'
 
   s.description      = <<-DESC
@@ -13,6 +13,7 @@ DESC
   s.author           = { 'Vectorform' => 'jmeador@vectorform.com', 'Igor Efremov' => 'igor@efremov.io' }
   s.source           = { :git => 'https://github.com/vectorform/Texty.git', :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/vectorform'
+  s.swift_versions   = ['5.0']
 
   s.ios.deployment_target = '8.0'
 

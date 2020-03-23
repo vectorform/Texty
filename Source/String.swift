@@ -70,7 +70,7 @@ internal extension String {
     }
     
     
-    internal mutating func findAndRemoveTags() -> [(tag: String, range: NSRange)] {
+    mutating func findAndRemoveTags() -> [(tag: String, range: NSRange)] {
         let scanner: Scanner = Scanner(string: self)
         
         var tagLocation: Int
@@ -142,7 +142,7 @@ internal extension String {
             
             //The tag is closing, and we need to find the first opening tag for it
             //== compares Tag.name properties only
-            guard let index = openTags.index(of: tag) else {
+            guard let index = openTags.firstIndex(of: tag) else {
                 assertionFailure("Texty: closing tag found without opening tag (unbalanced tags found in string)")
                 continue
             }
@@ -161,7 +161,7 @@ internal extension String {
     }
 
     
-    internal mutating func stripTags() -> [String : NSRange] {
+    mutating func stripTags() -> [String : NSRange] {
         let scanner: Scanner = Scanner(string: self)
         var tags: [String : NSRange] = [:]
         var locationOffset: Int = 0

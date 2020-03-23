@@ -32,14 +32,14 @@ import Foundation
 internal extension Scanner {
     
     
-    internal func incrementLocation() {
+    func incrementLocation() {
         guard !self.isAtEnd else {
             return
         }
         self.scanLocation += 1 
     }
     
-    internal func scan(upto string: String) -> String? {
+    func scan(upto string: String) -> String? {
         var ptr: NSString? = ""
         guard self.scanUpTo(string, into: &ptr) || ((!self.isAtEnd) && ((self.string as NSString).substring(from: self.scanLocation).hasPrefix(string))) else {
             return nil
@@ -47,7 +47,7 @@ internal extension Scanner {
         return ptr as String?
     }
     
-    internal func scanUpToString(_ string: String) -> String? {
+    func scanUpToString(_ string: String) -> String? {
         var ptr: NSString? = ""
         guard self.scanUpTo(string, into: &ptr) || (!self.isAtEnd) else {
             return nil
@@ -55,7 +55,7 @@ internal extension Scanner {
         return ptr as String?
     }
     
-    internal func scanUpToCharacters(_ characterSet: CharacterSet) -> String? {
+    func scanUpToCharacters(_ characterSet: CharacterSet) -> String? {
         var ptr: NSString? = ""
         guard self.scanUpToCharacters(from: characterSet, into: &ptr) || (!self.isAtEnd) else {
             return nil
