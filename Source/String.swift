@@ -25,9 +25,7 @@
 // ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 // POSSIBILITY OF SUCH DAMAGE.
 
-
 import Foundation
-
 
 internal extension String {
     
@@ -38,15 +36,15 @@ internal extension String {
         
         var openLocation: Int
         var length: Int = 0
-        
-        while let left: String = scanner.scan(upto: "<") {
-            openLocation = scanner.scanLocation
-            
+
+        while let left: String = scanner.scanUpToString("<") {
+            openLocation = scanner.currentIndex.utf16Offset(in: self)
+
             scanner.incrementLocation()
             self.append(left)
             length += left.count
             
-            if let tag: String = scanner.scan(upto: ">") {
+            if let tag: String = scanner.scanUpToString(">") {
                 scanner.incrementLocation()
                 
                 if(tag.hasSuffix("/")) {
@@ -54,7 +52,7 @@ internal extension String {
                     locationOffset += 2 + tag.count
                     
                     assert(lastOpenTag != nil, "Texty: found closing tag \"<\(correctedTag)/>\" without opening tag")
-                    assert(correctedTag == lastOpenTag!, "Texty: found nonmatcing tags \"<\(lastOpenTag!)>\" and \"<\(correctedTag)\"/>")
+                    assert(correctedTag == lastOpenTag!, "Texty: found non-matching tags \"<\(lastOpenTag!)>\" and \"<\(correctedTag)\"/>")
                     
                     tags[correctedTag]!.length = length
                     return length
@@ -68,7 +66,6 @@ internal extension String {
 
         return length
     }
-    
     
     mutating func findAndRemoveTags() -> [(tag: String, range: NSRange)] {
         let scanner: Scanner = Scanner(string: self)
@@ -85,8 +82,7 @@ internal extension String {
         
         var ret: [(tag: String, range: NSRange)] = []
         var openTags: [Tag] = []
-        
-        
+
         scanner.charactersToBeSkipped = nil
         
         //This will scan in one tag at a time
@@ -95,21 +91,22 @@ internal extension String {
             guard !scanner.isAtEnd else {
                 break
             }
-            tagLocation = scanner.scanLocation
-            scanner.scanLocation += 1
+            tagLocation = scanner.currentIndex.utf16Offset(in: self)
+            scanner.incrementLocation()
             
-            guard let tagString: String = scanner.scanUpToCharacters(CharacterSet(charactersIn: "<>")) else {
+            guard let tagString: String = scanner.scanUpToCharacters(from: CharacterSet(charactersIn: "<>")) else {
                 newString += "<"
                 break
             }
- 
+
+            let scanLocation: Int = scanner.currentIndex.utf16Offset(in: self)
             //This will check for consecutive '<' characters (i.e. <underline> < </underline>)
-            if scanner.scanLocation < self.count, String(self[self.index(self.startIndex, offsetBy: scanner.scanLocation)]) == "<" {
+            if scanLocation < self.count, String(self[self.index(self.startIndex, offsetBy: scanLocation)]) == "<" {
                 //The next loop will catch the next '<'
                 newString += "<" + tagString
                 continue
             }
-            scanner.scanLocation += 1
+            scanner.incrementLocation()
             
             //Create the tag
             mutableTagString = tagString
@@ -159,7 +156,6 @@ internal extension String {
         self = newString
         return ret
     }
-
     
     mutating func stripTags() -> [String : NSRange] {
         let scanner: Scanner = Scanner(string: self)
@@ -172,5 +168,4 @@ internal extension String {
         self.stripTags(scanner: scanner, tags: &tags, locationOffset: &locationOffset)
         return tags
     }
-    
 }

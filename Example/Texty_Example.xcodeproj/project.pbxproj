@@ -206,7 +206,6 @@
 				672577EF1E3A88A000E04DEE /* Resources */,
 				6725780E1E3A901F00E04DEE /* Embed Frameworks */,
 				5BB4CCF910ADD828405B30BE /* [CP] Embed Pods Frameworks */,
-				FA85789B6E3C6A61CBB841DD /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -240,6 +239,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -272,7 +272,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Texty_Example/Pods-Texty_Example-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Texty_Example/Pods-Texty_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Texty/Texty.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -281,7 +281,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Texty_Example/Pods-Texty_Example-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Texty_Example/Pods-Texty_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A3524294EF2CDCF2F80FA6EF /* [CP] Check Pods Manifest.lock */ = {
@@ -300,21 +300,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		FA85789B6E3C6A61CBB841DD /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Texty_Example/Pods-Texty_Example-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -472,6 +457,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = D3F43CM6W7;
 				INFOPLIST_FILE = Texty_Example/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -492,6 +478,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = D3F43CM6W7;
 				INFOPLIST_FILE = Texty_Example/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",

@@ -28,7 +28,7 @@
 import Foundation
 import UIKit
 
-internal protocol TextStyleDelegate: class {
+internal protocol TextStyleDelegate: AnyObject {
     func didUpdate(style: TextStyle) -> Void
 }
 

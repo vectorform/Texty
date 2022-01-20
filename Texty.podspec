@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'Texty'
-  s.version          = '0.2.6'
+  s.version          = '0.2.7'
   s.summary          = 'Enjoy clean and easy text styling using a simplified and structured syntax.'
 
   s.description      = <<-DESC
@@ -15,7 +15,7 @@ DESC
   s.social_media_url = 'https://twitter.com/vectorform'
   s.swift_versions   = ['5.0']
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '13.0'
 
   s.source_files = 'Source/*.swift'
 end

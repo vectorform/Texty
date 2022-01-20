@@ -2,7 +2,6 @@
 //
 // Redistribution and use in source and binary forms, with or without modification,
 // are permitted provided that the following conditions are met:
-///Users/cbechtel/Desktop/Yarp Repo/Yarp/README.md
 // 1. Redistributions of source code must retain the above copyright notice, this
 // list of conditions and the following disclaimer.
 //
@@ -95,22 +94,22 @@ open class TextyLabel: UILabel, TextStyleDelegate {
     
     // A copy of style will be created
     public required init(style: TextStyle, frame: CGRect = .zero) {
-        
-        
         super.init(frame: frame)
         // Set style and ensure that didSet is called
-        ({
-            self.style = style
-            self.setDefaults()
-            self.style.delegate = self
-        })()
+        self.style = style
+        self.setDefaults()
+        self.style.delegate = self
     }
-    
+
+    public convenience init(textStyle: TextStyle, textColor: UIColor) {
+        self.init(style: textStyle)
+        self.style.foregroundColor = textColor
+    }
+
     public required init?(coder aDecoder: NSCoder) {
         fatalError("not supported")
     }
-    
-    
+
     private func setDefaults() {
         /// If the font/textColor are not set yet by the TextStyle passed in, then set some default values
         self.text = nil
@@ -135,5 +134,4 @@ open class TextyLabel: UILabel, TextStyleDelegate {
         /// Update attributed string with new attributes called by the textStyle when it detects an update
         self.text = possiblyTaggedText
     }
-    
 }

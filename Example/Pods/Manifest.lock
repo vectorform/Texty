@@ -1,16 +1,16 @@
 PODS:
-  - Texty (0.2.2)
+  - Texty (0.2.7)
 
 DEPENDENCIES:
   - Texty (from `../`)
 
 EXTERNAL SOURCES:
   Texty:
-    :path: ../
+    :path: "../"
 
 SPEC CHECKSUMS:
-  Texty: 1bc8ccb674c9c7cb1365fc9d3baddb41d75c60c4
+  Texty: a329edb9edd2f2ea4c1b14acf176cd9538850426
 
 PODFILE CHECKSUM: 2f8d78ff66bcf7c64d9b9946ec7ea9e66cf45636
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.10.1
