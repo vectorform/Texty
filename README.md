@@ -10,7 +10,7 @@ Created and maintained by Vectorform, LLC.
 
 
 ## Requirements:
-- iOS 8.0+
+- iOS 13.0+
 - Xcode 10.0+
 - Swift 5.0+
 
@@ -53,7 +53,7 @@ $ brew install carthage
 
 To integrate Texty into your Xcode project using Carthage, specify it in your `Cartfile`:
 ```ogdl
-github "Vectorform/Texty" ~> 0.2.6
+github "Vectorform/Texty" ~> 0.2.7
 ```
 
 Run `carthage update` to build the framework and drag the built `Texty.framework` into your Xcode project.
